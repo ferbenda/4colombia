@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Official sources — Colombia Earthquake</title>
-<meta property="og:title" content="Official sources — Colombia Earthquake">
-<meta name="description" content="Official information on the earthquake, confirmed and verified by the responsible Colombian institutions.">
+<title>Verified sources — Colombia Earthquake</title>
+<meta property="og:title" content="Verified sources — Colombia Earthquake">
+<meta name="description" content="Verified footage of the Colombia earthquake and the accounts of the institutions responding.">
 <style>
 :root{
 --amarillo:#FCD116; --azul:#003893; --rojo:#CE1126; --amarillo-suave:#FFF6D6;
@@ -184,8 +184,8 @@ padding-top:15px;line-height:1.7}
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
   <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
-  <h1><span lang-es>Fuentes oficiales</span><span lang-en>Official sources</span></h1>
-  <p class="intro"><span lang-es>Video de lo que está pasando, y las cuentas oficiales de quienes atienden la emergencia.</span><span lang-en>Footage of what is happening, plus the official accounts of those responding.</span></p>
+  <h1><span lang-es>Fuentes verificadas</span><span lang-en>Verified sources</span></h1>
+  <p class="intro"><span lang-es>Video verificado de lo que está pasando, y las cuentas de las instituciones que atienden la emergencia.</span><span lang-en>Verified footage of what is happening, plus the accounts of the institutions responding.</span></p>
 
   <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
     <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
@@ -195,9 +195,9 @@ padding-top:15px;line-height:1.7}
   </div>
 
   <div class="criterio">
-    <h2><span lang-es>Cómo se armó esta lista</span><span lang-en>How this list was built</span></h2>
+    <h2><span lang-es>Cómo se verifica esta lista</span><span lang-en>How this list is verified</span></h2>
     <ul>
-      <li><span lang-es><b>Información oficial.</b> Publicada directamente por las entidades colombianas responsables de la emergencia.</span><span lang-en><b>Official information.</b> Published directly by the Colombian agencies responsible for the emergency.</span></li>
+      <li><span lang-es><b>Verificado que es de este sismo.</b> Cada video se contrasta con la cobertura del 10 de agosto antes de publicarse; en emergencia circula mucho material antiguo o de otro país.</span><span lang-en><b>Verified as being from this earthquake.</b> Every video is checked against coverage from 10 August before publishing; old and unrelated footage circulates widely in emergencies.</span></li>
       <li><span class="resalte"><span lang-es>Confirmada y verificada</span><span lang-en>Confirmed and verified</span></span> <span lang-es>Cada dato viene de la institución que responde por él.</span><span lang-en>Every fact comes from the institution accountable for it.</span></li>
       <li><span lang-es><b>Cada cuenta verificada una por una</b>, siguiendo el enlace desde el sitio web oficial de la entidad.</span><span lang-en><b>Every account verified one by one</b>, by following the link from the agency's own website.</span></li>
       <li><span lang-es>Aquí reunimos la <b>fuente primaria</b>, para contrastar lo que veas en cualquier otro lado.</span><span lang-en>We gather the <b>primary source</b>, so you can check anything you see elsewhere against it.</span></li>
@@ -207,12 +207,15 @@ padding-top:15px;line-height:1.7}
   <!-- ================= SITIOS WEB ================= -->
   <h2 class="sec"><span lang-es>Ver lo que está pasando</span><span lang-en>See what is happening</span></h2>
   <div class="aviso-video">
-    <span lang-es>Video de la emergencia. Las entradas marcadas <b>EN</b> están en inglés; las demás se entienden por la imagen aunque no hables español.</span><span lang-en>Footage from the emergency. Entries marked <b>EN</b> are in English; the rest are understandable from the images even if you don't speak Spanish.</span>
+    <span lang-es>Cada enlace abre <b>el video directamente</b>. Solo publicamos material verificado de este sismo: nada de video antiguo ni de otro país. Las entradas marcadas <b>EN</b> están en inglés.</span><span lang-en>Every link opens <b>the video itself</b>. We only publish material verified as being from this earthquake — no old or unrelated footage. Entries marked <b>EN</b> are in English.</span>
   </div>
   <div id="videos"></div>
   <p id="videos-error" hidden><span lang-es>No se pudo cargar la lista de videos.</span><span lang-en>The video list could not be loaded.</span></p>
 
-  <h2 class="sec"><span lang-es>Sitios web oficiales</span><span lang-en>Official websites</span></h2>
+  <h2 class="sec"><span lang-es>Instituciones que atienden la emergencia</span><span lang-en>Institutions responding to the emergency</span></h2>
+  <p class="aviso-video" style="border-left-color:var(--azul)">
+    <span lang-es>Publican principalmente en español. Útiles para cifras y decisiones oficiales, no para entender lo que pasa a simple vista.</span><span lang-en>These publish mainly in Spanish. Useful for official figures and decisions, less so for seeing what is happening.</span>
+  </p>
 
   <a class="fuente" href="https://portal.gestiondelriesgo.gov.co/" target="_blank" rel="noopener">
     <span class="icono">WEB</span>
@@ -392,10 +395,10 @@ function idioma(l, btn){
 }
 
 const META = {
-  es:{t:'Fuentes oficiales — sismo Colombia',
-      d:'Información oficial sobre el sismo, confirmada y verificada por las instituciones colombianas responsables.'},
-  en:{t:'Official sources — Colombia Earthquake',
-      d:'Official information on the earthquake, confirmed and verified by the responsible Colombian institutions.'}
+  es:{t:'Fuentes verificadas — sismo Colombia',
+      d:'Video verificado de lo que está pasando y las cuentas de las instituciones que atienden la emergencia.'},
+  en:{t:'Verified sources — Colombia Earthquake',
+      d:'Verified footage of what is happening, plus the accounts of the institutions responding.'}
 };
 
 const VERIFICADO = '2026-08-11';
