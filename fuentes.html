@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Official sources — Colombia Earthquake</title>
+<meta property="og:title" content="Official sources — Colombia Earthquake">
+<meta name="description" content="Official information on the earthquake, confirmed and verified by the responsible Colombian institutions.">
+<style>
+:root{
+--amarillo:#FCD116; --azul:#003893; --rojo:#CE1126; --amarillo-suave:#FFF6D6;
+--papel:#F4F5F7;--tinta:#101828;--tinta-2:#56606E;--linea:#D4D9E0;--blanco:#fff;
+--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
+-webkit-font-smoothing:antialiased;
+padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
+  border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
+  padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-2);text-transform:uppercase;font-weight:600}
+.pulso{width:7px;height:7px;border-radius:50%;background:var(--rojo);flex:none;
+  animation:lat 2.4s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+
+.tricolor i{display:block}
+.tricolor i:nth-child(1){background:var(--amarillo);flex:2}
+.tricolor i:nth-child(2){background:var(--azul);flex:1}
+.tricolor i:nth-child(3){background:var(--rojo);flex:1}
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("img/colombia-horizontal.webp");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  opacity:.72}
+@media (orientation:portrait){
+  .fondo{background-image:url("img/colombia-vertical.webp")}
+}
+/* La columna de contenido es papel translúcido: la ilustración se ve a través
+   y a los lados, pero el texto conserva contraste en la zona más densa. */
+.wrap{position:relative;z-index:1;background:rgba(244,245,247,.88);
+  box-shadow:0 0 0 1px rgba(212,217,224,.6)}
+
+
+.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+.volver{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--tinta-2);
+text-decoration:none;margin-bottom:14px}
+.volver:hover{color:var(--azul)}
+.otra-pag{display:block;background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--azul);
+border-radius:3px;padding:16px;margin-top:26px;text-decoration:none;color:var(--tinta)}
+.otra-pag .t{font-size:16.5px;font-weight:650}
+.otra-pag .d{font-size:13.5px;color:var(--tinta-2);margin-top:4px}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+h1{font-size:26px;font-weight:650;letter-spacing:-.025em;margin:10px 0 8px}
+.intro{color:var(--tinta-2);font-size:15.5px;margin-bottom:18px}
+
+.criterio{background:var(--blanco);border:1px solid var(--linea);border-top:4px solid var(--azul);
+border-radius:3px;padding:17px;margin-bottom:26px}
+.criterio h2{font-size:16px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em}
+.criterio li{font-size:14px;color:var(--tinta-2);margin-left:18px;margin-bottom:6px;line-height:1.5}
+.criterio b{color:var(--tinta)}
+.resalte{background:var(--amarillo-suave);border-bottom:2px solid var(--amarillo);padding:1px 5px;
+font-weight:700;color:var(--tinta)}
+
+h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+color:var(--tinta-2);margin:30px 0 14px;font-weight:600;
+border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
+
+.fuente{display:flex;align-items:center;gap:13px;background:var(--blanco);border:1px solid var(--linea);
+border-radius:3px;padding:14px 15px;margin-bottom:9px;text-decoration:none;color:var(--tinta);min-height:64px}
+.fuente:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.fuente:hover{border-color:var(--azul)}
+.icono{width:34px;height:34px;flex:none;border-radius:3px;background:var(--azul);color:#fff;
+display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:700}
+.icono.rojo{background:var(--rojo)}
+.f-cuerpo{flex:1;min-width:0}
+.f-nom{font-size:15.5px;font-weight:650;letter-spacing:-.01em}
+.f-arroba{font-family:var(--mono);font-size:12px;color:var(--azul);margin-top:2px}
+.f-que{font-size:13px;color:var(--tinta-2);margin-top:3px;line-height:1.4}
+.flecha{color:var(--tinta-2);font-size:14px;flex:none}
+
+.pendiente{background:var(--blanco);border:1px solid var(--linea);border-left:4px solid var(--rojo);
+border-radius:3px;padding:17px;margin:30px 0 12px}
+.pendiente h2{font-size:16px;font-weight:700;margin-bottom:9px}
+.pendiente p,.pendiente li{font-size:14px;color:var(--tinta-2);line-height:1.55;margin-bottom:7px}
+.pendiente li{margin-left:18px}
+.pendiente b{color:var(--tinta)}
+
+[lang-en]{display:none}
+body.en [lang-es]{display:none}
+body.en [lang-en]{display:inline}
+.idioma{display:flex;gap:8px;margin-bottom:20px}
+.idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+font-weight:600;padding:8px 13px;border:1px solid var(--linea);background:var(--blanco);
+color:var(--tinta-2);border-radius:2px;cursor:pointer;min-height:38px}
+.idioma button[aria-pressed="true"]{border-color:var(--tinta);color:var(--tinta)}
+.pie{font-size:12.5px;color:var(--tinta-2);margin-top:30px;border-top:1px solid var(--linea);
+padding-top:15px;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="tricolor"><i></i><i></i><i></i></div>
+<div class="fondo" aria-hidden="true"></div>
+<div class="wrap">
+  <a class="volver" href="/">&#8592; <span lang-es>Inicio</span><span lang-en>Home</span></a>
+
+  <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
+  <h1><span lang-es>Fuentes oficiales</span><span lang-en>Official sources</span></h1>
+  <p class="intro"><span lang-es>Información oficial de las instituciones que atienden la emergencia.</span><span lang-en>Official information from the institutions responding to the emergency.</span></p>
+
+  <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
+    <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+
+  <div class="criterio">
+    <h2><span lang-es>Cómo se armó esta lista</span><span lang-en>How this list was built</span></h2>
+    <ul>
+      <li><span lang-es><b>Información oficial.</b> Publicada directamente por las entidades colombianas responsables de la emergencia.</span><span lang-en><b>Official information.</b> Published directly by the Colombian agencies responsible for the emergency.</span></li>
+      <li><span class="resalte"><span lang-es>Confirmada y verificada</span><span lang-en>Confirmed and verified</span></span> <span lang-es>Cada dato viene de la institución que responde por él.</span><span lang-en>Every fact comes from the institution accountable for it.</span></li>
+      <li><span lang-es><b>Cada cuenta verificada una por una</b>, siguiendo el enlace desde el sitio web oficial de la entidad.</span><span lang-en><b>Every account verified one by one</b>, by following the link from the agency's own website.</span></li>
+      <li><span lang-es>Aquí reunimos la <b>fuente primaria</b>, para contrastar lo que veas en cualquier otro lado.</span><span lang-en>We gather the <b>primary source</b>, so you can check anything you see elsewhere against it.</span></li>
+    </ul>
+  </div>
+
+  <!-- ================= SITIOS WEB ================= -->
+  <h2 class="sec"><span lang-es>Sitios web oficiales</span><span lang-en>Official websites</span></h2>
+
+  <a class="fuente" href="https://portal.gestiondelriesgo.gov.co/" target="_blank" rel="noopener">
+    <span class="icono">WEB</span>
+    <span class="f-cuerpo">
+      <span class="f-nom">UNGRD</span>
+      <span class="f-que"><span lang-es>Coordina el Puesto de Mando Unificado. Balance oficial y necesidades por territorio.</span><span lang-en>Runs the Unified Command Post. Official toll and needs by territory.</span></span>
+    </span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://sismosgc.sgc.gov.co/" target="_blank" rel="noopener">
+    <span class="icono">WEB</span>
+    <span class="f-cuerpo">
+      <span class="f-nom"><span lang-es>Servicio Geológico Colombiano — Sismicidad</span><span lang-en>Servicio Geológico Colombiano — Seismicity</span></span>
+      <span class="f-que"><span lang-es>Magnitud, profundidad y epicentro de cada réplica, en tiempo real.</span><span lang-en>Magnitude, depth and epicentre of every aftershock, in real time.</span></span>
+    </span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://www.cruzrojacolombiana.org/" target="_blank" rel="noopener">
+    <span class="icono">WEB</span>
+    <span class="f-cuerpo">
+      <span class="f-nom">Cruz Roja Colombiana</span>
+      <span class="f-que"><span lang-es>Protección de Vínculos Familiares: el canal formal para restablecer contacto con un familiar.</span><span lang-en>Restoring Family Links: the formal channel for re-establishing contact with a relative.</span></span>
+    </span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://www.defensacivil.gov.co/" target="_blank" rel="noopener">
+    <span class="icono">WEB</span>
+    <span class="f-cuerpo">
+      <span class="f-nom">Defensa Civil Colombiana</span>
+      <span class="f-que"><span lang-es>Capacidades operativas de respuesta y atención psicosocial gratuita.</span><span lang-en>Operational response capacity and free psychosocial support.</span></span>
+    </span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="http://www.ideam.gov.co/" target="_blank" rel="noopener">
+    <span class="icono">WEB</span>
+    <span class="f-cuerpo">
+      <span class="f-nom">IDEAM</span>
+      <span class="f-que"><span lang-es>Alertas de lluvia y deslizamiento sobre zonas con estructuras comprometidas.</span><span lang-en>Rain and landslide alerts over areas with compromised structures.</span></span>
+    </span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://www.medicinalegal.gov.co/" target="_blank" rel="noopener">
+    <span class="icono rojo">WEB</span>
+    <span class="f-cuerpo">
+      <span class="f-nom"><span lang-es>Medicina Legal — Registro Nacional de Desaparecidos</span><span lang-en>Medicina Legal — National Registry of Missing Persons</span></span>
+      <span class="f-que"><span lang-es>Consulta pública SIRDEC. Es el registro oficial del Estado, no una plataforma ciudadana.</span><span lang-en>Public SIRDEC search. This is the official state registry, not a citizen platform.</span></span>
+    </span><span class="flecha">&#8599;</span>
+  </a>
+
+  <!-- ================= X ================= -->
+  <h2 class="sec">X</h2>
+
+  <a class="fuente" href="https://x.com/UNGRD" target="_blank" rel="noopener">
+    <span class="icono">X</span>
+    <span class="f-cuerpo"><span class="f-nom">UNGRD</span><span class="f-arroba">@UNGRD</span>
+    <span class="f-que"><span lang-es>La fuente más rápida del sistema nacional de gestión del riesgo.</span><span lang-en>The fastest source in the national disaster management system.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://x.com/sgcol" target="_blank" rel="noopener">
+    <span class="icono">X</span>
+    <span class="f-cuerpo"><span class="f-nom">Servicio Geológico Colombiano</span><span class="f-arroba">@sgcol</span>
+    <span class="f-que"><span lang-es>Boletín de cada sismo y réplica. La UNGRD remite aquí para datos sísmicos.</span><span lang-en>Bulletin for every quake and aftershock. The UNGRD points here for seismic data.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://x.com/cruzrojacol" target="_blank" rel="noopener">
+    <span class="icono">X</span>
+    <span class="f-cuerpo"><span class="f-nom">Cruz Roja Colombiana</span><span class="f-arroba">@cruzrojacol</span>
+    <span class="f-que"><span lang-es>Búsqueda de familiares y canales de donación verificados.</span><span lang-en>Family search and verified donation channels.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://x.com/DefensaCivilCo" target="_blank" rel="noopener">
+    <span class="icono">X</span>
+    <span class="f-cuerpo"><span class="f-nom">Defensa Civil Colombiana</span><span class="f-arroba">@DefensaCivilCo</span>
+    <span class="f-que"><span lang-es>Operaciones de respuesta y participación en el PMU nacional.</span><span lang-en>Response operations and participation in the national command post.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://x.com/Dimarcolombia" target="_blank" rel="noopener">
+    <span class="icono">X</span>
+    <span class="f-cuerpo"><span class="f-nom">DIMAR</span><span class="f-arroba">@Dimarcolombia</span>
+    <span class="f-que"><span lang-es>Autoridad marítima. Única fuente válida sobre amenaza de tsunami en el Pacífico.</span><span lang-en>Maritime authority. The only valid source on Pacific tsunami threat.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <!-- ================= INSTAGRAM ================= -->
+  <h2 class="sec">Instagram</h2>
+
+  <a class="fuente" href="https://www.instagram.com/ungrd_oficial/" target="_blank" rel="noopener">
+    <span class="icono">IG</span>
+    <span class="f-cuerpo"><span class="f-nom">UNGRD</span><span class="f-arroba">@ungrd_oficial</span>
+    <span class="f-que"><span lang-es>Comunicados y piezas de orientación a la comunidad.</span><span lang-en>Official statements and public guidance.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://www.instagram.com/serviciogeologicocolombiano/" target="_blank" rel="noopener">
+    <span class="icono">IG</span>
+    <span class="f-cuerpo"><span class="f-nom">Servicio Geológico Colombiano</span><span class="f-arroba">@serviciogeologicocolombiano</span>
+    <span class="f-que"><span lang-es>Reportes sísmicos y explicación técnica del evento.</span><span lang-en>Seismic reports and technical explanation of the event.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <!-- ================= TIKTOK ================= -->
+  <h2 class="sec">TikTok</h2>
+
+  <a class="fuente" href="https://www.tiktok.com/@cruzrojabogota" target="_blank" rel="noopener">
+    <span class="icono">TT</span>
+    <span class="f-cuerpo"><span class="f-nom">Cruz Roja Bogotá</span><span class="f-arroba">@cruzrojabogota</span>
+    <span class="f-que"><span lang-es>Seccional Cundinamarca y Bogotá. Puntos de acopio y campañas de donación.</span><span lang-en>Cundinamarca and Bogotá branch. Collection points and donation campaigns.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <a class="fuente" href="https://www.tiktok.com/@rtvcnoticias" target="_blank" rel="noopener">
+    <span class="icono">TT</span>
+    <span class="f-cuerpo"><span class="f-nom">RTVC Noticias</span><span class="f-arroba">@rtvcnoticias</span>
+    <span class="f-que"><span lang-es>Sistema de medios públicos del Estado. Reporta citando al SGC y a las autoridades.</span><span lang-en>State public media system. Reports citing the SGC and the authorities.</span></span></span><span class="flecha">&#8599;</span>
+  </a>
+
+  <!-- ================= PENDIENTES ================= -->
+  <div class="pendiente">
+    <h2><span lang-es>Cuentas aún sin verificar</span><span lang-en>Accounts not yet verified</span></h2>
+    <p><span lang-es>Faltan cuentas de Instagram y TikTok de Defensa Civil, Bomberos, IDEAM, Medicina Legal y las alcaldías de Cali, Pereira, Manizales y Quibdó.</span><span lang-en>Still missing: Instagram and TikTok accounts for Defensa Civil, the fire service, IDEAM, Medicina Legal, and the city governments of Cali, Pereira, Manizales and Quibdó.</span></p>
+    <p><span lang-es><b>No se publican hasta confirmarlas.</b> Una cuenta falsa aquí es peor que no tener la lista. El método:</span><span lang-en><b>They stay out until confirmed.</b> A fake account here is worse than no list. How to confirm one:</span></p>
+    <ul>
+      <li><span lang-es>Entrar al <b>sitio web oficial</b> de la entidad (dominio <code>.gov.co</code> cuando aplique)</span><span lang-en>Go to the agency's <b>official website</b> (a <code>.gov.co</code> domain where applicable)</span></li>
+      <li><span lang-es>Seguir el enlace de redes desde el pie de página de ese sitio</span><span lang-en>Follow the social link from that site's own footer</span></li>
+      <li><span lang-es>No buscar la cuenta directamente en la red social: ahí aparecen imitaciones antes que la real</span><span lang-en>Never search for the account inside the social network: imitations surface before the real one</span></li>
+    </ul>
+  </div>
+
+  <a class="otra-pag" href="/ayudar">
+    <span class="t"><span lang-es>Donar de forma segura</span><span lang-en>Give safely</span></span>
+    <span class="d"><span lang-es>Organizaciones oficiales que reciben con tarjeta desde cualquier país.</span><span lang-en>Official organizations accepting cards from any country.</span></span>
+  </a>
+
+  <p class="pie">
+    <span lang-es>Esta página solo enlaza. No reproduce, resume ni interpreta lo que publican estas fuentes.</span><span lang-en>This page only links. It does not reproduce, summarize or interpret what these sources publish.</span><br>
+    <span id="verif"></span>
+  </p>
+</div>
+
+<script>
+function idioma(l, btn){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
+  const m = META[l];
+  document.title = m.t;
+  document.querySelector('meta[name="description"]').setAttribute('content', m.d);
+  const og = document.querySelector('meta[property="og:title"]');
+  if(og) og.setAttribute('content', m.t);
+  guardarIdioma(l);
+  pintarPie(l);
+}
+
+const META = {
+  es:{t:'Fuentes oficiales — sismo Colombia',
+      d:'Información oficial sobre el sismo, confirmada y verificada por las instituciones colombianas responsables.'},
+  en:{t:'Official sources — Colombia Earthquake',
+      d:'Official information on the earthquake, confirmed and verified by the responsible Colombian institutions.'}
+};
+
+const VERIFICADO = '2026-08-11';
+function pintarPie(l){
+  const f = new Date(VERIFICADO+'T12:00:00');
+  document.getElementById('verif').textContent = l==='en'
+    ? 'Links verified on ' + f.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) + '.'
+    : 'Enlaces verificados el ' + f.toLocaleDateString('es-CO',{day:'numeric',month:'long',year:'numeric'}) + '.';
+}
+
+function guardarIdioma(l){
+  try{ localStorage.setItem('idioma', l); }catch(e){}
+  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
+  document.querySelectorAll('a[href^="/"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), location.origin);
+    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+
+(function inicial(){
+  let l = new URLSearchParams(location.search).get('lang');
+  if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
+  if(l !== 'es') l = 'en';
+  const botones = document.querySelectorAll('.idioma button');
+  idioma(l, botones[l==='es' ? 1 : 0]);
+})();
+</script>
+</body>
+</html>

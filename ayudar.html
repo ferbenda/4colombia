@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to help from abroad — Colombia Earthquake</title>
+<meta property="og:title" content="How to help from abroad — Colombia Earthquake">
+<meta name="description" content="Give by credit or debit card from any country, in under two minutes.">
+<style>
+:root{
+/* Bandera de Colombia. El amarillo nunca lleva texto encima ni va como
+   fondo de botón: sobre blanco no alcanza contraste accesible. Se usa
+   como banda, subrayado y realce. */
+--amarillo:#FCD116; --azul:#003893; --rojo:#CE1126;
+--amarillo-suave:#FFF6D6;
+--papel:#F4F5F7;--tinta:#101828;--tinta-2:#56606E;--linea:#D4D9E0;
+--senal:#003893;--alto:#CE1126;--blanco:#fff;
+--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
+-webkit-font-smoothing:antialiased;
+padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+.volver{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--tinta-2);
+text-decoration:none;margin-bottom:14px}
+.volver:hover{color:var(--azul)}
+.otra-pag{display:block;background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--rojo);
+border-radius:3px;padding:16px;margin-top:26px;text-decoration:none;color:var(--tinta)}
+.otra-pag .t{font-size:16.5px;font-weight:650}
+.otra-pag .d{font-size:13.5px;color:var(--tinta-2);margin-top:4px}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
+  border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
+  padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-2);text-transform:uppercase;font-weight:600}
+.pulso{width:7px;height:7px;border-radius:50%;background:var(--rojo);flex:none;
+  animation:lat 2.4s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+
+.tricolor i{display:block}
+.tricolor i:nth-child(1){background:var(--amarillo);flex:2}
+.tricolor i:nth-child(2){background:var(--azul);flex:1}
+.tricolor i:nth-child(3){background:var(--rojo);flex:1}
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("img/colombia-horizontal.webp");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  opacity:.72}
+@media (orientation:portrait){
+  .fondo{background-image:url("img/colombia-vertical.webp")}
+}
+/* La columna de contenido es papel translúcido: la ilustración se ve a través
+   y a los lados, pero el texto conserva contraste en la zona más densa. */
+.wrap{position:relative;z-index:1;background:rgba(244,245,247,.88);
+  box-shadow:0 0 0 1px rgba(212,217,224,.6)}
+
+
+
+/* ---- aviso principal: a dónde va el dinero ---- */
+.aviso-dinero{background:var(--blanco);border:1px solid var(--linea);
+  border-top:4px solid var(--azul);border-radius:3px;padding:18px;margin:20px 0 8px}
+.aviso-dinero h2{font-family:var(--sans);font-size:16.5px;letter-spacing:-.01em;
+  text-transform:none;color:var(--tinta);margin:0 0 9px;font-weight:700}
+.aviso-dinero p{font-size:14.5px;color:var(--tinta-2);line-height:1.55;margin-bottom:9px}
+.aviso-dinero p:last-child{margin-bottom:0}
+.aviso-dinero b{color:var(--tinta)}
+.marca-cero{display:inline-block;background:var(--amarillo-suave);border-bottom:2px solid var(--amarillo);
+  padding:1px 5px;font-weight:700;color:var(--tinta)}
+
+/* ---- llamado a la diáspora ---- */
+.diaspora{background:var(--azul);color:#fff;border-radius:3px;padding:18px;margin-bottom:8px}
+.diaspora h2{font-family:var(--sans);font-size:17px;text-transform:none;letter-spacing:-.01em;
+  color:#fff;margin:0 0 8px;font-weight:700}
+.diaspora p{font-size:14.5px;line-height:1.55;color:#E6EAF5;margin:0}
+.diaspora .amarillo{color:var(--amarillo);font-weight:700}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+h1{font-size:26px;font-weight:650;letter-spacing:-.025em;margin:10px 0 8px}
+.intro{color:var(--tinta-2);font-size:15.5px;margin-bottom:8px}
+
+/* idioma */
+.idioma{display:flex;gap:8px;margin:18px 0 26px}
+.idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+font-weight:600;padding:8px 13px;border:1px solid var(--linea);background:var(--blanco);
+color:var(--tinta-2);border-radius:2px;cursor:pointer;min-height:38px}
+.idioma button[aria-pressed="true"]{border-color:var(--tinta);color:var(--tinta)}
+
+h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+color:var(--tinta-2);margin:32px 0 4px;font-weight:600;
+border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
+.h2sub{color:var(--tinta-2);font-size:14px;margin-bottom:14px}
+
+/* tarjeta de organización */
+.org{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:17px;margin-bottom:12px}
+.org.destacada{border-color:var(--azul);border-width:1.5px}
+.org-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.org-nom{font-size:17.5px;font-weight:650;letter-spacing:-.01em}
+.org-que{color:var(--tinta-2);font-size:14px;margin-top:5px}
+.insignia{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+font-weight:700;padding:4px 7px;border-radius:2px;white-space:nowrap;flex:none;
+background:var(--senal);color:#fff}
+.insignia.impuesto{background:var(--rojo)}
+
+.monedas{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.moneda{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--tinta-2);
+border:1px solid var(--linea);border-radius:2px;padding:3px 7px}
+
+.donar{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+margin-top:14px;padding:15px;background:var(--senal);color:#fff;border:1px solid var(--senal);
+border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height:52px}
+.donar:focus-visible{outline:2px solid var(--tinta);outline-offset:2px}
+.donar.secundaria{background:var(--blanco);color:var(--tinta);border-color:var(--tinta)}
+
+/* pasos */
+.pasos{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:17px;margin-bottom:26px}
+.paso{display:flex;gap:12px;padding:9px 0;align-items:baseline}
+.paso+.paso{border-top:1px solid var(--linea)}
+.num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--senal);flex:none;width:18px}
+.paso-txt{font-size:14.5px}
+
+/* seguridad */
+.seguridad{background:var(--blanco);border-left:3px solid var(--alto);padding:15px 16px;margin:26px 0}
+.seguridad h3{font-size:15.5px;font-weight:650;margin-bottom:9px}
+.seguridad li{font-size:14px;color:var(--tinta-2);margin-left:17px;margin-bottom:7px;line-height:1.5}
+.seguridad b{color:var(--tinta)}
+
+.antes{background:var(--amarillo-suave);border-left:3px solid var(--amarillo);padding:12px 14px;
+  font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:14px}
+.antes b{color:var(--tinta)}
+
+/* ---- selector de país ---- */
+.selector{background:var(--blanco);border:1px solid var(--linea);border-top:4px solid var(--amarillo);
+  border-radius:3px;padding:17px;margin-bottom:14px}
+.selector label{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-2);display:block;margin-bottom:8px}
+.selector select{width:100%;font-family:var(--sans);font-size:16px;color:var(--tinta);
+  background:var(--papel);border:1px solid var(--linea);border-radius:2px;padding:13px 12px;min-height:50px}
+.selector select:focus{outline:2px solid var(--azul);outline-offset:1px;border-color:transparent}
+.explica{font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-top:11px}
+.explica b{color:var(--tinta)}
+.resultado-pais{margin-top:15px;display:none}
+.resultado-pais.visible{display:block}
+.ruta{border-top:1px solid var(--linea);padding:12px 0}
+.ruta:last-child{padding-bottom:0}
+.ruta-cab{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.ruta-nom{font-size:15px;font-weight:650}
+.etiqueta{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:700;padding:3px 7px;border-radius:2px;white-space:nowrap;flex:none}
+.etiqueta.si{background:var(--azul);color:#fff}
+.etiqueta.no{background:var(--papel);color:var(--tinta-2);border:1px solid var(--linea)}
+.etiqueta.verifica{background:var(--rojo);color:#fff}
+.ruta-det{font-size:13.5px;color:var(--tinta-2);margin-top:4px;line-height:1.45}
+.ruta-det b{color:var(--tinta)}
+.nota-fiscal{background:var(--amarillo-suave);border-left:3px solid var(--amarillo);padding:11px 13px;
+  font-size:13px;color:var(--tinta-2);margin-top:14px;line-height:1.5}
+
+details{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:15px 16px;margin-bottom:12px}
+summary{font-size:15.5px;font-weight:650;cursor:pointer}
+details p,details li{font-size:14px;color:var(--tinta-2);margin-top:9px;line-height:1.55}
+details li{margin-left:17px}
+
+.pie{font-size:12.5px;color:var(--tinta-2);margin-top:30px;border-top:1px solid var(--linea);
+padding-top:15px;line-height:1.7}
+[lang-en]{display:none}
+body.en [lang-es]{display:none}
+body.en [lang-en]{display:inline}
+body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
+</style>
+</head>
+<body>
+<div class="tricolor"><i></i><i></i><i></i></div>
+<div class="fondo" aria-hidden="true"></div>
+<div class="wrap">
+  <a class="volver" href="/">&#8592; <span lang-es>Inicio</span><span lang-en>Home</span></a>
+
+  <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
+  <h1><span lang-es>Ayudar desde el exterior</span><span lang-en>Help from abroad</span></h1>
+  <p class="intro">
+    <span lang-es>Con tarjeta, en tu moneda, en dos minutos. Sin cuentas ni llaves.</span>
+    <span lang-en>By card, in your currency, in two minutes. No account numbers.</span>
+  </p>
+
+  <div class="aviso-dinero">
+    <h2><span lang-es>Esta página no recibe dinero</span><span lang-en>This page does not receive money</span></h2>
+    <p>
+      <span lang-es>Tu donación <b>no pasa por ningún intermediario</b>. Va <span class="marca-cero">100% directo</span> a instituciones oficiales y organizaciones humanitarias reconocidas.</span>
+      <span lang-en>Your donation <b>passes through no intermediary</b>. It goes <span class="marca-cero">100% directly</span> to official institutions and recognized humanitarian organizations.</span>
+    </p>
+    <p>
+      <span lang-es>Cada botón abre la página de pago de la organización. Aquí no se cobra nada ni se guardan datos de tarjeta.</span>
+      <span lang-en>Every button opens the organization's own checkout. Nothing is charged here and no card data is stored.</span>
+    </p>
+    <p>
+      <span lang-es>Existe <b>solo para informar</b> cuál es la mejor forma de ayudar a Colombia.</span>
+      <span lang-en>It exists <b>only to inform</b> you of the best way to help Colombia.</span>
+    </p>
+  </div>
+
+  <div class="diaspora">
+    <h2><span lang-es>Colombianos en el exterior y colombianos por adopción</span><span lang-en>Colombians abroad — and Colombians by choice</span></h2>
+    <p>
+      <span lang-es>La distancia no cambia de dónde venimos. Desde donde estés, <span class="amarillo">tu aporte llega hoy</span> a las familias que lo perdieron todo.</span>
+      <span lang-en>Distance doesn't change where we come from. Wherever you are, <span class="amarillo">your gift reaches families today</span> — families who lost everything.</span>
+    </p>
+  </div>
+
+  <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
+    <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+
+  <div class="pasos">
+    <div class="paso"><span class="num">1</span><span class="paso-txt">
+      <span lang-es>Elige una organización de abajo.</span><span lang-en>Pick an organization below.</span></span></div>
+    <div class="paso"><span class="num">2</span><span class="paso-txt">
+      <span lang-es>Toca el botón. Abre su página oficial.</span>
+      <span lang-en>Tap the button. It opens their official page.</span></span></div>
+    <div class="paso"><span class="num">3</span><span class="paso-txt">
+      <span lang-es>Pagas con tarjeta, como cualquier compra en línea.</span>
+      <span lang-en>Pay by card, like any online purchase.</span></span></div>
+  </div>
+
+  <h2><span lang-es>Lo más rápido</span><span lang-en>Fastest option</span></h2>
+  <p class="h2sub">
+    <span lang-es>Aceptan tarjetas de cualquier país; el dinero llega a equipos ya en terreno.</span>
+    <span lang-en>Cards from any country; funds reach teams already on the ground.</span></p>
+
+  <div class="org destacada">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">GlobalGiving — Colombia Earthquake Relief Fund</div>
+        <div class="org-que">
+          <span lang-es>Fondos rápidos a organizaciones locales: atención médica, búsqueda y rescate, albergue, alimentos y agua.</span>
+          <span lang-en>Rapid funding to local organizations: medical care, search and rescue, shelter, food and water.</span>
+        </div>
+      </div>
+      <span class="insignia impuesto"><span lang-es>EE.UU. / UK deducible</span><span lang-en>US / UK deductible</span></span>
+    </div>
+    <div class="monedas"><span class="moneda">USD</span><span class="moneda">EUR</span><span class="moneda">GBP</span><span class="moneda">Visa · Mastercard · Amex</span><span class="moneda">PayPal</span></div>
+    <a class="donar" href="https://www.globalgiving.org/projects/colombia-earthquake-relief-fund/" target="_blank" rel="noopener">
+      <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <div class="org">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">All Hands &amp; Hearts</div>
+        <div class="org-que">
+          <span lang-es>En Pereira desde el día del sismo, comprando herramientas y equipo para los grupos de rescate.</span>
+          <span lang-en>In Pereira since day one, procuring tools and gear for rescue crews.</span>
+        </div>
+      </div>
+      <span class="insignia impuesto"><span lang-es>EE.UU. deducible</span><span lang-en>US deductible</span></span>
+    </div>
+    <div class="monedas"><span class="moneda">USD</span><span class="moneda">Visa · Mastercard · Amex</span></div>
+    <a class="donar" href="https://allhandsandhearts.org/our-work/programs/colombia-earthquake-relief" target="_blank" rel="noopener">
+      <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <h2><span lang-es>Entidades colombianas</span><span lang-en>Colombian organizations</span></h2>
+  <p class="h2sub">
+    <span lang-es>Si prefieres que tu aporte vaya directo a una institución del país.</span>
+    <span lang-en>If you'd rather give straight to an institution inside Colombia.</span></p>
+
+  <div class="org">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">Cruz Roja Colombiana</div>
+        <div class="org-que">
+          <span lang-es>Ayuda de emergencia, salud, agua potable, rescate y reencuentro de familias separadas.</span>
+          <span lang-en>Emergency aid, health, clean water, rescue, and reuniting separated families.</span>
+        </div>
+      </div>
+      <span class="insignia"><span lang-es>Oficial</span><span lang-en>Official</span></span>
+    </div>
+    <div class="monedas"><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
+    <a class="donar" href="https://ayuda.cruzrojacolombiana.org/emergencia-colombia-terremoto" target="_blank" rel="noopener">
+      <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <div class="org">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">ABACO — Bancos de Alimentos de Colombia</div>
+        <div class="org-que">
+          <span lang-es>Corredor humanitario de alimentos. Envían reporte de cómo llegó tu aporte.</span>
+          <span lang-en>Humanitarian food corridor. They send a report on where your gift went.</span>
+        </div>
+      </div>
+      <span class="insignia"><span lang-es>Oficial</span><span lang-en>Official</span></span>
+    </div>
+    <div class="monedas"><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
+    <a class="donar" href="https://donahoy.abaco.org.co/colombia2026" target="_blank" rel="noopener">
+      <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <div class="org">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">Fundación PLAN</div>
+        <div class="org-que">
+          <span lang-es>Alojamiento, agua y saneamiento, alimentación, protección de la niñez y educación.</span>
+          <span lang-en>Shelter, water and sanitation, food, child protection and education.</span>
+        </div>
+      </div>
+      <span class="insignia"><span lang-es>Oficial</span><span lang-en>Official</span></span>
+    </div>
+    <div class="monedas"><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
+    <a class="donar" href="https://plan.org.co/" target="_blank" rel="noopener">
+      <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <h2><span lang-es>Con presencia en tu país</span><span lang-en>Present in your country</span></h2>
+  <p class="h2sub">
+    <span lang-es>Con oficina propia en decenas de países: donas en tu moneda.</span>
+    <span lang-en>With their own office in dozens of countries: give in your currency.</span></p>
+
+  <div class="org">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">UNICEF</div>
+        <div class="org-que">
+          <span lang-es>Trabaja con la ONU, las autoridades nacionales y la UNGRD. Comité en decenas de países: donas en tu moneda.</span>
+          <span lang-en>Works with the UN, national authorities and the UNGRD. Committees in dozens of countries: give in your currency.</span>
+        </div>
+      </div>
+      <span class="insignia impuesto"><span lang-es>Comité nacional</span><span lang-en>National committee</span></span>
+    </div>
+    <div class="monedas"><span class="moneda"><span lang-es>Tu moneda local</span><span lang-en>Your local currency</span></span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
+    <a class="donar" href="https://www.unicef.org/" target="_blank" rel="noopener">
+      <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <h2><span lang-es>Animales afectados</span><span lang-en>Animals affected</span></h2>
+  <p class="h2sub">
+    <span lang-es>Varios refugios del Eje Cafetero colapsaron. Cientos de animales rescatados quedaron sin techo, perdidos o heridos.</span><span lang-en>Several shelters in the coffee region collapsed. Hundreds of rescued animals are homeless, lost or injured.</span></p>
+
+  <div class="org destacada">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom">Plataforma ALTO</div>
+        <div class="org-que">
+          <span lang-es>Documenta refugio por refugio y publica cómo ayudar a cada uno. La vía más confiable para saber qué se necesita hoy.</span><span lang-en>Documents each shelter and publishes how to help. The most reliable way to know what's needed today.</span>
+        </div>
+      </div>
+      <span class="insignia"><span lang-es>Verifica los refugios</span><span lang-en>Verifies shelters</span></span>
+    </div>
+    <a class="donar" href="https://x.com/PlataformaALTO" target="_blank" rel="noopener">
+      <span lang-es>Ver cómo ayudar a cada refugio</span><span lang-en>See how to help each shelter</span></a>
+  </div>
+
+  <div class="antes">
+    <span lang-es><b>Los refugios afectados reciben por canales personales</b> —WhatsApp, Nequi, mensaje directo—, y es justo donde más cuentas falsas aparecen. Por eso aquí no publicamos esos canales: entra por Plataforma ALTO, que está verificando refugio por refugio, y confirma siempre que la solicitud venga de la fundación.</span><span lang-en><b>Affected shelters receive through personal channels</b> — WhatsApp, Nequi, direct message — which is exactly where fake accounts appear. So we don't publish those channels here: go through Plataforma ALTO, which is verifying shelter by shelter, and always confirm the request comes from the foundation itself.</span>
+  </div>
+
+  <div class="org">
+    <div class="org-cab">
+      <div>
+        <div class="org-nom"><span lang-es>Entidades públicas de bienestar animal</span><span lang-en>Public animal welfare agencies</span></div>
+        <div class="org-que">
+          <span lang-es>El Instituto Distrital de Protección y Bienestar Animal de Bogotá y el Centro de Bienestar Animal de Cali están coordinando la atención junto a la Defensa Civil del Valle, la Policía Nacional y la Gobernación del Valle. Consúltalos para saber qué se necesita y dónde entregarlo.</span><span lang-en>Bogotá's animal welfare institute and Cali's animal welfare centre are coordinating the response with Defensa Civil del Valle, the National Police and the Valle governor's office. Check with them for what is needed and where to deliver it.</span>
+        </div>
+      </div>
+      <span class="insignia"><span lang-es>Oficial</span><span lang-en>Official</span></span>
+    </div>
+  </div>
+
+  <div class="seguridad">
+    <h3><span lang-es>Tres reglas para no caer en estafas</span><span lang-en>Three rules to avoid scams</span></h3>
+    <ul>
+      <li><span lang-es><b>Nunca pagues por un enlace que te llegó por WhatsApp o redes.</b> Entra tú mismo al sitio de la organización.</span>
+          <span lang-en><b>Never pay through a link sent by WhatsApp or social media.</b> Go to the organization's own site yourself.</span></li>
+      <li><span lang-es><b>Un número de cuenta o una llave suelta no prueban nada.</b> Cualquiera puede publicar una. Una página de pago en el dominio oficial sí.</span>
+          <span lang-en><b>A bare account number proves nothing.</b> Anyone can post one. A checkout page on the official domain does.</span></li>
+      <li><span lang-es><b>Revisa que la dirección empiece por</b> <code>https://</code> <b>y que el dominio sea el de la organización</b>, no uno parecido.</span>
+          <span lang-en><b>Check the address starts with</b> <code>https://</code> <b>and the domain belongs to the organization</b>, not a lookalike.</span></li>
+    </ul>
+  </div>
+
+  <details>
+    <summary><span lang-es>¿Puedo mandar ropa, comida o cosas?</span><span lang-en>Can I send clothes, food or goods?</span></summary>
+    <p><span lang-es>Por ahora no hay centros de acopio habilitados fuera de Colombia. Solo se reciben donaciones en dinero desde el exterior.</span>
+       <span lang-en>There are no collection points outside Colombia at this time. From abroad, only monetary donations are being accepted.</span></p>
+    <p><span lang-es>La Cruz Roja recomienda dinero antes que especie: se mueve más rápido, no paga flete y se compra lo que de verdad hace falta en cada zona.</span>
+       <span lang-en>The Red Cross recommends money over goods: it moves faster, avoids shipping costs, and buys what each area actually needs.</span></p>
+  </details>
+
+  <details>
+    <summary><span lang-es>Estoy en Colombia — ¿qué es Bre-B, Nequi, Daviplata?</span><span lang-en>I'm in Colombia — what are Bre-B, Nequi, Daviplata?</span></summary>
+    <p><span lang-es>Son formas de pago locales. Bre-B es el sistema de pagos inmediatos: en vez del número de cuenta usas una "llave" (un correo o un número). Nequi y Daviplata son billeteras digitales de Bancolombia y Davivienda.</span>
+       <span lang-en>These are local payment methods. Bre-B is Colombia's instant payments system, where a "key" (an email or phone number) replaces the account number. Nequi and Daviplata are digital wallets run by Bancolombia and Davivienda.</span></p>
+    <p><span lang-es><b>Si estás fuera de Colombia no necesitas nada de esto.</b> Los botones de arriba funcionan con tu tarjeta normal.</span>
+       <span lang-en><b>If you're outside Colombia you don't need any of this.</b> The buttons above work with your regular card.</span></p>
+  </details>
+
+  <h2><span lang-es>¿Puedo deducir impuestos?</span><span lang-en>Can I claim a tax deduction?</span></h2>
+  <p class="h2sub">
+    <span lang-es>Esto solo cambia dónde puedes deducir, no si tu donación llega.</span>
+    <span lang-en>This only affects where you can deduct — not whether your donation arrives.</span></p>
+
+  <div class="selector">
+    <label for="pais"><span lang-es>Tu país de residencia fiscal</span><span lang-en>Your country of tax residence</span></label>
+    <select id="pais" onchange="verPais()">
+      <option value="">— <span lang-es>Selecciona</span> —</option>
+    </select>
+
+    <p class="explica">
+      <span lang-es><b>El dinero llega a Colombia en todos los casos.</b> Lo que cambia es si el certificado de donación te sirve para tu declaración de impuestos: solo vale si la organización está registrada en el país donde tributas.</span>
+      <span lang-en><b>The money reaches Colombia either way.</b> What changes is whether the donation receipt counts on your tax return: it only does if the organization is registered where you pay taxes.</span>
+    </p>
+
+    <div class="resultado-pais" id="res-pais"></div>
+
+    <div class="nota-fiscal">
+      <span lang-es><b>Confirma el beneficio fiscal con la organización o con tu contador.</b> Las reglas de deducción cambian por país, por tipo de contribuyente y por monto. Esta guía indica dónde existe la vía local, no cuánto puedes deducir.</span>
+      <span lang-en><b>Confirm the tax treatment with the organization or your accountant.</b> Rules vary by country, taxpayer type and amount. This guide shows where a local route exists, not how much you can deduct.</span>
+    </div>
+  </div>
+
+  <a class="otra-pag" href="/fuentes">
+    <span class="t"><span lang-es>Fuentes oficiales</span><span lang-en>Official sources</span></span>
+    <span class="d"><span lang-es>Información oficial, confirmada y verificada por instituciones colombianas.</span>
+    <span lang-en>Official information, confirmed and verified by Colombian institutions.</span></span>
+  </a>
+
+  <p class="pie">
+    <span lang-es>Cada botón lleva a la página oficial de la organización. Este sitio no recibe dinero ni procesa pagos en ningún momento.</span>
+    <span lang-en>Every button opens the organization's own official page. This site never receives money or processes payments.</span>
+    <br><span id="verif"></span>
+  </p>
+</div>
+
+<script>
+/* ============================================================
+   Sociedades nacionales de la Cruz Roja: 191 países.
+   Comités nacionales de UNICEF y oficinas de Plan: solo en algunos.
+   Donde no hay vía local, la tarjeta igual funciona: lo que falta
+   es el recibo deducible en el país del donante, no la capacidad de donar.
+   ============================================================ */
+const PAISES = {
+  // --- Unión Europea ---
+  ES:{n:'España', cr:'Cruz Roja Española', unicef:1, plan:1},
+  DE:{n:'Alemania', cr:'Deutsches Rotes Kreuz', unicef:1, plan:1},
+  FR:{n:'Francia', cr:'Croix-Rouge française', unicef:1, plan:1},
+  IT:{n:'Italia', cr:'Croce Rossa Italiana', unicef:1, plan:1},
+  NL:{n:'Países Bajos', cr:'Het Nederlandse Rode Kruis', unicef:1, plan:1},
+  BE:{n:'Bélgica', cr:'Croix-Rouge / Rode Kruis', unicef:1, plan:1},
+  PT:{n:'Portugal', cr:'Cruz Vermelha Portuguesa', unicef:1, plan:0},
+  IE:{n:'Irlanda', cr:'Irish Red Cross', unicef:1, plan:1},
+  AT:{n:'Austria', cr:'Österreichisches Rotes Kreuz', unicef:1, plan:0},
+  SE:{n:'Suecia', cr:'Svenska Röda Korset', unicef:1, plan:1},
+  DK:{n:'Dinamarca', cr:'Røde Kors', unicef:1, plan:1},
+  FI:{n:'Finlandia', cr:'Suomen Punainen Risti', unicef:1, plan:1},
+  PL:{n:'Polonia', cr:'Polski Czerwony Krzyż', unicef:1, plan:0},
+  CZ:{n:'Chequia', cr:'Český červený kříž', unicef:1, plan:0},
+  GR:{n:'Grecia', cr:'Ελληνικός Ερυθρός Σταυρός', unicef:1, plan:0},
+  LU:{n:'Luxemburgo', cr:'Croix-Rouge luxembourgeoise', unicef:1, plan:0},
+  HU:{n:'Hungría', cr:'Magyar Vöröskereszt', unicef:1, plan:0},
+  RO:{n:'Rumanía', cr:'Crucea Roșie Română', unicef:0, plan:0},
+  SK:{n:'Eslovaquia', cr:'Slovenský Červený kríž', unicef:1, plan:0},
+  HR:{n:'Croacia', cr:'Hrvatski Crveni križ', unicef:1, plan:0},
+  BG:{n:'Bulgaria', cr:'Български Червен кръст', unicef:1, plan:0},
+  EE:{n:'Estonia', cr:'Eesti Punane Rist', unicef:1, plan:0},
+  LT:{n:'Lituania', cr:'Lietuvos Raudonasis Kryžius', unicef:1, plan:0},
+  LV:{n:'Letonia', cr:'Latvijas Sarkanais Krusts', unicef:0, plan:0},
+  SI:{n:'Eslovenia', cr:'Rdeči križ Slovenije', unicef:1, plan:0},
+  // --- Resto de Europa ---
+  GB:{n:'Reino Unido', cr:'British Red Cross', unicef:1, plan:1, gg:1},
+  CH:{n:'Suiza', cr:'Schweizerisches Rotes Kreuz', unicef:1, plan:0},
+  NO:{n:'Noruega', cr:'Norges Røde Kors', unicef:1, plan:1},
+  IS:{n:'Islandia', cr:'Rauði krossinn', unicef:1, plan:0},
+  // --- América ---
+  US:{n:'Estados Unidos', cr:'American Red Cross', unicef:1, plan:1, gg:1},
+  CA:{n:'Canadá', cr:'Canadian Red Cross', unicef:1, plan:1},
+  MX:{n:'México', cr:'Cruz Roja Mexicana', unicef:0, plan:0},
+  AR:{n:'Argentina', cr:'Cruz Roja Argentina', unicef:0, plan:0},
+  CL:{n:'Chile', cr:'Cruz Roja Chilena', unicef:0, plan:0},
+  BR:{n:'Brasil', cr:'Cruz Vermelha Brasileira', unicef:0, plan:0},
+  PE:{n:'Perú', cr:'Cruz Roja Peruana', unicef:0, plan:0},
+  EC:{n:'Ecuador', cr:'Cruz Roja Ecuatoriana', unicef:0, plan:0},
+  PA:{n:'Panamá', cr:'Cruz Roja Panameña', unicef:0, plan:0},
+  CR:{n:'Costa Rica', cr:'Cruz Roja Costarricense', unicef:0, plan:0},
+  // --- Asia y Oceanía ---
+  AU:{n:'Australia', cr:'Australian Red Cross', unicef:1, plan:1},
+  NZ:{n:'Nueva Zelanda', cr:'New Zealand Red Cross', unicef:1, plan:0},
+  JP:{n:'Japón', cr:'Japanese Red Cross Society', unicef:1, plan:1},
+  KR:{n:'Corea del Sur', cr:'Korean Red Cross', unicef:1, plan:1},
+  AE:{n:'Emiratos Árabes Unidos', cr:'Emirates Red Crescent', unicef:0, plan:0},
+  IL:{n:'Israel', cr:'Magen David Adom', unicef:0, plan:0},
+  IN:{n:'India', cr:'Indian Red Cross Society', unicef:1, plan:1},
+  TR:{n:'Turquía', cr:'Türk Kızılay', unicef:1, plan:0},
+  ZA:{n:'Sudáfrica', cr:'South African Red Cross Society', unicef:0, plan:0}
+};
+
+(function llenar(){
+  const sel = document.getElementById('pais');
+  Object.keys(PAISES).sort((a,b)=>PAISES[a].n.localeCompare(PAISES[b].n,'es'))
+    .forEach(c=>{
+      const o=document.createElement('option'); o.value=c; o.textContent=PAISES[c].n; sel.appendChild(o);
+    });
+  const otro=document.createElement('option'); otro.value='OTRO'; otro.textContent='Otro país / Other country';
+  sel.appendChild(otro);
+})();
+
+function fila(nom, etq, clase, det){
+  return `<div class="ruta">
+    <div class="ruta-cab"><span class="ruta-nom">${nom}</span>
+    <span class="etiqueta ${clase}">${etq}</span></div>
+    <div class="ruta-det">${det}</div></div>`;
+}
+
+function verPais(){
+  const c = document.getElementById('pais').value;
+  const cont = document.getElementById('res-pais');
+  const en = document.body.classList.contains('en');
+  if(!c){ cont.className='resultado-pais'; cont.innerHTML=''; return; }
+
+  if(c==='OTRO'){
+    cont.className='resultado-pais visible';
+    cont.innerHTML = fila(
+      en?'Red Cross / Red Crescent':'Cruz Roja o Media Luna Roja',
+      en?'191 countries':'191 países','si',
+      en?'There is almost certainly a National Society in your country, and it can channel funds through the IFRC network. Search for it on <b>ifrc.org</b>.'
+        :'Casi con certeza existe una Sociedad Nacional en tu país y puede canalizar fondos por la red de la IFRC. Búscala en <b>ifrc.org</b>.')
+      + fila('GlobalGiving', en?'No deduction':'Sin deducción','no',
+      en?'Accepts international cards. A local tax receipt is only issued in the US and UK.'
+        :'Acepta tarjetas internacionales. El recibo fiscal local solo se emite en EE. UU. y Reino Unido.')
+      + fila(en?'Colombian organizations':'Entidades colombianas', en?'No deduction':'Sin deducción','no',
+      en?'Cruz Roja Colombiana, ABACO and Fundación PLAN issue Colombian receipts, which generally do not deduct abroad.'
+        :'Cruz Roja Colombiana, ABACO y Fundación PLAN emiten recibo colombiano, que en general no deduce fuera del país.');
+    return;
+  }
+
+  const p = PAISES[c];
+  let h = fila(p.cr, en?'Deductible for you':'Deduces impuestos','si',
+    (en?'Your country\'s National Red Cross Society. Donate in your currency, get a local receipt; funds move through the IFRC network to the Colombian Red Cross.'
+       :'La Sociedad Nacional de la Cruz Roja de tu país. Donas en tu moneda, recibes certificado local y los fondos se canalizan por la red de la IFRC hacia la Cruz Roja Colombiana.'));
+
+  h += p.unicef
+    ? fila('UNICEF '+p.n, en?'Deductible for you':'Deduces impuestos','si',
+        en?'There is a UNICEF National Committee here. Give through it for a local tax receipt.'
+          :'Existe Comité Nacional de UNICEF. Donando por él obtienes recibo fiscal local.')
+    : fila('UNICEF', en?'No office here':'No opera en tu país','no',
+        en?'No National Committee here. You can still give at unicef.org, without a local receipt.'
+          :'No hay Comité Nacional. Igual puedes donar en unicef.org, sin recibo local.');
+
+  if(p.plan) h += fila('Plan International '+p.n, en?'Deductible for you':'Deduces impuestos','si',
+    en?'Plan has a national organization here and is responding in Colombia.'
+      :'Plan tiene organización nacional en tu país y está respondiendo en Colombia.');
+
+  h += p.gg
+    ? fila('GlobalGiving', en?'Deductible for you':'Deduces impuestos','si',
+        en?'Registered in your country — the receipt is valid for your tax return.'
+          :'Está registrada en tu país; el recibo sirve para tu declaración.')
+    : fila('GlobalGiving', en?'No deduction':'Sin deducción','no',
+        en?'Accepts your card, but the receipt is US or UK only.'
+          :'Acepta tu tarjeta, pero el recibo es solo de EE. UU. o Reino Unido.');
+
+  h += fila(en?'Colombian organizations':'Entidades colombianas', en?'No deduction':'Sin deducción','no',
+    en?'Same speed, same destination — but the receipt is Colombian, so your tax authority will not accept it.'
+      :'Misma velocidad y mismo destino, pero el certificado es colombiano y tu autoridad tributaria no lo acepta.');
+
+  cont.className='resultado-pais visible';
+  cont.innerHTML = h;
+}
+
+const META = {
+  es: {t:'Cómo ayudar desde el exterior — sismo Colombia',
+       d:'Donar con tarjeta de crédito o débito desde cualquier país, en menos de dos minutos.'},
+  en: {t:'How to help from abroad — Colombia Earthquake',
+       d:'Give by credit or debit card from any country, in under two minutes.'}
+};
+
+function idioma(l, btn){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  const m = META[l];
+  document.title = m.t;
+  document.querySelector('meta[name="description"]').setAttribute('content', m.d);
+  const og = document.querySelector('meta[property="og:title"]');
+  if(og) og.setAttribute('content', m.t);
+  document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
+  guardarIdioma(l);
+  verPais();   // el panel de país se vuelve a pintar en el idioma nuevo
+}
+// Fecha de última verificación de los enlaces de pago. Un directorio de
+// donaciones sin fecha visible no es verificable por quien lo lee.
+const VERIFICADO = '2026-08-11';
+document.getElementById('verif').textContent =
+  'Enlaces verificados el ' + new Date(VERIFICADO+'T12:00:00').toLocaleDateString('es-CO',
+    {day:'numeric', month:'long', year:'numeric'}) + '.';
+
+function guardarIdioma(l){
+  try{ localStorage.setItem('idioma', l); }catch(e){}
+  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
+  document.querySelectorAll('a[href^="/"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), location.origin);
+    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+
+(function inicial(){
+  let l = new URLSearchParams(location.search).get('lang');
+  if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
+  if(l !== 'es') l = 'en';
+  const botones = document.querySelectorAll('.idioma button');
+  idioma(l, botones[l==='es' ? 1 : 0]);
+})();
+</script>
+</body>
+</html>

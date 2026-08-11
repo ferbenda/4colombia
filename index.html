@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colombia Earthquake — where to give, where to get facts</title>
+<meta name="description" content="Verified donation channels and official information sources on the 10 August 2026 earthquake in Colombia.">
+<meta property="og:title" content="Colombia Earthquake — where to give, where to get facts">
+<meta property="og:description" content="Verified donation channels and official sources. No intermediaries.">
+<meta property="og:type" content="website">
+<style>
+:root{
+--amarillo:#FCD116; --azul:#003893; --rojo:#CE1126; --amarillo-suave:#FFF6D6;
+--papel:#F4F5F7;--tinta:#101828;--tinta-2:#56606E;--linea:#D4D9E0;--blanco:#fff;
+--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
+-webkit-font-smoothing:antialiased;
+padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
+  border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
+  padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-2);text-transform:uppercase;font-weight:600}
+.pulso{width:7px;height:7px;border-radius:50%;background:var(--rojo);flex:none;
+  animation:lat 2.4s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+
+.tricolor i{display:block}
+.tricolor i:nth-child(1){background:var(--amarillo);flex:2}
+.tricolor i:nth-child(2){background:var(--azul);flex:1}
+.tricolor i:nth-child(3){background:var(--rojo);flex:1}
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("img/colombia-horizontal.webp");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  opacity:.72}
+@media (orientation:portrait){
+  .fondo{background-image:url("img/colombia-vertical.webp")}
+}
+/* La columna de contenido es papel translúcido: la ilustración se ve a través
+   y a los lados, pero el texto conserva contraste en la zona más densa. */
+.wrap{position:relative;z-index:1;background:rgba(244,245,247,.88);
+  box-shadow:0 0 0 1px rgba(212,217,224,.6)}
+
+
+.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+h1{font-size:29px;font-weight:650;letter-spacing:-.03em;margin:11px 0 10px;line-height:1.15}
+.sub{color:var(--tinta-2);font-size:16px;margin-bottom:26px}
+
+.idioma{display:flex;gap:8px;margin-bottom:24px}
+.idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+font-weight:600;padding:8px 13px;border:1px solid var(--linea);background:var(--blanco);
+color:var(--tinta-2);border-radius:2px;cursor:pointer;min-height:38px}
+.idioma button[aria-pressed="true"]{border-color:var(--tinta);color:var(--tinta)}
+
+a.bloque{display:block;background:var(--blanco);border:1px solid var(--linea);border-radius:0;
+  border-left:6px solid var(--linea);padding:20px 18px;margin-bottom:12px;text-decoration:none;
+  color:var(--tinta);transition:background-color .16s ease,border-color .16s ease,color .16s ease}
+a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.b-tit{font-weight:650;letter-spacing:-.02em;line-height:1.1}
+.b-sub{color:var(--tinta-2);font-size:14.5px;margin-top:7px;line-height:1.45;transition:color .16s ease}
+.b-ir{font-family:var(--mono);font-size:11px;letter-spacing:.08em;margin-top:11px;font-weight:600;
+  color:var(--tinta-2);transition:color .16s ease}
+
+.linea-1{border-left-color:var(--amarillo)}
+.linea-1 .b-tit{font-size:34px}
+.linea-2{border-left-color:var(--azul)}
+.linea-2 .b-tit{font-size:24px}
+
+.linea-3{display:block;background:var(--blanco);border:1px solid var(--linea);
+  border-left:6px solid var(--rojo);padding:17px 18px;
+  transition:background-color .16s ease,border-color .16s ease,color .16s ease}
+.linea-3 .b-tit{font-size:16.5px;color:var(--rojo);transition:color .16s ease}
+.linea-3 p{font-size:14px;color:var(--tinta-2);line-height:1.55;margin-top:7px;transition:color .16s ease}
+.linea-3 b{color:var(--tinta);transition:color .16s ease}
+
+/* --- bloque completo en lavado de color de bandera --- */
+.linea-1.activo{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
+.linea-1.activo .b-sub,.linea-1.activo .b-ir{color:#5C4600}
+
+.linea-2.activo{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
+.linea-2.activo .b-sub,.linea-2.activo .b-ir{color:#143466}
+
+.linea-3.activo{background:rgba(206,17,38,.38);border-color:var(--rojo)}
+.linea-3.activo .b-tit,.linea-3.activo b{color:#4A0810}
+.linea-3.activo p{color:#74141E}
+
+@media (hover:hover){
+  .linea-1:hover{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
+  .linea-1:hover .b-sub,.linea-1:hover .b-ir{color:#5C4600}
+  .linea-2:hover{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
+  .linea-2:hover .b-sub,.linea-2:hover .b-ir{color:#143466}
+  .linea-3:hover{background:rgba(206,17,38,.38);border-color:var(--rojo)}
+  .linea-3:hover .b-tit,.linea-3:hover b{color:#4A0810}
+  .linea-3:hover p{color:#74141E}
+}
+.linea-1:active{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
+.linea-1:active .b-sub,.linea-1:active .b-ir{color:#5C4600}
+.linea-2:active{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
+.linea-2:active .b-sub,.linea-2:active .b-ir{color:#143466}
+.linea-3:active{background:rgba(206,17,38,.38);border-color:var(--rojo)}
+.linea-3:active .b-tit,.linea-3:active b{color:#4A0810}
+.linea-3:active p{color:#74141E}
+.pie{font-size:12.5px;color:var(--tinta-2);margin-top:28px;border-top:1px solid var(--linea);
+padding-top:15px;line-height:1.7}
+[lang-en]{display:none}
+body.en [lang-es]{display:none}
+body.en [lang-en]{display:inline}
+</style>
+</head>
+<body>
+<div class="tricolor"><i></i><i></i><i></i></div>
+<div class="fondo" aria-hidden="true"></div>
+<div class="wrap">
+
+  <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
+  <h1><span lang-es>Dónde donar y dónde informarse</span><span lang-en>Where to give, where to get facts</span></h1>
+  <p class="sub">
+    <span lang-es>Dos cosas, verificadas. Nada más.</span>
+    <span lang-en>Two things, verified. Nothing else.</span>
+  </p>
+
+  <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
+    <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+
+  <a class="bloque linea-1" href="/ayudar">
+    <div class="b-tit"><span lang-es>Donaciones</span><span lang-en>Donations</span></div>
+    <div class="b-sub"><span lang-es>Dónde donar de forma segura. Con tarjeta, desde cualquier país.</span><span lang-en>Where to give safely. By card, from any country.</span></div>
+    <div class="b-ir"><span lang-es>VER OPCIONES</span><span lang-en>SEE OPTIONS</span> &#8594;</div>
+  </a>
+
+  <a class="bloque linea-2" href="/fuentes">
+    <div class="b-tit"><span lang-es>Fuentes oficiales</span><span lang-en>Official sources</span></div>
+    <div class="b-sub"><span lang-es>Las cuentas y sitios de las instituciones que atienden la emergencia. Información relevante y verificable.</span><span lang-en>The accounts and sites of the institutions responding to the emergency. Relevant, verifiable information.</span></div>
+    <div class="b-ir"><span lang-es>VER FUENTES</span><span lang-en>SEE SOURCES</span> &#8594;</div>
+  </a>
+
+  <div class="linea-3" tabindex="0" role="note">
+    <div class="b-tit"><span lang-es>Somos únicamente un directorio</span><span lang-en>We are only a directory</span></div>
+    <p><span lang-es><b>No pedimos ni recibimos dinero.</b> Si alguien te contacta en nuestro nombre pidiendo una donación, no respondas: no somos nosotros. Aquí solo revisamos dónde donar de forma segura y cómo informarse de forma segura.</span><span lang-en><b>We never ask for or receive money.</b> If anyone contacts you in our name asking for a donation, do not respond — it isn't us. All we do is check where to give safely and how to stay safely informed.</span></p>
+  </div>
+
+  <p class="pie">
+    <span lang-es>Independiente y sin ánimo de lucro. Se añaden entidades a medida que se verifican; cada página muestra su fecha de revisión.</span>
+    <span lang-en>Independent and non-profit. Organizations are added as they're verified; each page shows its review date.</span>
+  </p>
+</div>
+
+<script>
+const META = {
+  es: {t:'Sismo Colombia — dónde donar y dónde informarse',
+       d:'Canales de donación verificados y fuentes oficiales de información sobre el sismo del 10 de agosto de 2026 en Colombia.'},
+  en: {t:'Colombia Earthquake — where to give, where to get facts',
+       d:'Verified donation channels and official information sources on the 10 August 2026 earthquake in Colombia.'}
+};
+
+/* :active no siempre dispara en bloques no interactivos de iOS:
+   se refuerza con eventos táctiles. */
+(function tacto(){
+  document.querySelectorAll('.linea-1,.linea-2,.linea-3').forEach(el=>{
+    const on = ()=>el.classList.add('activo');
+    const off = ()=>el.classList.remove('activo');
+    el.addEventListener('touchstart', on, {passive:true});
+    ['touchend','touchcancel'].forEach(ev=>el.addEventListener(ev, ()=>setTimeout(off,180), {passive:true}));
+    el.addEventListener('focus', on);
+    el.addEventListener('blur', off);
+  });
+})();
+
+function idioma(l, btn){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
+  guardarIdioma(l);
+  const m = META[l];
+  document.title = m.t;
+  document.querySelector('meta[name="description"]').setAttribute('content', m.d);
+  document.querySelector('meta[property="og:title"]').setAttribute('content', m.t);
+}
+
+function guardarIdioma(l){
+  try{ localStorage.setItem('idioma', l); }catch(e){}
+  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
+  document.querySelectorAll('a[href^="/"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), location.origin);
+    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+
+(function inicial(){
+  let l = new URLSearchParams(location.search).get('lang');
+  if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
+  if(l !== 'es') l = 'en';
+  const botones = document.querySelectorAll('.idioma button');
+  idioma(l, botones[l==='es' ? 1 : 0]);
+})();
+</script>
+</body>
+</html>
