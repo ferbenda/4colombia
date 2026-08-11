@@ -83,17 +83,31 @@ Copia y pega dentro de `"videos": [ ... ]`, separando cada bloque con coma:
 
 - `plataforma`: `tiktok` / `instagram` / `x` / `youtube` / `web`
 - `idioma`: `en` (hablan inglés) / `es` (español) / `sin_texto` (se entiende solo)
-- `destacado`: `true` ocupa el doble de ancho. **Máximo dos**, y van primero.
+- `miniatura`: ruta a una imagen en `/img/thumbs/` (ver más abajo). Opcional.
 - El orden del archivo es el orden en pantalla.
 - El último bloque **no lleva coma** al final.
 
 ---
 
+## Miniaturas
+
+Todas las tarjetas son del mismo tamaño (vertical 3:4). Sin miniatura muestran
+el color de la plataforma; con miniatura muestran la imagen del video.
+
+**No se pueden traer automáticamente de Instagram ni Facebook**: bloquean el
+acceso y sus direcciones de imagen vencen en días. Hay que capturarlas:
+
+1. Pausa el video en el fotograma más representativo
+2. Captura de pantalla, recorta a vertical 3:4, exporta a 360x480 px
+3. Guarda en `img/thumbs/` con nombre claro: `rescate-cali.jpg`
+4. En `videos.json` agrega al video: `"miniatura": "/img/thumbs/rescate-cali.jpg"`
+
+Si el archivo falta, la tarjeta cae al degradado. Nunca se rompe.
+
 ## Orden recomendado
 
-1. El más impactante, `destacado: true`
-2. Un segundo destacado, si tienes otro muy bueno
-3-8. El resto, alternando: rescate -> daño -> gente ayudando -> rescate...
+1. El más impactante primero — es el que más se mira
+2. El resto, alternando: rescate -> daño -> gente ayudando -> rescate...
 
 Termina con algo esperanzador. Justo debajo aparece el boton de donar, y esa es
 la transición que importa.

@@ -1,0 +1,35 @@
+MINIATURAS DE LOS VIDEOS
+========================
+
+Aquí van las imágenes de vista previa de cada video.
+
+FORMATO
+-------
+  360 x 480 px (vertical 3:4), JPG, calidad media. Unos 30-60 KB cada una.
+  Nombre libre, pero que se entienda: rescate-cali.jpg, dron-pereira.jpg
+
+COMO OBTENERLAS
+---------------
+  1. Abre el video y pausálo en el fotograma más representativo.
+  2. Captura de pantalla.
+  3. Recorta a vertical 3:4 y exporta a 360x480.
+
+  En Mac: Cmd+Shift+4 para capturar, Vista Previa para recortar.
+  En iPhone: captura y recorta en Fotos.
+
+COMO CONECTARLA
+---------------
+  En videos.json, agrega el campo "miniatura" al video:
+
+    "miniatura": "/img/thumbs/rescate-cali.jpg"
+
+  Si no pones el campo, o el archivo no existe, la tarjeta muestra el
+  degradado de color de la plataforma. No se rompe nada.
+
+CUIDADO
+-------
+  - Elige un fotograma que se entienda sin contexto y sin idioma.
+  - Nada de cuerpos, heridos identificables ni rostros de personas en
+    su peor momento.
+  - No enlaces la imagen desde Instagram o Facebook: esas direcciones
+    vencen en días y quedan recuadros rotos.

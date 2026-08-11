@@ -1,5 +1,5 @@
 {
-  "_leeme": "Edita SOLO este archivo. Ver GUIA-VIDEOS.md. La url debe abrir el video directamente. Objetivo: 7 a 10 entradas.",
+  "_leeme": "Edita SOLO este archivo. Ver GUIA-VIDEOS.md. La url debe abrir el video directamente. Campo opcional 'miniatura': ruta a una imagen en /img/thumbs/ (360x480). Si falta, se usa el degradado de la plataforma.",
   "actualizado": "2026-08-11",
   "videos": [
     {
@@ -9,7 +9,7 @@
       "titulo_es": "Rescatan a un bebé entre los escombros en Cali",
       "titulo_en": "A baby pulled alive from the rubble in Cali",
       "idioma": "en",
-      "destacado": true
+      "miniatura": ""
     },
     {
       "plataforma": "web",
@@ -18,7 +18,7 @@
       "titulo_es": "El momento exacto del sismo, grabado por testigos",
       "titulo_en": "The moment the quake struck, filmed by witnesses",
       "idioma": "en",
-      "destacado": true
+      "miniatura": ""
     },
     {
       "plataforma": "instagram",
@@ -26,7 +26,8 @@
       "autor": "Instagram",
       "titulo_es": "PENDIENTE — describe qué se ve",
       "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto"
+      "idioma": "sin_texto",
+      "miniatura": ""
     },
     {
       "plataforma": "instagram",
@@ -34,7 +35,8 @@
       "autor": "Instagram",
       "titulo_es": "PENDIENTE — describe qué se ve",
       "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto"
+      "idioma": "sin_texto",
+      "miniatura": ""
     },
     {
       "plataforma": "instagram",
@@ -42,7 +44,8 @@
       "autor": "Instagram",
       "titulo_es": "PENDIENTE — describe qué se ve",
       "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto"
+      "idioma": "sin_texto",
+      "miniatura": ""
     },
     {
       "plataforma": "facebook",
@@ -50,7 +53,8 @@
       "autor": "Facebook",
       "titulo_es": "PENDIENTE — describe qué se ve",
       "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto"
+      "idioma": "sin_texto",
+      "miniatura": ""
     },
     {
       "plataforma": "facebook",
@@ -58,7 +62,8 @@
       "autor": "Facebook",
       "titulo_es": "PENDIENTE — describe qué se ve",
       "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto"
+      "idioma": "sin_texto",
+      "miniatura": ""
     },
     {
       "plataforma": "facebook",
@@ -66,7 +71,8 @@
       "autor": "Facebook",
       "titulo_es": "PENDIENTE — describe qué se ve",
       "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto"
+      "idioma": "sin_texto",
+      "miniatura": ""
     }
   ]
 }

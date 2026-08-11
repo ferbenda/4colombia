@@ -169,7 +169,7 @@ h1{font-size:26px;margin:10px 0 6px}
 
   <div class="bloque-legal">
     <h2><span lang-es>Enlaces a terceros</span><span lang-en>Third-party links</span></h2>
-    <p><span lang-es>Al tocar cualquier botón sales de este sitio. Las organizaciónes enlazadas tienen sus propias políticas de privacidad y condiciones, que te recomendamos leer. <b>No controlamos ni respondemos por el contenido, la seguridad ni el uso de datos de esos sitios.</b></span><span lang-en>Tapping any button takes you off this site. The linked organizations have their own privacy policies and terms, which we recommend reading. <b>We do not control or take responsibility for the content, security or data practices of those sites.</b></span></p>
+    <p><span lang-es>Al tocar cualquier botón sales de este sitio. Las organizaciones enlazadas tienen sus propias políticas de privacidad y condiciones, que te recomendamos leer. <b>No controlamos ni respondemos por el contenido, la seguridad ni el uso de datos de esos sitios.</b></span><span lang-en>Tapping any button takes you off this site. The linked organizations have their own privacy policies and terms, which we recommend reading. <b>We do not control or take responsibility for the content, security or data practices of those sites.</b></span></p>
     <p><span lang-es>Verificamos que cada enlace apunte al dominio oficial de la organización en la fecha indicada al pie de cada página. Aun así, <b>confirma siempre la dirección en tu navegador antes de pagar</b>.</span><span lang-en>We verify that each link points to the organization's official domain as of the date shown at the foot of each page. Even so, <b>always confirm the address in your browser before paying</b>.</span></p>
   </div>
 
@@ -214,7 +214,7 @@ h1{font-size:26px;margin:10px 0 6px}
   </div>
 
   <p class="pie">
-    <span lang-es>Sitio independiente y sin ánimo de lucro. No afiliado a ninguna entidad gubernamental ni a las organizaciónes enlazadas.</span><span lang-en>Independent and non-profit. Not affiliated with any government entity or with the linked organizations.</span><br>
+    <span lang-es>Sitio independiente y sin ánimo de lucro. No afiliado a ninguna entidad gubernamental ni a las organizaciones enlazadas.</span><span lang-en>Independent and non-profit. Not affiliated with any government entity or with the linked organizations.</span><br>
     <span id="verif"></span>
   </p>
 </div>
@@ -308,8 +308,8 @@ function guardarIdioma(l){
   let l = new URLSearchParams(location.search).get('lang');
   if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
   if(l !== 'es') l = 'en';
-  const botónes = document.querySelectorAll('.idioma button');
-  idioma(l, botónes[l==='es' ? 1 : 0]);
+  const botones = document.querySelectorAll('.idioma button');
+  idioma(l, botones[l==='es' ? 1 : 0]);
 })();
 </script>
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
