@@ -1,70 +1,106 @@
-# Cómo actualizar los videos
+# Curar los videos — hoja de trabajo
 
-Todo vive en **`videos.json`**. Es el único archivo que tocas. No hay que
-editar HTML ni CSS.
+La página aguanta **7 a 10 videos**. Ni menos (se ve vacía) ni más (deja de ser
+curaduría y se vuelve un feed).
+
+Todo se edita en **`videos.json`**. Nada de HTML.
 
 ---
 
-## Agregar un video
+## Qué video sirve y cuál no
 
-Copia este bloque y pégalo dentro de `"videos": [ ... ]`, separado por coma:
+El objetivo de esta página es que alguien mire y decida ayudar. Eso lo logran
+tres tipos de video:
+
+| Funciona | Por qué |
+|---|---|
+| **Un rescate en curso** | Tensión y desenlace. Se entiende sin una palabra. |
+| **La escala del daño** | Una cuadra, un edificio caído, un dron sobre la zona. Da magnitud. |
+| **Gente ayudando** | Cadenas humanas, voluntarios, vecinos. Muestra que el aporte se suma a algo. |
+
+| No funciona | Por qué |
+|---|---|
+| Alguien hablando a cámara | Si es en español, el extranjero se va en 3 segundos. |
+| Cifras y gráficos | Informa, no mueve. Para eso está el bloque de instituciones. |
+| Cuerpos, heridos, familias llorando | Cruza la línea. Un directorio no hace morbo. |
+| Video sin verificar | Un viral de otro país destruye toda la credibilidad. |
+
+**La prueba de los 3 segundos:** silencia el video y míralo tres segundos. Si no
+entiendes qué pasa, no va.
+
+---
+
+## Dónde buscarlos
+
+- **TikTok / Instagram**: `#terremotocolombia`, `#sismocolombia`, `#pereira`,
+  `#cali`, `#manizales`, `#quibdó`
+- **X**: busca `terremoto Colombia` filtrando por Videos, ordenado por Populares
+- **Cuentas que ya publican material bueno**: `@UNGRD`, `@DefensaCivilCo`,
+  `@cruzrojacol`, `@rtvcnoticias`, `@PlataformaALTO` (animales)
+- **En inglés**: AP, Reuters, CNN, NBC publican el mismo material con narración
+  en inglés — esos merecen `destacado: true`.
+
+---
+
+## Verificar antes de publicar
+
+Tres chequeos, un minuto cada uno:
+
+1. **Fecha del post**: 10 de agosto de 2026 o después.
+2. **El lugar coincide**: nombres de calles, comercios, placas, acentos.
+3. **Búsqueda inversa** si algo no cuadra: guarda un fotograma y súbelo a Google
+   Imágenes. Si aparece en notas de 2023 o de Turquía, no es de este sismo.
+
+---
+
+## Sacar el enlace directo
+
+**Nunca el perfil. Siempre el video.**
+
+- **TikTok** -> Compartir -> Copiar enlace -> `tiktok.com/@usuario/video/7412...`
+- **Instagram** -> tres puntos -> Copiar enlace -> `instagram.com/reel/CxYz.../`
+- **X** -> la fecha del post -> Copiar enlace -> `x.com/usuario/status/1234...`
+
+Si la URL termina en el nombre de la cuenta y nada más, **no sirve**.
+
+---
+
+## Plantilla
+
+Copia y pega dentro de `"videos": [ ... ]`, separando cada bloque con coma:
 
 ```json
 {
   "plataforma": "tiktok",
-  "url": "https://www.tiktok.com/@usuario/video/123456789",
+  "url": "https://www.tiktok.com/@usuario/video/7412345678901234567",
   "autor": "@usuario",
-  "titulo_es": "Rescate en el centro de Pereira",
-  "titulo_en": "Rescue in downtown Pereira",
-  "idioma": "sin_texto"
+  "titulo_es": "Cadena humana para sacar a una mujer en Pereira",
+  "titulo_en": "Human chain rescues a woman in Pereira",
+  "idioma": "sin_texto",
+  "destacado": false
 }
 ```
 
-### Los campos
-
-| Campo | Qué poner |
-|---|---|
-| `plataforma` | `tiktok` · `instagram` · `x` · `youtube` · `web` |
-| `url` | **El enlace del video en sí, nunca de un perfil ni de una portada** |
-| `autor` | El @ o el nombre del medio |
-| `titulo_es` | Qué se ve, en español |
-| `titulo_en` | Lo mismo en inglés (**no lo dejes vacío**) |
-| `idioma` | `en` si se habla inglés · `es` si es en español · `sin_texto` si se entiende solo con la imagen |
-| `destacado` | `true` para que salga con borde rojo. Máximo dos o tres. |
-
-**El orden del archivo es el orden en pantalla.** Lo más importante arriba.
+- `plataforma`: `tiktok` / `instagram` / `x` / `youtube` / `web`
+- `idioma`: `en` (hablan inglés) / `es` (español) / `sin_texto` (se entiende solo)
+- `destacado`: `true` ocupa el doble de ancho. **Máximo dos**, y van primero.
+- El orden del archivo es el orden en pantalla.
+- El último bloque **no lleva coma** al final.
 
 ---
 
-## Consejos de curaduría
+## Orden recomendado
 
-- **Prioriza lo que se entiende sin idioma.** Un rescate, una calle, un edificio.
-  Ahí el video hace lo que el texto no puede.
-- **Marca bien el idioma.** Un extranjero ve la etiqueta y sabe si le va a servir.
-- **Siempre la URL del video, nunca del perfil.** Es la regla que no se rompe.
-  Alguien que llega buscando ver lo que pasó no debe aterrizar en una cuenta y
-  tener que buscar entre publicaciones.
+1. El más impactante, `destacado: true`
+2. Un segundo destacado, si tienes otro muy bueno
+3-8. El resto, alternando: rescate -> daño -> gente ayudando -> rescate...
 
-  Cómo sacar el enlace directo:
-  - **TikTok**: abre el video, botón Compartir → Copiar enlace. Queda así:
-    `tiktok.com/@usuario/video/7412...`
-  - **Instagram**: abre el reel, los tres puntos → Copiar enlace. Queda así:
-    `instagram.com/reel/CxYz.../`
-  - **X**: la fecha del post → Copiar enlace. Queda así:
-    `x.com/usuario/status/1234...`
-  - Si la URL termina en el nombre de la cuenta y nada más, **no sirve**.
-- **Nada de contenido gráfico**: cuerpos, personas heridas identificables,
-  familias en el peor momento. Es un directorio, no morbo.
-- **Verifica que sea de ESTE sismo.** Es lo que promete el título de la página.
-  En emergencia circula muchísimo video antiguo o de otro país, a veces con
-  millones de vistas. Contrasta contra la cobertura del 10 de agosto: el edificio,
-  la ciudad, la fecha del post. Si no lo puedes confirmar, no lo pongas.
-- **Revisa cada dos días.** Los videos virales se borran o se hacen privados.
-  Un enlace roto en la primera posición hace que el sitio parezca abandonado.
+Termina con algo esperanzador. Justo debajo aparece el boton de donar, y esa es
+la transición que importa.
 
 ---
 
-## Publicar el cambio
+## Publicar
 
 ```bash
 git add videos.json
@@ -72,15 +108,8 @@ git commit -m "Actualiza videos"
 git push
 ```
 
-Vercel redespliega solo en un minuto. Si el JSON queda mal escrito (una coma de
-más, una comilla suelta), la sección muestra un aviso en vez de romper la página
-— pero conviene revisarlo antes en jsonlint.com.
+Un minuto y está arriba. Antes de subir, pasa el archivo por **jsonlint.com**:
+una coma de más deja la sección vacía.
 
----
-
-## Si algo no aparece
-
-- **Ningún video se muestra** → error de sintaxis en el JSON.
-- **Uno solo falta** → revisa que su bloque tenga todas las comillas y esté
-  separado del anterior por coma.
-- **El último bloque** no lleva coma al final.
+**Revisa cada dos días.** Los virales se borran o se hacen privados; un enlace
+roto en la primera posición hace ver el sitio abandonado.

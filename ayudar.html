@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="/img/icono.png">
+<link rel="apple-touch-icon" href="/img/icono.png">
+<meta name="theme-color" content="#003893">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>How to help from abroad — Colombia Earthquake</title>
+<meta property="og:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://4colombia.com/img/og.jpg">
 <meta property="og:title" content="How to help from abroad — Colombia Earthquake">
 <meta name="description" content="Give by credit or debit card from any country, in under two minutes.">
 <style>
@@ -48,9 +56,9 @@ border-radius:3px;padding:16px;margin-top:26px;text-decoration:none;color:var(--
 @media (prefers-reduced-motion:reduce){.btn-share .pulso-share{animation:none;display:none}}
 .btn-share.hecho{background:var(--senal,#003893);border-color:var(--azul);color:#fff}
 @media (max-width:400px){.btn-share{padding:8px 10px;font-size:12.5px}}
-.marca{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.02em;
-  color:var(--tinta);text-decoration:none;padding:12px 0;margin-right:auto}
-.marca span{color:var(--azul)}
+.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none}
+.marca img{height:26px;width:auto;display:block}
+@media (max-width:400px){.marca img{height:22px}}
 .nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
   font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
   border-bottom:2px solid transparent}
@@ -225,7 +233,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 <div class="tricolor"><i></i><i></i><i></i></div>
 <nav class="nav" aria-label="Principal">
   <div class="nav-int">
-    <a class="marca" href="/index.html">4<span>Colombia</span></a>
+    <a class="marca" href="/index.html"><img src="/img/logo.png" alt="4Colombia"></a>
     <a class="enl" href="/ayudar.html" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
     <a class="enl" href="/fuentes.html"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
     <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">

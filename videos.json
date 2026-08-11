@@ -1,7 +1,16 @@
 {
-  "_leeme": "Edita SOLO este archivo. Ver GUIA-VIDEOS.md. REGLA: la url debe abrir el video directamente, nunca un perfil ni una portada.",
+  "_leeme": "Edita SOLO este archivo. Ver GUIA-VIDEOS.md. La url debe abrir el video directamente. Objetivo: 7 a 10 entradas.",
   "actualizado": "2026-08-11",
   "videos": [
+    {
+      "plataforma": "web",
+      "url": "https://www.cnn.com/2026/08/11/world/live-news/colombia-earthquake-latest",
+      "autor": "CNN",
+      "titulo_es": "Rescatan a un bebé entre los escombros en Cali",
+      "titulo_en": "A baby pulled alive from the rubble in Cali",
+      "idioma": "en",
+      "destacado": true
+    },
     {
       "plataforma": "web",
       "url": "https://www.nbcnews.com/video/videos-capture-the-moment-a-7-4-magnitude-earthquake-strikes-colombia-268050501807",
@@ -12,13 +21,52 @@
       "destacado": true
     },
     {
-      "plataforma": "web",
-      "url": "https://www.cnn.com/2026/08/11/world/live-news/colombia-earthquake-latest",
-      "autor": "CNN",
-      "titulo_es": "Rescate de un bebé entre los escombros en Cali",
-      "titulo_en": "A baby pulled from the rubble in Cali",
-      "idioma": "en",
-      "destacado": true
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/reel/Db6feJqNugM/",
+      "autor": "Instagram",
+      "titulo_es": "PENDIENTE — describe qué se ve",
+      "titulo_en": "PENDING — describe what it shows",
+      "idioma": "sin_texto"
+    },
+    {
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/reel/DaGKJKVhpug/",
+      "autor": "Instagram",
+      "titulo_es": "PENDIENTE — describe qué se ve",
+      "titulo_en": "PENDING — describe what it shows",
+      "idioma": "sin_texto"
+    },
+    {
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/reel/DaIWZk-tmYr/",
+      "autor": "Instagram",
+      "titulo_es": "PENDIENTE — describe qué se ve",
+      "titulo_en": "PENDING — describe what it shows",
+      "idioma": "sin_texto"
+    },
+    {
+      "plataforma": "facebook",
+      "url": "https://www.facebook.com/share/r/1PUXM5WMff/",
+      "autor": "Facebook",
+      "titulo_es": "PENDIENTE — describe qué se ve",
+      "titulo_en": "PENDING — describe what it shows",
+      "idioma": "sin_texto"
+    },
+    {
+      "plataforma": "facebook",
+      "url": "https://www.facebook.com/share/r/19bpvFGuDB/",
+      "autor": "Facebook",
+      "titulo_es": "PENDIENTE — describe qué se ve",
+      "titulo_en": "PENDING — describe what it shows",
+      "idioma": "sin_texto"
+    },
+    {
+      "plataforma": "facebook",
+      "url": "https://www.facebook.com/share/r/17JdBpG6Y7/",
+      "autor": "Facebook",
+      "titulo_es": "PENDIENTE — describe qué se ve",
+      "titulo_en": "PENDING — describe what it shows",
+      "idioma": "sin_texto"
     }
   ]
 }

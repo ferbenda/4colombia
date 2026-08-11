@@ -8,7 +8,10 @@ ayudar.html    canales de donación verificados, con selector de país
 fuentes.html   video de la emergencia + cuentas oficiales
 videos.json    lista de videos (se edita sola, ver GUIA-VIDEOS.md)
 legal.html     privacidad y términos
-img/           fondos ilustrados
+img/           fondos ilustrados, logo y favicon
+  logo.png       marca horizontal (barra de navegación y portada)
+  icono.png      el "4" tricolor — favicon y icono de app
+  og.jpg         imagen que aparece al compartir el enlace
 robots.txt     indexación
 sitemap.xml    mapa del sitio
 vercel.json    cabeceras de seguridad y caché

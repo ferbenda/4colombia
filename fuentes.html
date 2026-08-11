@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="/img/icono.png">
+<link rel="apple-touch-icon" href="/img/icono.png">
+<meta name="theme-color" content="#003893">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Verified sources — Colombia Earthquake</title>
+<meta property="og:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://4colombia.com/img/og.jpg">
 <meta property="og:title" content="Verified sources — Colombia Earthquake">
 <meta name="description" content="Verified footage of the Colombia earthquake and the accounts of the institutions responding.">
 <style>
@@ -35,9 +43,9 @@ padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-
 @media (prefers-reduced-motion:reduce){.btn-share .pulso-share{animation:none;display:none}}
 .btn-share.hecho{background:var(--senal,#003893);border-color:var(--azul);color:#fff}
 @media (max-width:400px){.btn-share{padding:8px 10px;font-size:12.5px}}
-.marca{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.02em;
-  color:var(--tinta);text-decoration:none;padding:12px 0;margin-right:auto}
-.marca span{color:var(--azul)}
+.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none}
+.marca img{height:26px;width:auto;display:block}
+@media (max-width:400px){.marca img{height:22px}}
 .nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
   font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
   border-bottom:2px solid transparent}
@@ -97,29 +105,55 @@ h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform
 color:var(--tinta-2);margin:30px 0 14px;font-weight:600;
 border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
 
-.vid{display:flex;align-items:center;gap:12px;background:var(--blanco);border:1px solid var(--linea);
-  border-radius:3px;padding:13px 14px;margin-bottom:9px;text-decoration:none;color:var(--tinta);min-height:70px}
-.vid:hover{border-color:var(--azul)}
-.vid:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
-.vid.destacado{border-left:5px solid var(--rojo)}
-.plat{width:40px;height:40px;flex:none;border-radius:3px;display:flex;align-items:center;
-  justify-content:center;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.04em;color:#fff}
-.plat[data-p="tiktok"]{background:#111}
-.plat[data-p="instagram"]{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF)}
-.plat[data-p="x"]{background:#111}
-.plat[data-p="youtube"]{background:#C4302B}
-.plat[data-p="web"]{background:var(--azul)}
-.vid-cuerpo{flex:1;min-width:0}
-.vid-tit{font-size:14.5px;font-weight:650;line-height:1.3;letter-spacing:-.01em}
-.vid-meta{font-family:var(--mono);font-size:11px;color:var(--tinta-2);margin-top:4px;
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.idioma-tag{border:1px solid var(--linea);border-radius:2px;padding:1px 5px;font-size:9.5px;letter-spacing:.05em}
-.idioma-tag.en{border-color:var(--azul);color:var(--azul)}
-.vid .flecha{color:var(--tinta-2);font-size:13px;flex:none}
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:6px}
+.vid{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  aspect-ratio:9/13;background:var(--tinta);border:1px solid var(--linea);border-radius:3px;
+  padding:12px;text-decoration:none;overflow:hidden;isolation:isolate}
+.vid::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(160deg,#1B2430 0%,#2C3A4C 55%,#3B4A5E 100%)}
+.vid[data-p="tiktok"]::before{background:linear-gradient(160deg,#0B0B0F 0%,#1C2A33 60%,#25F4EE22 100%)}
+.vid[data-p="instagram"]::before{background:linear-gradient(160deg,#3A1C4A 0%,#8134AF 55%,#F58529 130%)}
+.vid[data-p="facebook"]::before{background:linear-gradient(160deg,#0B1B3A 0%,#1877F2 100%)}
+.vid[data-p="x"]::before{background:linear-gradient(160deg,#0B0B0F 0%,#20262E 100%)}
+.vid[data-p="youtube"]::before{background:linear-gradient(160deg,#2A0C0B 0%,#7A1B18 100%)}
+.vid[data-p="web"]::before{background:linear-gradient(160deg,#0A1B3D 0%,#003893 100%)}
+.vid::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top,rgba(8,12,18,.86) 0%,rgba(8,12,18,.30) 52%,rgba(8,12,18,0) 100%)}
+.vid:hover{border-color:var(--amarillo)}
+.vid:focus-visible{outline:3px solid var(--amarillo);outline-offset:2px}
+.vid-play{position:absolute;top:11px;left:11px;width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center}
+.vid-play svg{width:13px;height:13px;fill:#fff;margin-left:2px}
+.vid-plat{position:absolute;top:14px;right:12px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;font-weight:700;color:rgba(255,255,255,.9)}
+.vid-tit{position:relative;font-size:14px;font-weight:650;line-height:1.25;letter-spacing:-.01em;
+  color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.vid-meta{position:relative;font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.72);
+  margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.idioma-tag{border:1px solid rgba(255,255,255,.45);border-radius:2px;padding:1px 4px;font-size:9px}
+.idioma-tag.en{border-color:var(--amarillo);color:var(--amarillo)}
+.vid.destacado{grid-column:span 2;aspect-ratio:16/10}
+.vid.destacado .vid-tit{font-size:17px}
+@media (max-width:420px){.vid-grid{grid-template-columns:repeat(2,1fr)}}
+
+.cta-donar{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:rgba(252,209,22,.38);border:1px solid var(--amarillo);border-left:5px solid var(--amarillo);
+  padding:16px 17px;margin:18px 0 4px;text-decoration:none;color:#3A2C00}
+.cta-donar:hover{background:rgba(252,209,22,.55)}
+.cta-donar:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.cta-donar .t{font-size:17px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.cta-donar .d{font-size:13.5px;color:#5C4600;margin-top:3px}
+.cta-donar .f{font-size:20px;flex:none}
 .aviso-video{background:var(--blanco);border-left:3px solid var(--amarillo);padding:12px 14px;
   font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:16px}
 .aviso-video b{color:var(--tinta)}
 #videos-error{font-size:13.5px;color:var(--tinta-2)}
+.inst{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:15px 16px;margin-top:8px}
+.inst summary{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-2);cursor:pointer;font-weight:600}
+.inst summary:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.inst-nota{font-size:13px;color:var(--tinta-2);line-height:1.5;margin:11px 0 4px}
 .fuente{display:flex;align-items:center;gap:13px;background:var(--blanco);border:1px solid var(--linea);
 border-radius:3px;padding:14px 15px;margin-bottom:9px;text-decoration:none;color:var(--tinta);min-height:64px}
 .fuente:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
@@ -171,7 +205,7 @@ padding-top:15px;line-height:1.7}
 <div class="tricolor"><i></i><i></i><i></i></div>
 <nav class="nav" aria-label="Principal">
   <div class="nav-int">
-    <a class="marca" href="/index.html">4<span>Colombia</span></a>
+    <a class="marca" href="/index.html"><img src="/img/logo.png" alt="4Colombia"></a>
     <a class="enl" href="/ayudar.html"><span lang-es>Donar</span><span lang-en>Give</span></a>
     <a class="enl" href="/fuentes.html" aria-current="page"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
     <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">
@@ -184,8 +218,8 @@ padding-top:15px;line-height:1.7}
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
   <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
-  <h1><span lang-es>Fuentes verificadas</span><span lang-en>Verified sources</span></h1>
-  <p class="intro"><span lang-es>Video verificado de lo que está pasando, y las cuentas de las instituciones que atienden la emergencia.</span><span lang-en>Verified footage of what is happening, plus the accounts of the institutions responding.</span></p>
+  <h1><span lang-es>Lo que está pasando</span><span lang-en>What is happening</span></h1>
+  <p class="intro"><span lang-es>Video verificado desde el terreno. Míralo y decide si puedes ayudar.</span><span lang-en>Verified footage from the ground. Watch it, then decide if you can help.</span></p>
 
   <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
     <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
@@ -207,16 +241,20 @@ padding-top:15px;line-height:1.7}
   <!-- ================= SITIOS WEB ================= -->
   <h2 class="sec"><span lang-es>Ver lo que está pasando</span><span lang-en>See what is happening</span></h2>
   <div class="aviso-video">
-    <span lang-es>Cada enlace abre <b>el video directamente</b>. Solo publicamos material verificado de este sismo: nada de video antiguo ni de otro país. Las entradas marcadas <b>EN</b> están en inglés.</span><span lang-en>Every link opens <b>the video itself</b>. We only publish material verified as being from this earthquake — no old or unrelated footage. Entries marked <b>EN</b> are in English.</span>
+    <span lang-es>Cada tarjeta abre <b>el video directamente</b>. Todo verificado como material de este sismo — nada antiguo ni de otro país.</span><span lang-en>Each card opens <b>the video itself</b>. All verified as footage from this earthquake — nothing old or unrelated.</span>
   </div>
-  <div id="videos"></div>
+  <div id="videos" class="vid-grid"></div>
   <p id="videos-error" hidden><span lang-es>No se pudo cargar la lista de videos.</span><span lang-en>The video list could not be loaded.</span></p>
 
-  <h2 class="sec"><span lang-es>Instituciones que atienden la emergencia</span><span lang-en>Institutions responding to the emergency</span></h2>
-  <p class="aviso-video" style="border-left-color:var(--azul)">
-    <span lang-es>Publican principalmente en español. Útiles para cifras y decisiones oficiales, no para entender lo que pasa a simple vista.</span><span lang-en>These publish mainly in Spanish. Useful for official figures and decisions, less so for seeing what is happening.</span>
-  </p>
+  <a class="cta-donar" href="/ayudar.html">
+    <span><span class="t"><span lang-es>Puedes ayudar hoy</span><span lang-en>You can help today</span></span>
+    <span class="d"><span lang-es>Con tarjeta, desde cualquier país, en dos minutos.</span><span lang-en>By card, from any country, in two minutes.</span></span></span>
+    <span class="f" aria-hidden="true">&#8594;</span>
+  </a>
 
+  <details class="inst">
+    <summary><span lang-es>Instituciones oficiales</span><span lang-en>Official institutions</span></summary>
+    <p class="inst-nota"><span lang-es>Publican en español. Aquí van las cuatro que importan: réplicas, coordinación nacional, búsqueda de familiares y el registro oficial de desaparecidos.</span><span lang-en>These publish in Spanish. The four that matter: aftershocks, national coordination, family search, and the official missing-persons registry.</span></p>
   <a class="fuente" href="https://portal.gestiondelriesgo.gov.co/" target="_blank" rel="noopener">
     <span class="icono">WEB</span>
     <span class="f-cuerpo">
@@ -224,7 +262,6 @@ padding-top:15px;line-height:1.7}
       <span class="f-que"><span lang-es>Coordina el Puesto de Mando Unificado. Balance oficial y necesidades por territorio.</span><span lang-en>Runs the Unified Command Post. Official toll and needs by territory.</span></span>
     </span><span class="flecha">&#8599;</span>
   </a>
-
   <a class="fuente" href="https://sismosgc.sgc.gov.co/" target="_blank" rel="noopener">
     <span class="icono">WEB</span>
     <span class="f-cuerpo">
@@ -232,7 +269,6 @@ padding-top:15px;line-height:1.7}
       <span class="f-que"><span lang-es>Magnitud, profundidad y epicentro de cada réplica, en tiempo real.</span><span lang-en>Magnitude, depth and epicentre of every aftershock, in real time.</span></span>
     </span><span class="flecha">&#8599;</span>
   </a>
-
   <a class="fuente" href="https://www.cruzrojacolombiana.org/" target="_blank" rel="noopener">
     <span class="icono">WEB</span>
     <span class="f-cuerpo">
@@ -240,23 +276,6 @@ padding-top:15px;line-height:1.7}
       <span class="f-que"><span lang-es>Protección de Vínculos Familiares: el canal formal para restablecer contacto con un familiar.</span><span lang-en>Restoring Family Links: the formal channel for re-establishing contact with a relative.</span></span>
     </span><span class="flecha">&#8599;</span>
   </a>
-
-  <a class="fuente" href="https://www.defensacivil.gov.co/" target="_blank" rel="noopener">
-    <span class="icono">WEB</span>
-    <span class="f-cuerpo">
-      <span class="f-nom">Defensa Civil Colombiana</span>
-      <span class="f-que"><span lang-es>Capacidades operativas de respuesta y atención psicosocial gratuita.</span><span lang-en>Operational response capacity and free psychosocial support.</span></span>
-    </span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="http://www.ideam.gov.co/" target="_blank" rel="noopener">
-    <span class="icono">WEB</span>
-    <span class="f-cuerpo">
-      <span class="f-nom">IDEAM</span>
-      <span class="f-que"><span lang-es>Alertas de lluvia y deslizamiento sobre zonas con estructuras comprometidas.</span><span lang-en>Rain and landslide alerts over areas with compromised structures.</span></span>
-    </span><span class="flecha">&#8599;</span>
-  </a>
-
   <a class="fuente" href="https://www.medicinalegal.gov.co/" target="_blank" rel="noopener">
     <span class="icono rojo">WEB</span>
     <span class="f-cuerpo">
@@ -264,86 +283,7 @@ padding-top:15px;line-height:1.7}
       <span class="f-que"><span lang-es>Consulta pública SIRDEC. Es el registro oficial del Estado, no una plataforma ciudadana.</span><span lang-en>Public SIRDEC search. This is the official state registry, not a citizen platform.</span></span>
     </span><span class="flecha">&#8599;</span>
   </a>
-
-  <!-- ================= X ================= -->
-  <h2 class="sec">X</h2>
-
-  <a class="fuente" href="https://x.com/UNGRD" target="_blank" rel="noopener">
-    <span class="icono">X</span>
-    <span class="f-cuerpo"><span class="f-nom">UNGRD</span><span class="f-arroba">@UNGRD</span>
-    <span class="f-que"><span lang-es>La fuente más rápida del sistema nacional de gestión del riesgo.</span><span lang-en>The fastest source in the national disaster management system.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="https://x.com/sgcol" target="_blank" rel="noopener">
-    <span class="icono">X</span>
-    <span class="f-cuerpo"><span class="f-nom">Servicio Geológico Colombiano</span><span class="f-arroba">@sgcol</span>
-    <span class="f-que"><span lang-es>Boletín de cada sismo y réplica. La UNGRD remite aquí para datos sísmicos.</span><span lang-en>Bulletin for every quake and aftershock. The UNGRD points here for seismic data.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="https://x.com/cruzrojacol" target="_blank" rel="noopener">
-    <span class="icono">X</span>
-    <span class="f-cuerpo"><span class="f-nom">Cruz Roja Colombiana</span><span class="f-arroba">@cruzrojacol</span>
-    <span class="f-que"><span lang-es>Búsqueda de familiares y canales de donación verificados.</span><span lang-en>Family search and verified donation channels.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="https://x.com/DefensaCivilCo" target="_blank" rel="noopener">
-    <span class="icono">X</span>
-    <span class="f-cuerpo"><span class="f-nom">Defensa Civil Colombiana</span><span class="f-arroba">@DefensaCivilCo</span>
-    <span class="f-que"><span lang-es>Operaciones de respuesta y participación en el PMU nacional.</span><span lang-en>Response operations and participation in the national command post.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="https://x.com/Dimarcolombia" target="_blank" rel="noopener">
-    <span class="icono">X</span>
-    <span class="f-cuerpo"><span class="f-nom">DIMAR</span><span class="f-arroba">@Dimarcolombia</span>
-    <span class="f-que"><span lang-es>Autoridad marítima. Única fuente válida sobre amenaza de tsunami en el Pacífico.</span><span lang-en>Maritime authority. The only valid source on Pacific tsunami threat.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <!-- ================= INSTAGRAM ================= -->
-  <h2 class="sec">Instagram</h2>
-
-  <a class="fuente" href="https://www.instagram.com/ungrd_oficial/" target="_blank" rel="noopener">
-    <span class="icono">IG</span>
-    <span class="f-cuerpo"><span class="f-nom">UNGRD</span><span class="f-arroba">@ungrd_oficial</span>
-    <span class="f-que"><span lang-es>Comunicados y piezas de orientación a la comunidad.</span><span lang-en>Official statements and public guidance.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="https://www.instagram.com/serviciogeologicocolombiano/" target="_blank" rel="noopener">
-    <span class="icono">IG</span>
-    <span class="f-cuerpo"><span class="f-nom">Servicio Geológico Colombiano</span><span class="f-arroba">@serviciogeologicocolombiano</span>
-    <span class="f-que"><span lang-es>Reportes sísmicos y explicación técnica del evento.</span><span lang-en>Seismic reports and technical explanation of the event.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <!-- ================= TIKTOK ================= -->
-  <h2 class="sec">TikTok</h2>
-
-  <a class="fuente" href="https://www.tiktok.com/@cruzrojabogota" target="_blank" rel="noopener">
-    <span class="icono">TT</span>
-    <span class="f-cuerpo"><span class="f-nom">Cruz Roja Bogotá</span><span class="f-arroba">@cruzrojabogota</span>
-    <span class="f-que"><span lang-es>Seccional Cundinamarca y Bogotá. Puntos de acopio y campañas de donación.</span><span lang-en>Cundinamarca and Bogotá branch. Collection points and donation campaigns.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <a class="fuente" href="https://www.tiktok.com/@rtvcnoticias" target="_blank" rel="noopener">
-    <span class="icono">TT</span>
-    <span class="f-cuerpo"><span class="f-nom">RTVC Noticias</span><span class="f-arroba">@rtvcnoticias</span>
-    <span class="f-que"><span lang-es>Sistema de medios públicos del Estado. Reporta citando al SGC y a las autoridades.</span><span lang-en>State public media system. Reports citing the SGC and the authorities.</span></span></span><span class="flecha">&#8599;</span>
-  </a>
-
-  <!-- ================= PENDIENTES ================= -->
-  <div class="pendiente">
-    <h2><span lang-es>Cuentas aún sin verificar</span><span lang-en>Accounts not yet verified</span></h2>
-    <p><span lang-es>Faltan cuentas de Instagram y TikTok de Defensa Civil, Bomberos, IDEAM, Medicina Legal y las alcaldías de Cali, Pereira, Manizales y Quibdó.</span><span lang-en>Still missing: Instagram and TikTok accounts for Defensa Civil, the fire service, IDEAM, Medicina Legal, and the city governments of Cali, Pereira, Manizales and Quibdó.</span></p>
-    <p><span lang-es><b>No se publican hasta confirmarlas.</b> Una cuenta falsa aquí es peor que no tener la lista. El método:</span><span lang-en><b>They stay out until confirmed.</b> A fake account here is worse than no list. How to confirm one:</span></p>
-    <ul>
-      <li><span lang-es>Entrar al <b>sitio web oficial</b> de la entidad (dominio <code>.gov.co</code> cuando aplique)</span><span lang-en>Go to the agency's <b>official website</b> (a <code>.gov.co</code> domain where applicable)</span></li>
-      <li><span lang-es>Seguir el enlace de redes desde el pie de página de ese sitio</span><span lang-en>Follow the social link from that site's own footer</span></li>
-      <li><span lang-es>No buscar la cuenta directamente en la red social: ahí aparecen imitaciones antes que la real</span><span lang-en>Never search for the account inside the social network: imitations surface before the real one</span></li>
-    </ul>
-  </div>
-
-  <a class="otra-pag" href="/ayudar.html">
-    <span class="t"><span lang-es>Donar de forma segura</span><span lang-en>Give safely</span></span>
-    <span class="d"><span lang-es>Organizaciones oficiales que reciben con tarjeta desde cualquier país.</span><span lang-en>Official organizations accepting cards from any country.</span></span>
-  </a>
+  </details>
 
   <div class="compartir">
     <h3><span lang-es>Comparte esta página</span><span lang-en>Share this page</span></h3>
@@ -466,24 +406,23 @@ async function copiarEnlace(btn){
 
 
 /* ---------- videos: se leen de videos.json, editable sin tocar el HTML ---------- */
-const ETQ_PLAT = {tiktok:'TIKTOK', instagram:'IG', x:'X', youtube:'YT', web:'VIDEO'};
+const ETQ_PLAT = {tiktok:'TIKTOK', instagram:'IG', facebook:'FACEBOOK', x:'X', youtube:'YT', web:'VIDEO'};
 
 function pintarVideos(datos){
   const en = document.body.classList.contains('en');
   const cont = document.getElementById('videos');
   if(!cont) return;
+  const play = '<span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
   cont.innerHTML = (datos.videos||[]).map(v=>{
     const t = en ? (v.titulo_en || v.titulo_es) : (v.titulo_es || v.titulo_en);
     const etq = ETQ_PLAT[v.plataforma] || 'LINK';
-    const tag = v.idioma === 'en'
-      ? '<span class="idioma-tag en">EN</span>'
-      : (v.idioma === 'es' ? '<span class="idioma-tag">ES</span>' : '');
-    return '<a class="vid ' + (v.destacado ? 'destacado' : '') + '" href="' + esc(v.url) +
-      '" target="_blank" rel="noopener">' +
-      '<span class="plat" data-p="' + esc(v.plataforma) + '">' + etq + '</span>' +
-      '<span class="vid-cuerpo"><span class="vid-tit">' + esc(t) + '</span>' +
-      '<span class="vid-meta">' + esc(v.autor || '') + tag + '</span></span>' +
-      '<span class="flecha">&#8599;</span></a>';
+    const tag = v.idioma === 'en' ? '<span class="idioma-tag en">EN</span>'
+              : v.idioma === 'es' ? '<span class="idioma-tag">ES</span>' : '';
+    return '<a class="vid ' + (v.destacado ? 'destacado' : '') + '" data-p="' + esc(v.plataforma) +
+      '" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + play +
+      '<span class="vid-plat">' + etq + '</span>' +
+      '<span class="vid-tit">' + esc(t) + '</span>' +
+      '<span class="vid-meta">' + esc(v.autor || '') + tag + '</span></a>';
   }).join('');
 }
 

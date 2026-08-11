@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="/img/icono.png">
+<link rel="apple-touch-icon" href="/img/icono.png">
+<meta name="theme-color" content="#003893">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Colombia Earthquake — where to give, where to get facts</title>
 <meta name="description" content="Verified donation channels and official information sources on the 10 August 2026 earthquake in Colombia.">
+<meta property="og:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://4colombia.com/img/og.jpg">
 <meta property="og:title" content="Colombia Earthquake — where to give, where to get facts">
 <meta property="og:description" content="Verified donation channels and official sources. No intermediaries.">
 <meta property="og:type" content="website">
@@ -37,9 +45,9 @@ padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-
 @media (prefers-reduced-motion:reduce){.btn-share .pulso-share{animation:none;display:none}}
 .btn-share.hecho{background:var(--senal,#003893);border-color:var(--azul);color:#fff}
 @media (max-width:400px){.btn-share{padding:8px 10px;font-size:12.5px}}
-.marca{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.02em;
-  color:var(--tinta);text-decoration:none;padding:12px 0;margin-right:auto}
-.marca span{color:var(--azul)}
+.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none}
+.marca img{height:26px;width:auto;display:block}
+@media (max-width:400px){.marca img{height:22px}}
 .nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
   font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
   border-bottom:2px solid transparent}
@@ -77,6 +85,8 @@ padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-
 .wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
 
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+.logo-hero{display:block;width:min(300px,72%);height:auto;margin:6px 0 14px}
+@media (max-width:420px){.logo-hero{width:min(250px,80%)}}
 h1{font-size:clamp(38px,9vw,58px);font-weight:700;letter-spacing:-.04em;margin:12px 0 12px;
   line-height:1.02;text-wrap:balance}
 h1 .subraya{background:linear-gradient(transparent 62%, rgba(252,209,22,.85) 62%);padding:0 3px}
@@ -162,7 +172,7 @@ body.en [lang-en]{display:inline}
 <div class="tricolor"><i></i><i></i><i></i></div>
 <nav class="nav" aria-label="Principal">
   <div class="nav-int">
-    <a class="marca" href="/index.html">4<span>Colombia</span></a>
+    <a class="marca" href="/index.html"><img src="/img/logo.png" alt="4Colombia"></a>
     <a class="enl" href="/ayudar.html"><span lang-es>Donar</span><span lang-en>Give</span></a>
     <a class="enl" href="/fuentes.html"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
     <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">
@@ -175,6 +185,7 @@ body.en [lang-en]{display:inline}
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
 
+  <img class="logo-hero" src="/img/logo.png" alt="4Colombia">
   <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
   <h1><span lang-es>Colombia necesita<br>tu ayuda <span class="subraya">hoy</span></span><span lang-en>Colombia needs<br>your help <span class="subraya">today</span></span></h1>
   <p class="sub"><span lang-es>Dona en dos minutos con tu tarjeta, desde cualquier país. O infórmate en las fuentes oficiales.</span><span lang-en>Give in two minutes by card, from any country. Or get the facts from official sources.</span></p>
