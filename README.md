@@ -95,6 +95,24 @@ registra nada.
 Sin cookies, sin identificadores persistentes, sin datos personales. Por eso la
 CSP solo necesitó `connect-src 'self'`.
 
+## Logos de las organizaciones
+
+Cada tarjeta de `ayudar.html` tiene un recuadro `.marca-org` con las iniciales
+de la organización. Para poner el logo real:
+
+```html
+<div class="marca-org" aria-hidden="true">
+  <img src="/img/logos/globalgiving.svg" alt="">
+</div>
+```
+
+Guardar los archivos en `img/logos/` (SVG o PNG con fondo transparente).
+
+**Pedir autorización antes.** Los logos son marcas registradas; el uso en un
+directorio informativo suele aceptarse, pero conviene confirmarlo por escrito con
+cada organización. **No enlazar el logo desde el servidor de ellos** — consume su
+ancho de banda y se rompe si cambian la ruta.
+
 ## Reglas editoriales
 
 - Solo entidades con NIT verificable y canal de pago en su propio dominio

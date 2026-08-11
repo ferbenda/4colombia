@@ -17,7 +17,21 @@
 body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
 -webkit-font-smoothing:antialiased;
 padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:31}
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.94);
+  backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--linea)}
+.nav-int{max-width:620px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:4px}
+.marca{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.02em;
+  color:var(--tinta);text-decoration:none;padding:12px 0;margin-right:auto}
+.marca span{color:var(--azul)}
+.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
+  border-bottom:2px solid transparent}
+.nav a.enl:hover{color:var(--tinta)}
+.nav a.enl[aria-current="page"]{color:var(--tinta);border-bottom-color:var(--amarillo)}
+.nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
+@media (max-width:400px){.nav-int{padding:0 12px}.nav a.enl{padding:13px 6px;font-size:10px}}
+
 .actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
   border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
   padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
@@ -47,8 +61,10 @@ padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-
 .wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
 
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
-h1{font-size:29px;font-weight:650;letter-spacing:-.03em;margin:11px 0 10px;line-height:1.15}
-.sub{color:var(--tinta-2);font-size:16px;margin-bottom:26px}
+h1{font-size:clamp(38px,9vw,58px);font-weight:700;letter-spacing:-.04em;margin:12px 0 12px;
+  line-height:1.02;text-wrap:balance}
+h1 .subraya{background:linear-gradient(transparent 62%, rgba(252,209,22,.85) 62%);padding:0 3px}
+.sub{color:var(--tinta-2);font-size:17px;line-height:1.45;margin-bottom:24px;max-width:34ch}
 
 .idioma{display:flex;gap:8px;margin-bottom:24px}
 .idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
@@ -113,15 +129,19 @@ body.en [lang-en]{display:inline}
 </head>
 <body>
 <div class="tricolor"><i></i><i></i><i></i></div>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-int">
+    <a class="marca" href="/index.html">4<span>Colombia</span></a>
+    <a class="enl" href="/ayudar.html"><span lang-es>Donar</span><span lang-en>Give</span></a>
+    <a class="enl" href="/fuentes.html"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
+  </div>
+</nav>
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
 
   <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
-  <h1><span lang-es>Dónde donar y dónde informarse</span><span lang-en>Where to give, where to get facts</span></h1>
-  <p class="sub">
-    <span lang-es>Dos cosas, verificadas. Nada más.</span>
-    <span lang-en>Two things, verified. Nothing else.</span>
-  </p>
+  <h1><span lang-es>Colombia necesita<br>tu ayuda <span class="subraya">hoy</span></span><span lang-en>Colombia needs<br>your help <span class="subraya">today</span></span></h1>
+  <p class="sub"><span lang-es>Dona en dos minutos con tu tarjeta, desde cualquier país. O infórmate en las fuentes oficiales.</span><span lang-en>Give in two minutes by card, from any country. Or get the facts from official sources.</span></p>
 
   <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
     <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
@@ -203,7 +223,9 @@ function guardarIdioma(l){
   idioma(l, botones[l==='es' ? 1 : 0]);
 })();
 </script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

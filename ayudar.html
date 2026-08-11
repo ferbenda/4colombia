@@ -28,7 +28,21 @@ text-decoration:none;margin-bottom:14px}
 border-radius:3px;padding:16px;margin-top:26px;text-decoration:none;color:var(--tinta)}
 .otra-pag .t{font-size:16.5px;font-weight:650}
 .otra-pag .d{font-size:13.5px;color:var(--tinta-2);margin-top:4px}
-.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:31}
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.94);
+  backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--linea)}
+.nav-int{max-width:620px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:4px}
+.marca{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.02em;
+  color:var(--tinta);text-decoration:none;padding:12px 0;margin-right:auto}
+.marca span{color:var(--azul)}
+.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
+  border-bottom:2px solid transparent}
+.nav a.enl:hover{color:var(--tinta)}
+.nav a.enl[aria-current="page"]{color:var(--tinta);border-bottom-color:var(--amarillo)}
+.nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
+@media (max-width:400px){.nav-int{padding:0 12px}.nav a.enl{padding:13px 6px;font-size:10px}}
+
 .actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
   border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
   padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
@@ -93,7 +107,14 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
 /* tarjeta de organización */
 .org{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:17px;margin-bottom:12px}
 .org.destacada{border-color:var(--azul);border-width:1.5px}
-.org-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.org-cab{display:flex;align-items:flex-start;gap:12px}
+.marca-org{width:52px;height:52px;flex:none;border-radius:3px;border:1px solid var(--linea);
+  background:var(--papel);display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.03em;color:var(--tinta-2);
+  overflow:hidden}
+.marca-org img{width:100%;height:100%;object-fit:contain;padding:5px}
+.org-txt{flex:1;min-width:0}
+
 .org-nom{font-size:17.5px;font-weight:650;letter-spacing:-.01em}
 .org-que{color:var(--tinta-2);font-size:14px;margin-top:5px}
 .insignia{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
@@ -101,6 +122,8 @@ font-weight:700;padding:4px 7px;border-radius:2px;white-space:nowrap;flex:none;
 background:var(--senal);color:#fff}
 .insignia.impuesto{background:var(--rojo)}
 
+.aviso-ruta{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--vence,#8A6E00);
+  margin-top:8px;line-height:1.45}
 .monedas{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
 .moneda{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--tinta-2);
 border:1px solid var(--linea);border-radius:2px;padding:3px 7px}
@@ -169,10 +192,15 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 </head>
 <body>
 <div class="tricolor"><i></i><i></i><i></i></div>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-int">
+    <a class="marca" href="/index.html">4<span>Colombia</span></a>
+    <a class="enl" href="/ayudar.html" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
+    <a class="enl" href="/fuentes.html"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
+  </div>
+</nav>
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
-  <a class="volver" href="/index.html">&#8592; <span lang-es>Inicio</span><span lang-en>Home</span></a>
-
   <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
   <h1><span lang-es>Ayudar desde el exterior</span><span lang-en>Help from abroad</span></h1>
   <p class="intro">
@@ -229,7 +257,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org destacada">
     <div class="org-cab">
-      <div>
+      <div class="marca-org" aria-hidden="true">GG</div>
+      <div class="org-txt">
         <div class="org-nom">GlobalGiving — Colombia Earthquake Relief Fund</div>
         <div class="org-que">
           <span lang-es>Fondos rápidos a organizaciones locales: atención médica, búsqueda y rescate, albergue, alimentos y agua.</span>
@@ -245,7 +274,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div>
+      <div class="marca-org" aria-hidden="true">AH</div>
+      <div class="org-txt">
         <div class="org-nom">All Hands &amp; Hearts</div>
         <div class="org-que">
           <span lang-es>En Pereira desde el día del sismo, comprando herramientas y equipo para los grupos de rescate.</span>
@@ -266,8 +296,9 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div>
-        <div class="org-nom">Cruz Roja Colombiana</div>
+      <div class="marca-org" aria-hidden="true">CRC</div>
+      <div class="org-txt">
+        <div class="org-nom">Cruz Roja Colombiana — #TodosPorColombia</div>
         <div class="org-que">
           <span lang-es>Ayuda de emergencia, salud, agua potable, rescate y reencuentro de familias separadas.</span>
           <span lang-en>Emergency aid, health, clean water, rescue, and reuniting separated families.</span>
@@ -282,7 +313,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div>
+      <div class="marca-org" aria-hidden="true">ABC</div>
+      <div class="org-txt">
         <div class="org-nom">ABACO — Bancos de Alimentos de Colombia</div>
         <div class="org-que">
           <span lang-es>Corredor humanitario de alimentos. Envían reporte de cómo llegó tu aporte.</span>
@@ -298,8 +330,9 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div>
-        <div class="org-nom">Fundación PLAN</div>
+      <div class="marca-org" aria-hidden="true">PLAN</div>
+      <div class="org-txt">
+        <div class="org-nom">Fundación PLAN — <span lang-es>campaña «Terremoto en Colombia»</span><span lang-en>&quot;Terremoto en Colombia&quot; campaign</span></div>
         <div class="org-que">
           <span lang-es>Alojamiento, agua y saneamiento, alimentación, protección de la niñez y educación.</span>
           <span lang-en>Shelter, water and sanitation, food, child protection and education.</span>
@@ -308,6 +341,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       <span class="insignia"><span lang-es>Oficial</span><span lang-en>Official</span></span>
     </div>
     <div class="monedas"><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
+    <div class="aviso-ruta"><span lang-es>Busca la campaña «Terremoto en Colombia» en su página de inicio.</span><span lang-en>Look for the "Terremoto en Colombia" campaign on their homepage.</span></div>
     <a class="donar" href="https://plan.org.co/" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
   </div>
@@ -319,7 +353,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div>
+      <div class="marca-org" aria-hidden="true">UN</div>
+      <div class="org-txt">
         <div class="org-nom">UNICEF</div>
         <div class="org-que">
           <span lang-es>Trabaja con la ONU, las autoridades nacionales y la UNGRD. Comité en decenas de países: donas en tu moneda.</span>
@@ -329,7 +364,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       <span class="insignia impuesto"><span lang-es>Comité nacional</span><span lang-en>National committee</span></span>
     </div>
     <div class="monedas"><span class="moneda"><span lang-es>Tu moneda local</span><span lang-en>Your local currency</span></span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
-    <a class="donar" href="https://www.unicef.org/" target="_blank" rel="noopener">
+    <a class="donar" href="https://www.unicefusa.org/stories/magnitude-74-earthquake-strikes-colombia-children-need-help-now" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
   </div>
 
@@ -339,10 +374,11 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org destacada">
     <div class="org-cab">
-      <div>
+      <div class="marca-org" aria-hidden="true">ALTO</div>
+      <div class="org-txt">
         <div class="org-nom">Plataforma ALTO</div>
         <div class="org-que">
-          <span lang-es>Documenta refugio por refugio y publica cómo ayudar a cada uno. La vía más confiable para saber qué se necesita hoy.</span><span lang-en>Documents each shelter and publishes how to help. The most reliable way to know what's needed today.</span>
+          <span lang-es><b>No existe una entidad central que reciba donaciones para animales en esta emergencia.</b> ALTO documenta refugio por refugio y publica cómo ayudar a cada uno: es la vía más confiable para saber qué se necesita hoy y a qué canal enviarlo.</span><span lang-en><b>There is no central body collecting animal donations for this emergency.</b> ALTO documents each shelter and publishes how to help: the most reliable way to know what is needed today and where to send it.</span>
         </div>
       </div>
       <span class="insignia"><span lang-es>Verifica los refugios</span><span lang-en>Verifies shelters</span></span>
@@ -357,10 +393,11 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div>
+      <div class="marca-org" aria-hidden="true">EPD</div>
+      <div class="org-txt">
         <div class="org-nom"><span lang-es>Entidades públicas de bienestar animal</span><span lang-en>Public animal welfare agencies</span></div>
         <div class="org-que">
-          <span lang-es>El Instituto Distrital de Protección y Bienestar Animal de Bogotá y el Centro de Bienestar Animal de Cali están coordinando la atención junto a la Defensa Civil del Valle, la Policía Nacional y la Gobernación del Valle. Consúltalos para saber qué se necesita y dónde entregarlo.</span><span lang-en>Bogotá's animal welfare institute and Cali's animal welfare centre are coordinating the response with Defensa Civil del Valle, the National Police and the Valle governor's office. Check with them for what is needed and where to deliver it.</span>
+          <span lang-es>El Centro de Bienestar Animal de Cali coordina la atención junto a la Defensa Civil del Valle, la Policía Nacional y la Gobernación del Valle. Reciben donaciones en especie —alimento, agua, medicamentos veterinarios y mantas— en sus puntos habilitados.</span><span lang-en>Cali's animal welfare centre coordinates the response with Defensa Civil del Valle, the National Police and the Valle governor's office. They accept in-kind donations — food, water, veterinary medicine and blankets — at their designated points.</span>
         </div>
       </div>
       <span class="insignia"><span lang-es>Oficial</span><span lang-en>Official</span></span>
@@ -610,7 +647,9 @@ function guardarIdioma(l){
   idioma(l, botones[l==='es' ? 1 : 0]);
 })();
 </script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

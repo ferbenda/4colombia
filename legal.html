@@ -15,7 +15,21 @@
 body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
 -webkit-font-smoothing:antialiased;
 padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:31}
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.94);
+  backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--linea)}
+.nav-int{max-width:620px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:4px}
+.marca{font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-.02em;
+  color:var(--tinta);text-decoration:none;padding:12px 0;margin-right:auto}
+.marca span{color:var(--azul)}
+.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
+  border-bottom:2px solid transparent}
+.nav a.enl:hover{color:var(--tinta)}
+.nav a.enl[aria-current="page"]{color:var(--tinta);border-bottom-color:var(--amarillo)}
+.nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
+@media (max-width:400px){.nav-int{padding:0 12px}.nav a.enl{padding:13px 6px;font-size:10px}}
+
 .actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
   border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
   padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
@@ -77,10 +91,15 @@ h1{font-size:26px;margin:10px 0 6px}
 </head>
 <body>
 <div class="tricolor"><i></i><i></i><i></i></div>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-int">
+    <a class="marca" href="/index.html">4<span>Colombia</span></a>
+    <a class="enl" href="/ayudar.html"><span lang-es>Donar</span><span lang-en>Give</span></a>
+    <a class="enl" href="/fuentes.html"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
+  </div>
+</nav>
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
-
-  <a class="volver" href="/index.html">&#8592; <span lang-es>Inicio</span><span lang-en>Home</span></a>
 
   <div class="eyebrow">4Colombia</div>
   <h1><span lang-es>Privacidad y términos</span><span lang-en>Privacy and terms</span></h1>
@@ -166,7 +185,9 @@ function guardarIdioma(l){
   idioma(l, botónes[l==='es' ? 1 : 0]);
 })();
 </script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

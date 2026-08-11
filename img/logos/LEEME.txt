@@ -1,0 +1,9 @@
+Logos de las organizaciones.
+
+Guardar aquí los archivos autorizados (SVG o PNG con fondo transparente),
+y en ayudar.html reemplazar las iniciales del recuadro .marca-org por:
+
+  <img src="/img/logos/NOMBRE.svg" alt="">
+
+Pedir autorización a cada organización antes de publicar su logo.
+No enlazar desde el servidor de ellos.
