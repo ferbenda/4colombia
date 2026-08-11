@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy and terms - 4Colombia</title>
+<meta name="description" content="How this directory works, what data we do not collect, and the terms of use.">
+<meta property="og:title" content="Privacy and terms - 4Colombia">
+<style>
+:root{
+--amarillo:#FCD116; --azul:#003893; --rojo:#CE1126; --amarillo-suave:#FFF6D6;
+--papel:#F4F5F7;--tinta:#101828;--tinta-2:#56606E;--linea:#D4D9E0;--blanco:#fff;
+--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
+-webkit-font-smoothing:antialiased;
+padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:2}
+.actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
+  border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
+  padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-2);text-transform:uppercase;font-weight:600}
+.pulso{width:7px;height:7px;border-radius:50%;background:var(--rojo);flex:none;
+  animation:lat 2.4s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+
+.tricolor i{display:block}
+.tricolor i:nth-child(1){background:var(--amarillo);flex:2}
+.tricolor i:nth-child(2){background:var(--azul);flex:1}
+.tricolor i:nth-child(3){background:var(--rojo);flex:1}
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("img/colombia-horizontal.webp");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  opacity:.72}
+@media (orientation:portrait){
+  .fondo{background-image:url("img/colombia-vertical.webp")}
+}
+/* La columna de contenido es papel translúcido: la ilustración se ve a través
+   y a los lados, pero el texto conserva contraste en la zona más densa. */
+.wrap{position:relative;z-index:1;background:rgba(244,245,247,.88);
+  box-shadow:0 0 0 1px rgba(212,217,224,.6)}
+
+
+.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+h1{font-size:29px;font-weight:650;letter-spacing:-.03em;margin:11px 0 10px;line-height:1.15}
+.sub{color:var(--tinta-2);font-size:16px;margin-bottom:26px}
+
+.idioma{display:flex;gap:8px;margin-bottom:24px}
+.idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+font-weight:600;padding:8px 13px;border:1px solid var(--linea);background:var(--blanco);
+color:var(--tinta-2);border-radius:2px;cursor:pointer;min-height:38px}
+.idioma button[aria-pressed="true"]{border-color:var(--tinta);color:var(--tinta)}
+
+.pie{font-size:12.5px;color:var(--tinta-2);margin-top:28px;border-top:1px solid var(--linea);
+padding-top:15px;line-height:1.7}
+[lang-en]{display:none}
+body.en [lang-es]{display:none}
+body.en [lang-en]{display:inline}
+
+h1{font-size:26px;margin:10px 0 6px}
+.volver{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--tinta-2);
+  text-decoration:none;margin-bottom:12px}
+.volver:hover{color:var(--azul)}
+.bloque-legal{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--azul);
+  padding:18px;margin-bottom:12px}
+.bloque-legal.rojo{border-left-color:var(--rojo)}
+.bloque-legal.amarillo{border-left-color:var(--amarillo)}
+.bloque-legal h2{font-family:var(--sans);font-size:17px;font-weight:650;letter-spacing:-.015em;
+  text-transform:none;color:var(--tinta);margin:0 0 9px;border:0;padding:0}
+.bloque-legal p{font-size:14.5px;color:var(--tinta-2);line-height:1.55;margin-bottom:9px}
+.bloque-legal p:last-child{margin-bottom:0}
+.bloque-legal b{color:var(--tinta)}
+</style>
+</head>
+<body>
+<div class="tricolor"><i></i><i></i><i></i></div>
+<div class="fondo" aria-hidden="true"></div>
+<div class="wrap">
+
+  <a class="volver" href="/index.html">&#8592; <span lang-es>Inicio</span><span lang-en>Home</span></a>
+
+  <div class="eyebrow">4Colombia</div>
+  <h1><span lang-es>Privacidad y términos</span><span lang-en>Privacy and terms</span></h1>
+
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+
+  <div class="bloque-legal rojo">
+    <h2><span lang-es>No pedimos ni recibimos dinero</span><span lang-en>We never ask for or receive money</span></h2>
+    <p><span lang-es>Este sitio es <b>únicamente un directorio</b>. No procesa pagos, no aloja pasarelas de cobro y no recibe donaciones de ninguna forma. Cada botón abre la página oficial de la organización correspondiente, en su propio dominio, donde el pago ocurre bajo sus términos y no los nuestros.</span><span lang-en>This site is <b>only a directory</b>. It processes no payments, hosts no checkout, and receives no donations in any form. Every button opens the corresponding organization's official page, on its own domain, where payment happens under their terms and not ours.</span></p>
+    <p><span lang-es><b>Si alguien te contacta en nuestro nombre pidiendo dinero, no somos nosotros.</b> No hacemos llamadas, no envíamos mensajes y no solicitamos aportes por ningún canal. Ignora cualquier solicitud de ese tipo.</span><span lang-en><b>If anyone contacts you in our name asking for money, it is not us.</b> We make no calls, send no messages, and solicit no contributions through any channel. Ignore any such request.</span></p>
+  </div>
+
+  <div class="bloque-legal">
+    <h2><span lang-es>Qué datos recogemos</span><span lang-en>What data we collect</span></h2>
+    <p><span lang-es><b>Ninguno que te identifique.</b> No hay formularios, no hay registro, y no pedimos correo, nombre, teléfono ni datos de pago. No usamos cookies de seguimiento ni herramientas de publicidad.</span><span lang-en><b>None that identifies you.</b> There are no forms, no sign-up, and we ask for no email, name, phone or payment details. We use no tracking cookies and no advertising tools.</span></p>
+    <p><span lang-es>Lo único que se guarda en tu navegador es <b>tu preferencia de idioma</b> (el valor &quot;en&quot; o &quot;es&quot;), mediante almacenamiento local. No sale de tu dispositivo, no se envía a ningún servidor, y puedes borrarlo limpiando los datos del sitio en tu navegador.</span><span lang-en>The only thing stored in your browser is <b>your language preference</b> (the value &quot;en&quot; or &quot;es&quot;), via local storage. It never leaves your device, is not sent to any server, and you can remove it by clearing site data in your browser.</span></p>
+    <p><span lang-es>Usamos una herramienta de analítica <b>sin cookies y sin identificadores persistentes</b>, que solo cuenta visitas agregadas: cuántas personas entran, qué páginas ven, desde qué país y con qué tipo de dispositivo. <b>No permite identificarte ni seguirte entre sesiones o entre sitios</b>, y los datos no se venden ni se comparten con anunciantes.</span><span lang-en>We use a <b>cookieless analytics tool with no persistent identifiers</b> that counts aggregate visits only: how many people arrive, which pages they view, from which country and on what kind of device. <b>It cannot identify you or track you across sessions or sites</b>, and the data is never sold or shared with advertisers.</span></p>
+    <p><span lang-es>Nuestro proveedor de alojamiento registra además datos técnicos estándar de servidor, como dirección IP y tipo de navegador, con fines de seguridad y funcionamiento. No tenemos acceso a información que te identifique ni la combinamos con nada.</span><span lang-en>Our hosting provider also records standard server data such as IP address and browser type, for security and operation. We have no access to information that identifies you and combine it with nothing.</span></p>
+  </div>
+
+  <div class="bloque-legal">
+    <h2><span lang-es>Enlaces a terceros</span><span lang-en>Third-party links</span></h2>
+    <p><span lang-es>Al tocar cualquier botón sales de este sitio. Las organizaciónes enlazadas tienen sus propias políticas de privacidad y condiciones, que te recomendamos leer. <b>No controlamos ni respondemos por el contenido, la seguridad ni el uso de datos de esos sitios.</b></span><span lang-en>Tapping any button takes you off this site. The linked organizations have their own privacy policies and terms, which we recommend reading. <b>We do not control or take responsibility for the content, security or data practices of those sites.</b></span></p>
+    <p><span lang-es>Verificamos que cada enlace apunte al dominio oficial de la organización en la fecha indicada al pie de cada página. Aun así, <b>confirma siempre la dirección en tu navegador antes de pagar</b>.</span><span lang-en>We verify that each link points to the organization's official domain as of the date shown at the foot of each page. Even so, <b>always confirm the address in your browser before paying</b>.</span></p>
+  </div>
+
+  <div class="bloque-legal amarillo">
+    <h2><span lang-es>Condiciones de uso</span><span lang-en>Terms of use</span></h2>
+    <p><span lang-es>La información se ofrece <b>tal cual, con fines informativos</b>, y se revisa de forma continua durante la emergencia. No garantizamos que esté completa ni permanentemente actualizada: las circunstancias cambian a diario.</span><span lang-en>Information is provided <b>as is, for informational purposes</b>, and is reviewed continuously during the emergency. We do not guarantee it is complete or permanently current: circumstances change daily.</span></p>
+    <p><span lang-es>La decisión de donar y a quién es <b>enteramente tuya</b>. No somos responsables del uso que cada organización dé a los fondos ni de las consecuencias de tu decisión.</span><span lang-en>The decisión to donate, and to whom, is <b>entirely yours</b>. We are not responsible for how each organization uses funds, nor for the consequences of your decisión.</span></p>
+    <p><span lang-es>Aparecer en este directorio no implica vínculo, patrocinio ni respaldo mutuo con ninguna organización. Los nombres y marcas mencionados pertenecen a sus titulares.</span><span lang-en>Appearing in this directory implies no affiliation, sponsorship or mutual endorsement with any organization. Names and trademarks mentioned belong to their respective owners.</span></p>
+  </div>
+
+  <div class="bloque-legal">
+    <h2><span lang-es>Correcciones</span><span lang-en>Corrections</span></h2>
+    <p><span lang-es>Si encuentras un enlace incorrecto, una organización que no debería estar listada o cualquier error, escríbenos y lo revisamos. Retiramos de inmediato cualquier entrada que no podamos verificar.</span><span lang-en>If you find an incorrect link, an organization that should not be listed, or any error, write to us and we will review it. We immediately remove any entry we cannot verify.</span></p>
+    <p><b>contacto@4colombia.com</b></p>
+  </div>
+
+  <p class="pie">
+    <span lang-es>Sitio independiente y sin ánimo de lucro. No afiliado a ninguna entidad gubernamental ni a las organizaciónes enlazadas.</span><span lang-en>Independent and non-profit. Not affiliated with any government entity or with the linked organizations.</span><br>
+    <span id="verif"></span>
+  </p>
+</div>
+
+<script>
+const META = {
+  es: {t:'Privacidad y términos - 4Colombia',
+       d:'Cómo funciona este directorio, qué datos no recogemos y bajo qué condiciones se usa.'},
+  en: {t:'Privacy and terms - 4Colombia',
+       d:'How this directory works, what data we do not collect, and the terms of use.'}
+};
+
+function idioma(l, btn){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
+  guardarIdioma(l);
+  const m = META[l];
+  document.title = m.t;
+  document.querySelector('meta[name="description"]').setAttribute('content', m.d);
+  document.querySelector('meta[property="og:title"]').setAttribute('content', m.t);
+}
+
+function guardarIdioma(l){
+  try{ localStorage.setItem('idioma', l); }catch(e){}
+  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
+  document.querySelectorAll('a[href^="/"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), location.origin);
+    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+
+(function inicial(){
+  let l = new URLSearchParams(location.search).get('lang');
+  if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
+  if(l !== 'es') l = 'en';
+  const botónes = document.querySelectorAll('.idioma button');
+  idioma(l, botónes[l==='es' ? 1 : 0]);
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

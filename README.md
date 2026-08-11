@@ -3,12 +3,27 @@
 Sitio estático de dos páginas. Sin backend, sin base de datos, sin pipeline.
 
 ```
-publico/
-  index.html     portada
-  ayudar.html    canales de donación verificados, con selector de país
-  fuentes.html   cuentas y sitios oficiales de información
-vercel.json      cabeceras de seguridad y caché
+index.html     portada
+ayudar.html    canales de donación verificados, con selector de país
+fuentes.html   cuentas y sitios oficiales de información
+legal.html     privacidad y términos
+img/           fondos ilustrados
+robots.txt     indexación
+sitemap.xml    mapa del sitio
+vercel.json    cabeceras de seguridad y caché
 ```
+
+## Seguridad
+
+El sitio no tiene backend, API keys, formularios, cookies de seguimiento ni
+llamadas de red. Lo único que guarda es la preferencia de idioma en
+`localStorage`. `vercel.json` aplica CSP estricta (`default-src 'none'`),
+HSTS, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer` y
+`Permissions-Policy` con todo desactivado.
+
+Al agregar contenido: no introducir scripts externos, `fetch`, formularios ni
+`innerHTML` alimentado por texto libre del usuario — cualquiera de esos rompe
+el modelo de seguridad actual.
 
 ## Idiomas
 
@@ -47,7 +62,7 @@ Vercel → Add New → Project → importar el repo:
 | Campo | Valor |
 |---|---|
 | Framework Preset | Other |
-| Root Directory | `publico` |
+| Root Directory | `./` |
 | Build Command | (vacío) |
 | Output Directory | (vacío) |
 
@@ -69,6 +84,16 @@ añadir; no publicar ninguno sin confirmar que la cuenta es de la fundación.
 
 Esa fecha aparece al pie de cada página. Si lleva más de dos semanas sin moverse,
 el sitio pierde el único respaldo que tiene: que alguien lo revisó.
+
+## Analítica
+
+Vercel Web Analytics y Speed Insights, cargados desde `/_vercel/...` (mismo
+origen). **Hay que activarlos en el panel de Vercel** — Project → Analytics →
+Enable, y Speed Insights → Enable. Sin eso los scripts devuelven 404 y no se
+registra nada.
+
+Sin cookies, sin identificadores persistentes, sin datos personales. Por eso la
+CSP solo necesitó `connect-src 'self'`.
 
 ## Reglas editoriales
 
