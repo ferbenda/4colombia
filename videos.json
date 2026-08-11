@@ -1,0 +1,56 @@
+{
+  "_leeme": "Edita SOLO este archivo para actualizar los videos. Ver GUIA-VIDEOS.md. Cada entrada: plataforma (tiktok|instagram|x|youtube|web), url, titulo_es, titulo_en, autor, idioma (es|en|sin_texto).",
+  "actualizado": "2026-08-11",
+  "videos": [
+    {
+      "plataforma": "web",
+      "url": "https://www.nbcnews.com/video/videos-capture-the-moment-a-7-4-magnitude-earthquake-strikes-colombia-268050501807",
+      "autor": "NBC News",
+      "titulo_es": "El momento exacto del sismo, grabado por testigos",
+      "titulo_en": "The moment the quake struck, filmed by witnesses",
+      "idioma": "en",
+      "destacado": true
+    },
+    {
+      "plataforma": "web",
+      "url": "https://www.cnn.com/2026/08/10/world/live-news/colombia-earthquake-san-jose-del-palmar",
+      "autor": "CNN",
+      "titulo_es": "Cobertura en vivo con video y fotografías",
+      "titulo_en": "Live coverage with video and photographs",
+      "idioma": "en",
+      "destacado": true
+    },
+    {
+      "plataforma": "x",
+      "url": "https://x.com/UNGRD",
+      "autor": "UNGRD",
+      "titulo_es": "Video de las operaciones de rescate, publicado por la autoridad nacional",
+      "titulo_en": "Rescue operation footage from the national disaster authority",
+      "idioma": "es"
+    },
+    {
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/ungrd_oficial/",
+      "autor": "@ungrd_oficial",
+      "titulo_es": "Reels de las zonas afectadas y los equipos en terreno",
+      "titulo_en": "Reels from affected areas and teams on the ground",
+      "idioma": "es"
+    },
+    {
+      "plataforma": "tiktok",
+      "url": "https://www.tiktok.com/@rtvcnoticias",
+      "autor": "@rtvcnoticias",
+      "titulo_es": "Medios públicos del Estado — video diario de la emergencia",
+      "titulo_en": "State public media — daily video from the emergency",
+      "idioma": "es"
+    },
+    {
+      "plataforma": "tiktok",
+      "url": "https://www.tiktok.com/@cruzrojabogota",
+      "autor": "@cruzrojabogota",
+      "titulo_es": "Cruz Roja: rescates y puntos de acopio",
+      "titulo_en": "Red Cross: rescues and collection points",
+      "idioma": "es"
+    }
+  ]
+}

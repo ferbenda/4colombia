@@ -1,9 +1,20 @@
-Logos de las organizaciones.
+LOGOS DE LAS ORGANIZACIONES
+===========================
 
-Guardar aquí los archivos autorizados (SVG o PNG con fondo transparente),
-y en ayudar.html reemplazar las iniciales del recuadro .marca-org por:
+Los siete están puestos y optimizados: recortados sin márgenes,
+normalizados a 184x104 px (2x del slot de 92x52) y en PNG con
+transparencia.
 
-  <img src="/img/logos/NOMBRE.svg" alt="">
+  globalgiving.png   allhands.png   cruzroja.png   abaco.png
+  plan.png           unicef.png     alto.png
 
-Pedir autorización a cada organización antes de publicar su logo.
-No enlazar desde el servidor de ellos.
+NOTAS
+-----
+- Si un archivo falta o falla, la tarjeta cae automáticamente a las
+  iniciales de la organización. No se rompe nada.
+
+- Para reemplazar uno: mismo nombre, PNG con fondo transparente,
+  184x104 px. El recorte de márgenes ya lo hace el CSS (object-fit).
+
+- Los logos son marcas registradas. Pedir autorización por escrito
+  a cada organización; suelen tener kit de prensa.

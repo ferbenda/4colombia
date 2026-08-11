@@ -5,13 +5,20 @@ Sitio estático de dos páginas. Sin backend, sin base de datos, sin pipeline.
 ```
 index.html     portada
 ayudar.html    canales de donación verificados, con selector de país
-fuentes.html   cuentas y sitios oficiales de información
+fuentes.html   video de la emergencia + cuentas oficiales
+videos.json    lista de videos (se edita sola, ver GUIA-VIDEOS.md)
 legal.html     privacidad y términos
 img/           fondos ilustrados
 robots.txt     indexación
 sitemap.xml    mapa del sitio
 vercel.json    cabeceras de seguridad y caché
 ```
+
+## Videos
+
+`fuentes.html` lee la sección de video de `videos.json`. Para actualizarla no se
+toca el HTML: se edita ese archivo y se hace push. Instrucciones completas en
+`GUIA-VIDEOS.md`.
 
 ## Seguridad
 
@@ -95,23 +102,17 @@ registra nada.
 Sin cookies, sin identificadores persistentes, sin datos personales. Por eso la
 CSP solo necesitó `connect-src 'self'`.
 
-## Logos de las organizaciones
+## Fotos de perfil de las organizaciones
 
-Cada tarjeta de `ayudar.html` tiene un recuadro `.marca-org` con las iniciales
-de la organización. Para poner el logo real:
+El `<img>` ya está puesto en cada tarjeta. Solo falta subir el archivo a
+`img/logos/` con el nombre exacto (ver `img/logos/LEEME.txt`). Si el archivo no
+existe, la tarjeta cae a las iniciales — no se rompe nada mientras tanto.
 
-```html
-<div class="marca-org" aria-hidden="true">
-  <img src="/img/logos/globalgiving.svg" alt="">
-</div>
-```
+**Nunca enlazar desde `scontent.cdninstagram.com`**: esas direcciones llevan
+firma con vencimiento y dejan de cargar en días. Descargar, recortar a cuadrado
+200x200 y subir al repo.
 
-Guardar los archivos en `img/logos/` (SVG o PNG con fondo transparente).
-
-**Pedir autorización antes.** Los logos son marcas registradas; el uso en un
-directorio informativo suele aceptarse, pero conviene confirmarlo por escrito con
-cada organización. **No enlazar el logo desde el servidor de ellos** — consume su
-ancho de banda y se rompe si cambian la ruta.
+Pedir la imagen y el permiso en el mismo correo de autorización.
 
 ## Reglas editoriales
 
