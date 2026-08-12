@@ -1,0 +1,5 @@
+# Una URL por línea.  Opcional:  | título ES | título EN | autor
+# Al hacer push, GitHub Actions genera videos.json y baja las miniaturas.
+# El orden de este archivo es el orden en la página: lo mejor arriba.
+
+https://www.tiktok.com/@blacklatinhistory/video/7672882030908034334?q=Choco&t=1786515487468

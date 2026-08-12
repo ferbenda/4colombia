@@ -1,79 +1,15 @@
 {
-  "_leeme": "Para agregar un video basta con pegar su URL entre comillas: \"https://...\". La plataforma y el autor se deducen solos. Si quieres mejor resultado, añade titulo_es, titulo_en y miniatura. Ver GUIA-VIDEOS.md.",
-  "actualizado": "2026-08-11",
+  "_leeme": "GENERADO por scripts/actualizar_videos.py — edita links.txt, no este archivo.",
+  "actualizado": "2026-08-12",
   "videos": [
     {
-      "plataforma": "facebook",
-      "url": "https://www.facebook.com/reel/935524779599154",
-      "autor": "Latinus",
-      "titulo_es": "Un edificio colapsa en Pereira durante el sismo",
-      "titulo_en": "A building collapses in Pereira during the quake",
-      "idioma": "sin_texto",
-      "miniatura": "/img/thumbs/colapso-pereira.jpg"
-    },
-    {
-      "plataforma": "instagram",
-      "url": "https://www.instagram.com/reel/Db6feJqNugM/",
-      "autor": "@orduzcolombia",
-      "titulo_es": "Sacan vivo a un hombre de los escombros",
-      "titulo_en": "A man pulled out alive from the rubble",
-      "idioma": "sin_texto",
-      "miniatura": "/img/thumbs/rescate-hombre.jpg"
-    },
-    {
-      "plataforma": "facebook",
-      "url": "https://www.facebook.com/reel/2234480077399847",
-      "autor": "@castellanosfamili",
-      "titulo_es": "Una familia ve su casa partirse durante el sismo",
-      "titulo_en": "A family watches their house split apart",
-      "idioma": "sin_texto",
-      "miniatura": "/img/thumbs/casa-familia.jpg"
-    },
-    {
-      "plataforma": "instagram",
-      "url": "https://www.instagram.com/p/Db3pIzux08h/",
-      "autor": "Instagram",
-      "titulo_es": "Un edificio se desploma tras el sismo",
-      "titulo_en": "A building comes down after the quake",
-      "idioma": "sin_texto",
-      "miniatura": "/img/thumbs/edificio-colapsa.jpg"
-    },
-    {
-      "plataforma": "facebook",
-      "url": "https://www.facebook.com/reel/1401951855159766",
-      "autor": "Facebook",
-      "titulo_es": "Casas siguen cayendo en Buenaventura",
-      "titulo_en": "Houses still collapsing in Buenaventura",
-      "idioma": "sin_texto",
-      "miniatura": "/img/thumbs/casa-buenaventura.jpg"
-    },
-    {
-      "plataforma": "instagram",
-      "url": "https://www.instagram.com/p/Db3kSxQAJUN/",
-      "autor": "Infinito",
-      "titulo_es": "Una iglesia afectada por el sismo",
-      "titulo_en": "A church damaged by the earthquake",
-      "idioma": "sin_texto",
-      "miniatura": "/img/thumbs/iglesia.jpg"
-    },
-    {
-      "plataforma": "web",
-      "url": "https://www.cnn.com/2026/08/11/world/live-news/colombia-earthquake-latest",
-      "autor": "CNN",
-      "titulo_es": "Rescatan a un bebé entre los escombros en Cali",
-      "titulo_en": "A baby pulled alive from the rubble in Cali",
-      "idioma": "en",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "web",
-      "url": "https://www.nbcnews.com/video/videos-capture-the-moment-a-7-4-magnitude-earthquake-strikes-colombia-268050501807",
-      "autor": "NBC News",
-      "titulo_es": "El momento exacto del sismo, grabado por testigos",
-      "titulo_en": "The moment the quake struck, filmed by witnesses",
-      "idioma": "en",
+      "url": "https://www.tiktok.com/@blacklatinhistory/video/7672882030908034334",
+      "plataforma": "tiktok",
+      "titulo_es": "Video en TikTok",
+      "titulo_en": "Video on TikTok",
+      "autor": "@blacklatinhistory",
+      "idioma": "",
       "miniatura": ""
     }
-  ],
-  "_ejemplo_minimo": "https://www.tiktok.com/@usuario/video/7412345678901234567"
+  ]
 }
