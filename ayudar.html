@@ -36,11 +36,18 @@ text-decoration:none;margin-bottom:14px}
 border-radius:3px;padding:16px;margin-top:26px;text-decoration:none;color:var(--tinta)}
 .otra-pag .t{font-size:16.5px;font-weight:650}
 .otra-pag .d{font-size:13.5px;color:var(--tinta-2);margin-top:4px}
+
+/* --- QA móvil: sin desbordes ni textos encimados --- */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg{max-width:100%}
+h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
+.wrap{width:100%}
 .tricolor{display:flex;height:6px;width:100%;position:relative;z-index:31}
 .nav{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.94);
   backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--linea)}
-.nav-int{max-width:620px;margin:0 auto;padding:0 18px;display:flex;align-items:center;gap:4px}
-.btn-share{display:inline-flex;align-items:center;gap:6px;margin-left:6px;
+.nav-int{max-width:620px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:2px;min-width:0}
+.btn-share{display:inline-flex;align-items:center;gap:5px;margin-left:5px;flex:none;
   font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:-.01em;
   color:#3A2C00;background:var(--amarillo);border:1.5px solid #E0B800;border-radius:2px;
   padding:8px 13px;cursor:pointer;min-height:38px;white-space:nowrap;
@@ -55,13 +62,22 @@ border-radius:3px;padding:16px;margin-top:26px;text-decoration:none;color:var(--
 @keyframes latido{0%{opacity:.85;transform:scale(1)}60%{opacity:0;transform:scale(1.18)}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.btn-share .pulso-share{animation:none;display:none}}
 .btn-share.hecho{background:var(--senal,#003893);border-color:var(--azul);color:#fff}
-@media (max-width:400px){.btn-share{padding:8px 10px;font-size:12.5px}}
-.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none}
+@media (max-width:420px){
+  .btn-share{padding:8px 9px;font-size:12px;gap:4px}
+  .btn-share svg{width:13px;height:13px}
+  .nav a.enl{padding:13px 5px;font-size:9.5px;letter-spacing:.03em}
+  .marca img{height:20px}
+}
+@media (max-width:340px){
+  .nav a.enl{font-size:9px;padding:13px 4px}
+  .marca img{height:18px}
+}
+.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none;flex:0 1 auto;min-width:0}
 .marca img{height:26px;width:auto;display:block}
 @media (max-width:400px){.marca img{height:22px}}
-.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
-  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 9px;
-  border-bottom:2px solid transparent}
+.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 7px;white-space:nowrap;
+  border-bottom:2px solid transparent;flex:none}
 .nav a.enl:hover{color:var(--tinta)}
 .nav a.enl[aria-current="page"]{color:var(--tinta);border-bottom-color:var(--amarillo)}
 .nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
@@ -131,26 +147,31 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
 /* tarjeta de organización */
 .org{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:17px;margin-bottom:12px}
 .org.destacada{border-color:var(--azul);border-width:1.5px}
-.org-cab{display:flex;align-items:flex-start;gap:12px}
+/* Logo e insignia comparten la primera fila; el texto ocupa una fila
+   completa debajo. Antes los tres competían por el ancho y en móvil el
+   nombre se partía palabra por palabra. */
+.org-cab{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
 .marca-org{width:92px;height:52px;flex:none;border-radius:3px;border:1px solid var(--linea);
   background:var(--blanco);display:flex;align-items:center;justify-content:center;
   font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.03em;color:var(--tinta-2);
   overflow:hidden}
 .marca-org img{width:100%;height:100%;object-fit:contain;display:block}
-.org-txt{flex:1;min-width:0}
+.org-txt{flex:1 1 100%;min-width:0}
 
-.org-nom{font-size:17.5px;font-weight:650;letter-spacing:-.01em}
-.org-que{color:var(--tinta-2);font-size:14px;margin-top:5px}
+.org-nom{font-size:17.5px;font-weight:650;letter-spacing:-.015em;line-height:1.25;
+  overflow-wrap:anywhere}
+.org-que{color:var(--tinta-2);font-size:14px;margin-top:5px;line-height:1.5}
 .insignia{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
-font-weight:700;padding:4px 7px;border-radius:2px;white-space:nowrap;flex:none;
+font-weight:700;padding:4px 7px;border-radius:2px;flex:0 1 auto;margin-left:auto;
+white-space:normal;text-align:right;line-height:1.3;
 background:var(--senal);color:#fff}
 .insignia.impuesto{background:var(--rojo)}
 
 .aviso-ruta{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--vence,#8A6E00);
   margin-top:8px;line-height:1.45}
-.monedas{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
-.moneda{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--tinta-2);
-border:1px solid var(--linea);border-radius:2px;padding:3px 7px}
+.monedas{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px;min-width:0}
+.moneda{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--tinta-2);
+border:1px solid var(--linea);border-radius:2px;padding:3px 6px;white-space:nowrap}
 
 .donar{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
 margin-top:14px;padding:15px;background:var(--senal);color:#fff;border:1px solid var(--senal);
@@ -160,10 +181,10 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 
 /* pasos */
 .pasos{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:17px;margin-bottom:26px}
-.paso{display:flex;gap:12px;padding:9px 0;align-items:baseline}
+.paso{display:flex;gap:11px;padding:9px 0;align-items:baseline;min-width:0}
 .paso+.paso{border-top:1px solid var(--linea)}
 .num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--senal);flex:none;width:18px}
-.paso-txt{font-size:14.5px}
+.paso-txt{font-size:14.5px;flex:1;min-width:0;line-height:1.45}
 
 /* seguridad */
 .seguridad{background:var(--blanco);border-left:3px solid var(--alto);padding:15px 16px;margin:26px 0}
@@ -189,8 +210,8 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .resultado-pais.visible{display:block}
 .ruta{border-top:1px solid var(--linea);padding:12px 0}
 .ruta:last-child{padding-bottom:0}
-.ruta-cab{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-.ruta-nom{font-size:15px;font-weight:650}
+.ruta-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.ruta-nom{font-size:15px;font-weight:650;flex:1 1 60%;min-width:0;line-height:1.3}
 .etiqueta{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
   font-weight:700;padding:3px 7px;border-radius:2px;white-space:nowrap;flex:none}
 .etiqueta.si{background:var(--azul);color:#fff}
@@ -211,7 +232,7 @@ details li{margin-left:17px}
 .compartir h3{font-size:15.5px;font-weight:650;letter-spacing:-.01em;margin:0 0 3px}
 .compartir p{font-size:13.5px;color:var(--tinta-2);margin:0 0 12px;line-height:1.45}
 .comp-btns{display:flex;flex-wrap:wrap;gap:8px}
-.cbtn{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:14px;
+.cbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:var(--sans);font-size:14px;flex:1 1 auto;min-width:0;
   font-weight:600;padding:11px 14px;border-radius:2px;border:1.5px solid var(--linea);
   background:var(--blanco);color:var(--tinta);text-decoration:none;cursor:pointer;min-height:44px}
 .cbtn:hover{border-color:var(--tinta)}
