@@ -25,6 +25,15 @@ toca el HTML: se edita ese archivo y se hace push. Instrucciones completas en
 
 ## Seguridad
 
+HTTPS obligatorio: Vercel emite el certificado y redirige todo el tráfico.
+`Strict-Transport-Security` con `preload` obliga al navegador a usar HTTPS
+incluso en la primera visita, una vez el dominio esté en la lista de precarga
+(se envía en hstspreload.org, es gratis y tarda unas semanas).
+
+Once cabeceras de seguridad activas, entre ellas CSP con `default-src 'none'`,
+COEP/COOP/CORP para aislar el sitio, y `Permissions-Policy` con todos los
+permisos del navegador desactivados.
+
 El sitio no tiene backend, API keys, formularios, cookies de seguimiento ni
 llamadas de red. Lo único que guarda es la preferencia de idioma en
 `localStorage`. `vercel.json` aplica CSP estricta (`default-src 'none'`),
