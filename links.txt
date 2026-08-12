@@ -1,5 +1,6 @@
-# Una URL por línea.  Opcional:  | título ES | título EN | autor
+# Una URL por línea.
+# Opcional:  | título ES | título EN | autor | idioma (en / es / sin_texto)
 # Al hacer push, GitHub Actions genera videos.json y baja las miniaturas.
 # El orden de este archivo es el orden en la página: lo mejor arriba.
 
-https://www.tiktok.com/@blacklatinhistory/video/7672882030908034334?q=Choco&t=1786515487468
+https://www.tiktok.com/@blacklatinhistory/video/7672882030908034334 | Las comunidades negras del Chocó, fuera de la cobertura internacional | Colombia's Black communities left out of the coverage | @blacklatinhistory | en

@@ -7,7 +7,9 @@ Cada línea de links.txt es una URL. Opcionalmente, título en español e inglé
 separados por |:
 
     https://www.tiktok.com/@usuario/video/7412...
-    https://www.instagram.com/reel/Abc123/ | Rescate en Pereira | Rescue in Pereira | @autor
+    https://www.instagram.com/reel/Abc123/ | Rescate en Pereira | Rescue in Pereira | @autor | sin_texto
+
+El quinto campo es el idioma: en / es / sin_texto (se entiende solo con la imagen).
 
 Lo que se puede sacar automáticamente (TikTok, YouTube, X) se saca vía oEmbed:
 título, autor y miniatura, que se descarga al repo para que no venza.
@@ -172,6 +174,8 @@ def main():
             v["titulo_en"] = partes[2]
         if len(partes) > 3 and partes[3]:
             v["autor"] = partes[3]
+        if len(partes) > 4 and partes[4] in ("en", "es", "sin_texto"):
+            v["idioma"] = partes[4]
 
         gen_es, gen_en = TITULO_GENERICO[plat]
         v.setdefault("titulo_es", gen_es)
