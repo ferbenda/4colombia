@@ -12,6 +12,11 @@ img/           fondos ilustrados, logo y favicon
   logo.png       marca horizontal (barra de navegación y portada)
   icono.png      el "4" tricolor — favicon y icono de app
   og.jpg         imagen que aparece al compartir el enlace
+  historia-es.jpg / historia-en.jpg
+                 1080x1920 para publicar en historias de Instagram.
+                 Instagram no permite compartir enlaces desde la web:
+                 el usuario descarga la imagen, la sube a su historia
+                 y le pega el sticker de enlace.
 robots.txt     indexación
 sitemap.xml    mapa del sitio
 vercel.json    cabeceras de seguridad y caché
