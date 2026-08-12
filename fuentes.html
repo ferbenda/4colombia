@@ -133,6 +133,14 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
 .vid[data-p="x"]::before{background:linear-gradient(160deg,#0B0B0F 0%,#20262E 100%)}
 .vid[data-p="youtube"]::before{background:linear-gradient(160deg,#2A0C0B 0%,#7A1B18 100%)}
 .vid[data-p="web"]::before{background:linear-gradient(160deg,#0A1B3D 0%,#003893 100%)}
+/* Sin miniatura, la tarjeta se apoya en tipografía grande y un glifo de
+   la plataforma al fondo: se lee como diseño, no como imagen faltante. */
+.vid.sin-mini .vid-tit{font-size:17px;line-height:1.2;letter-spacing:-.02em}
+.vid.sin-mini .vid-glifo{position:absolute;right:-14px;bottom:38px;z-index:-1;
+  font-family:var(--mono);font-weight:700;font-size:64px;line-height:1;
+  color:rgba(255,255,255,.10);letter-spacing:-.06em;pointer-events:none;user-select:none}
+.vid.sin-mini::after{background:linear-gradient(to top,rgba(8,12,18,.72) 0%,rgba(8,12,18,.18) 60%,rgba(8,12,18,0) 100%)}
+.vid.sin-mini .vid-meta{margin-top:8px}
 .vid-mini{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;display:block}
 .vid::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(8,12,18,.86) 0%,rgba(8,12,18,.30) 52%,rgba(8,12,18,0) 100%)}
@@ -479,8 +487,10 @@ function pintarVideos(datos){
       ? '<img class="vid-mini" src="' + esc(v.miniatura) + '" alt="" loading="lazy" onerror="this.remove()">'
       : '';
     /* href real: si el JS falla, el enlace sigue funcionando */
-    return '<a class="vid" data-p="' + esc(v.plataforma) + '" href="' + esc(v.url) +
-      '" target="_blank" rel="noopener">' + mini + play +
+    const glifo = v.miniatura ? '' :
+      '<span class="vid-glifo" aria-hidden="true">' + etq.slice(0,2) + '</span>';
+    return '<a class="vid ' + (v.miniatura ? '' : 'sin-mini') + '" data-p="' + esc(v.plataforma) +
+      '" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + mini + glifo + play +
       '<span class="vid-plat">' + etq + '</span>' +
       '<span class="vid-tit">' + esc(t) + '</span>' +
       '<span class="vid-meta">' + esc(v.autor || '') + tag + '</span></a>';

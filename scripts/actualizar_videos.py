@@ -7,9 +7,11 @@ Cada línea de links.txt es una URL. Opcionalmente, título en español e inglé
 separados por |:
 
     https://www.tiktok.com/@usuario/video/7412...
-    https://www.instagram.com/reel/Abc123/ | Rescate en Pereira | Rescue in Pereira | @autor | sin_texto
+    https://.../reel/Abc123/ | Rescate en Pereira | Rescue in Pereira | @autor | sin_texto | /img/thumbs/x.jpg
 
-El quinto campo es el idioma: en / es / sin_texto (se entiende solo con la imagen).
+Campos, en orden: URL | título ES | título EN | autor | idioma | miniatura.
+Idioma: en / es / sin_texto (se entiende solo con la imagen).
+Miniatura: solo si la capturaste a mano; si no, se intenta bajar sola.
 
 Lo que se puede sacar automáticamente (TikTok, YouTube, X) se saca vía oEmbed:
 título, autor y miniatura, que se descarga al repo para que no venza.
@@ -47,6 +49,10 @@ LINKS = RAIZ / "links.txt"
 SALIDA = RAIZ / "videos.json"
 THUMBS = RAIZ / "img" / "thumbs"
 AGENTE = "Mozilla/5.0 (compatible; 4colombia/1.0; +https://4colombia.com)"
+
+# Respaldo para Instagram y Facebook. Ponlo en False para no depender de un
+# tercero; entonces esas miniaturas se capturan a mano.
+USAR_MICROLINK = True
 
 OEMBED = {
     "tiktok": "https://www.tiktok.com/oembed?url=",
@@ -110,14 +116,45 @@ def bajar_miniatura(url_img: str, clave: str) -> str:
     return f"/img/thumbs/{destino.name}"
 
 
+def por_microlink(url: str) -> str:
+    """
+    Respaldo para Instagram y Facebook, que no tienen oEmbed público.
+    Microlink lee las etiquetas Open Graph de la página y devuelve la imagen.
+    Capa gratuita: unas 50 consultas al día, suficiente para este ritmo.
+    Desactivar poniendo USAR_MICROLINK = False si no se quiere la dependencia.
+    """
+    if not USAR_MICROLINK:
+        return ""
+    try:
+        d = pedir("https://api.microlink.io/?url=" + urllib.parse.quote(url, safe=""))
+        return (d.get("data") or {}).get("image", {}).get("url", "") or ""
+    except Exception as e:
+        print(f"  aviso: microlink falló ({e})")
+        return ""
+
+
 def enriquecer(url: str, plat: str) -> dict:
-    """Consulta oEmbed. Devuelve {} si la plataforma no lo ofrece o si falla."""
+    """oEmbed donde existe; microlink como respaldo para la miniatura."""
     if plat not in OEMBED:
+        img = por_microlink(url)
+        if img:
+            clave = hashlib.sha1(url.encode()).hexdigest()[:10]
+            try:
+                return {"miniatura": bajar_miniatura(img, clave)}
+            except Exception as e:
+                print(f"  aviso: no se pudo bajar la miniatura ({e})")
         return {}
     try:
         d = pedir(OEMBED[plat] + urllib.parse.quote(url, safe=""))
     except Exception as e:
-        print(f"  aviso: oEmbed falló ({e})")
+        print(f"  aviso: oEmbed falló ({e}) — intentando microlink")
+        img = por_microlink(url)
+        if img:
+            clave = hashlib.sha1(url.encode()).hexdigest()[:10]
+            try:
+                return {"miniatura": bajar_miniatura(img, clave)}
+            except Exception as e2:
+                print(f"  aviso: no se pudo bajar la miniatura ({e2})")
         return {}
 
     datos = {}
@@ -176,6 +213,8 @@ def main():
             v["autor"] = partes[3]
         if len(partes) > 4 and partes[4] in ("en", "es", "sin_texto"):
             v["idioma"] = partes[4]
+        if len(partes) > 5 and partes[5]:
+            v["miniatura"] = partes[5]
 
         gen_es, gen_en = TITULO_GENERICO[plat]
         v.setdefault("titulo_es", gen_es)
