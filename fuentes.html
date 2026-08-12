@@ -578,15 +578,20 @@ function esc(x){ return String(x==null?'':x).replace(/[&<>"']/g, c=>({'&':'&amp;
 
 let DATOS_VIDEOS = null;
 async function cargarVideos(){
-  try{
-    const r = await fetch('/videos.json', {cache:'no-store'});
-    if(!r.ok) throw new Error(r.status);
-    DATOS_VIDEOS = await r.json();
-    pintarVideos(DATOS_VIDEOS);
-  }catch(e){
-    const err = document.getElementById('videos-error');
-    if(err) err.hidden = false;
+  /* Se intenta la ruta relativa primero: así funciona igual servido desde
+     el dominio, desde una subcarpeta o abierto en local. */
+  const rutas = ['videos.json', '/videos.json'];
+  for(const ruta of rutas){
+    try{
+      const r = await fetch(ruta, {cache:'no-store'});
+      if(!r.ok) continue;
+      DATOS_VIDEOS = await r.json();
+      pintarVideos(DATOS_VIDEOS);
+      return;
+    }catch(e){ /* siguiente ruta */ }
   }
+  const err = document.getElementById('videos-error');
+  if(err) err.hidden = false;
 }
 
 
