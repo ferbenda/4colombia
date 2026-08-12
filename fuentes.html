@@ -423,12 +423,54 @@ async function copiarEnlace(btn){
 /* ---------- videos: se leen de videos.json, editable sin tocar el HTML ---------- */
 const ETQ_PLAT = {tiktok:'TIKTOK', instagram:'IG', facebook:'FACEBOOK', x:'X', youtube:'YT', web:'VIDEO'};
 
+
+/* ---------- normalizador ----------
+   Una entrada de videos.json puede ser solo la URL entre comillas.
+   De ahí se deduce la plataforma y el autor; el título es opcional. */
+function deducirPlataforma(u){
+  if(/tiktok\.com/i.test(u)) return 'tiktok';
+  if(/instagram\.com/i.test(u)) return 'instagram';
+  if(/facebook\.com|fb\.watch/i.test(u)) return 'facebook';
+  if(/(twitter|x)\.com/i.test(u)) return 'x';
+  if(/youtube\.com|youtu\.be/i.test(u)) return 'youtube';
+  return 'web';
+}
+
+function deducirAutor(u){
+  const m = u.match(/(?:tiktok\.com|instagram\.com|(?:twitter|x)\.com)\/@?([A-Za-z0-9_.]+)/);
+  if(m && !['reel','reels','p','tv','share','video','status','watch'].includes(m[1])) {
+    return '@' + m[1];
+  }
+  try{ return new URL(u).hostname.replace(/^www\./,''); }catch(e){ return ''; }
+}
+
+const TITULO_POR_DEFECTO = {
+  es:{tiktok:'Video en TikTok', instagram:'Video en Instagram', facebook:'Video en Facebook',
+      x:'Video en X', youtube:'Video en YouTube', web:'Ver video'},
+  en:{tiktok:'Video on TikTok', instagram:'Video on Instagram', facebook:'Video on Facebook',
+      x:'Video on X', youtube:'Video on YouTube', web:'Watch video'}
+};
+
+function normalizar(v){
+  if(typeof v === 'string') v = {url: v};
+  const plataforma = v.plataforma || deducirPlataforma(v.url);
+  return {
+    url: v.url,
+    plataforma: plataforma,
+    autor: v.autor || deducirAutor(v.url),
+    titulo_es: v.titulo_es || TITULO_POR_DEFECTO.es[plataforma],
+    titulo_en: v.titulo_en || TITULO_POR_DEFECTO.en[plataforma],
+    idioma: v.idioma || '',
+    miniatura: v.miniatura || ''
+  };
+}
+
 function pintarVideos(datos){
   const en = document.body.classList.contains('en');
   const cont = document.getElementById('videos');
   if(!cont) return;
   const play = '<span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
-  cont.innerHTML = (datos.videos||[]).map(v=>{
+  cont.innerHTML = (datos.videos||[]).map(normalizar).map(v=>{
     const t = en ? (v.titulo_en || v.titulo_es) : (v.titulo_es || v.titulo_en);
     const etq = ETQ_PLAT[v.plataforma] || 'LINK';
     const tag = v.idioma === 'en' ? '<span class="idioma-tag en">EN</span>'

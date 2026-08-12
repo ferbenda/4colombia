@@ -1,5 +1,5 @@
 {
-  "_leeme": "Edita SOLO este archivo. Ver GUIA-VIDEOS.md. La url debe abrir el video directamente. Campo opcional 'miniatura': ruta a una imagen en /img/thumbs/ (360x480). Si falta, se usa el degradado de la plataforma.",
+  "_leeme": "Para agregar un video basta con pegar su URL entre comillas: \"https://...\". La plataforma y el autor se deducen solos. Si quieres mejor resultado, añade titulo_es, titulo_en y miniatura. Ver GUIA-VIDEOS.md.",
   "actualizado": "2026-08-11",
   "videos": [
     {
@@ -74,5 +74,6 @@
       "idioma": "en",
       "miniatura": ""
     }
-  ]
+  ],
+  "_ejemplo_minimo": "https://www.tiktok.com/@usuario/video/7412345678901234567"
 }
