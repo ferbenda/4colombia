@@ -501,10 +501,10 @@ async function copiarEnlace(btn){
   if(ok && nav){ const p = nav.querySelector('.pulso-share'); if(p) p.remove(); }
   if(btn && ok){
     const s = btn.querySelector('.txt');
-    const original = s ? s.innerHTML : '';
+    const original = s ? s.textContent : '';
     if(s) s.textContent = document.body.classList.contains('en') ? 'Copied' : 'Copiado';
     btn.classList.add('hecho');
-    setTimeout(()=>{ if(s) s.innerHTML = original; btn.classList.remove('hecho'); }, 1800);
+    setTimeout(()=>{ if(s) s.textContent = original; btn.classList.remove('hecho'); }, 1800);
   }
 }
 
@@ -558,23 +558,59 @@ function pintarVideos(datos){
   const en = document.body.classList.contains('en');
   const cont = document.getElementById('videos');
   if(!cont) return;
-  cont.innerHTML = (datos.videos||[]).map(normalizar).map(v=>{
-    const t = en ? (v.titulo_en || v.titulo_es) : (v.titulo_es || v.titulo_en);
-    const etq = ETQ_PLAT[v.plataforma] || 'LINK';
-    const tag = v.idioma === 'en' ? '<span class="idioma-tag en">EN</span>'
-              : v.idioma === 'es' ? '<span class="idioma-tag">ES</span>' : '';
-    const mini = v.miniatura
-      ? '<img class="vid-mini" src="' + esc(v.miniatura) + '" alt="" loading="lazy" onerror="this.remove()">'
-      : '';
-    /* href real: si el JS falla, el enlace sigue funcionando */
-    const glifo = v.miniatura ? '' :
-      '<span class="vid-glifo" aria-hidden="true">' + etq.slice(0,2) + '</span>';
-    return '<a class="vid ' + (v.miniatura ? '' : 'sin-mini') + '" data-p="' + esc(v.plataforma) +
-      '" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + mini + glifo +
-      '<span class="vid-plat">' + etq + '</span>' +
-      '<span class="vid-tit">' + esc(t) + '</span>' +
-      '<span class="vid-meta">' + esc(v.autor || '') + tag + '</span></a>';
-  }).join('');
+
+  /* Se construye con createElement en vez de innerHTML: así el navegador no
+     puede bloquear el dibujado por política de contenido, y no hay riesgo de
+     inyectar marcado desde los datos. */
+  while(cont.firstChild) cont.removeChild(cont.firstChild);
+
+  (datos.videos||[]).map(normalizar).forEach(v=>{
+    const a = document.createElement('a');
+    a.className = 'vid' + (v.miniatura ? '' : ' sin-mini');
+    a.setAttribute('data-p', v.plataforma);
+    a.href = v.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+
+    if(v.miniatura){
+      const img = document.createElement('img');
+      img.className = 'vid-mini';
+      img.src = v.miniatura;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.addEventListener('error', ()=> img.remove());
+      a.appendChild(img);
+    }else{
+      const g = document.createElement('span');
+      g.className = 'vid-glifo';
+      g.setAttribute('aria-hidden','true');
+      g.textContent = (ETQ_PLAT[v.plataforma] || 'LINK').slice(0,2);
+      a.appendChild(g);
+    }
+
+    const plat = document.createElement('span');
+    plat.className = 'vid-plat';
+    plat.textContent = ETQ_PLAT[v.plataforma] || 'LINK';
+    a.appendChild(plat);
+
+    const tit = document.createElement('span');
+    tit.className = 'vid-tit';
+    tit.textContent = en ? (v.titulo_en || v.titulo_es) : (v.titulo_es || v.titulo_en);
+    a.appendChild(tit);
+
+    const meta = document.createElement('span');
+    meta.className = 'vid-meta';
+    meta.appendChild(document.createTextNode(v.autor || ''));
+    if(v.idioma === 'en' || v.idioma === 'es'){
+      const tag = document.createElement('span');
+      tag.className = 'idioma-tag' + (v.idioma === 'en' ? ' en' : '');
+      tag.textContent = v.idioma.toUpperCase();
+      meta.appendChild(tag);
+    }
+    a.appendChild(meta);
+
+    cont.appendChild(a);
+  });
 }
 
 function esc(x){ return String(x==null?'':x).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }

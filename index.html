@@ -357,10 +357,10 @@ async function copiarEnlace(btn){
   if(ok && nav){ const p = nav.querySelector('.pulso-share'); if(p) p.remove(); }
   if(btn && ok){
     const s = btn.querySelector('.txt');
-    const original = s ? s.innerHTML : '';
+    const original = s ? s.textContent : '';
     if(s) s.textContent = document.body.classList.contains('en') ? 'Copied' : 'Copiado';
     btn.classList.add('hecho');
-    setTimeout(()=>{ if(s) s.innerHTML = original; btn.classList.remove('hecho'); }, 1800);
+    setTimeout(()=>{ if(s) s.textContent = original; btn.classList.remove('hecho'); }, 1800);
   }
 }
 
