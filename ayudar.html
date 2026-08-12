@@ -165,7 +165,6 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
 font-weight:700;padding:4px 7px;border-radius:2px;flex:0 1 auto;margin-left:auto;
 white-space:normal;text-align:right;line-height:1.3;
 background:var(--senal);color:#fff}
-.insignia.impuesto{background:var(--rojo)}
 
 .aviso-ruta{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--vence,#8A6E00);
   margin-top:8px;line-height:1.45}
@@ -196,31 +195,6 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
   font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:14px}
 .antes b{color:var(--tinta)}
 
-/* ---- selector de país ---- */
-.selector{background:var(--blanco);border:1px solid var(--linea);border-top:4px solid var(--amarillo);
-  border-radius:3px;padding:17px;margin-bottom:14px}
-.selector label{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--tinta-2);display:block;margin-bottom:8px}
-.selector select{width:100%;font-family:var(--sans);font-size:16px;color:var(--tinta);
-  background:var(--papel);border:1px solid var(--linea);border-radius:2px;padding:13px 12px;min-height:50px}
-.selector select:focus{outline:2px solid var(--azul);outline-offset:1px;border-color:transparent}
-.explica{font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-top:11px}
-.explica b{color:var(--tinta)}
-.resultado-pais{margin-top:15px;display:none}
-.resultado-pais.visible{display:block}
-.ruta{border-top:1px solid var(--linea);padding:12px 0}
-.ruta:last-child{padding-bottom:0}
-.ruta-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
-.ruta-nom{font-size:15px;font-weight:650;flex:1 1 60%;min-width:0;line-height:1.3}
-.etiqueta{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
-  font-weight:700;padding:3px 7px;border-radius:2px;white-space:nowrap;flex:none}
-.etiqueta.si{background:var(--azul);color:#fff}
-.etiqueta.no{background:var(--papel);color:var(--tinta-2);border:1px solid var(--linea)}
-.etiqueta.verifica{background:var(--rojo);color:#fff}
-.ruta-det{font-size:13.5px;color:var(--tinta-2);margin-top:4px;line-height:1.45}
-.ruta-det b{color:var(--tinta)}
-.nota-fiscal{background:var(--amarillo-suave);border-left:3px solid var(--amarillo);padding:11px 13px;
-  font-size:13px;color:var(--tinta-2);margin-top:14px;line-height:1.5}
 
 details{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:15px 16px;margin-bottom:12px}
 summary{font-size:15.5px;font-weight:650;cursor:pointer}
@@ -256,7 +230,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
   <div class="nav-int">
     <a class="marca" href="/index.html"><img src="/img/logo.png" alt="4Colombia"></a>
     <a class="enl" href="/ayudar.html" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
-    <a class="enl" href="/fuentes.html"><span lang-es>Fuentes</span><span lang-en>Sources</span></a>
+    <a class="enl" href="/fuentes.html"><span lang-es>Informarse</span><span lang-en>Get informed</span></a>
     <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">
       <span class="pulso-share" aria-hidden="true"></span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
@@ -330,7 +304,6 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
           <span lang-en>Rapid funding to local organizations: medical care, search and rescue, shelter, food and water.</span>
         </div>
       </div>
-      <span class="insignia impuesto"><span lang-es>EE.UU. / UK deducible</span><span lang-en>US / UK deductible</span></span>
     </div>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">EUR</span><span class="moneda">GBP</span><span class="moneda">Visa · Mastercard · Amex</span><span class="moneda">PayPal</span></div>
     <a class="donar" href="https://www.globalgiving.org/projects/colombia-earthquake-relief-fund/" target="_blank" rel="noopener">
@@ -347,7 +320,6 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
           <span lang-en>In Pereira since day one, procuring tools and gear for rescue crews.</span>
         </div>
       </div>
-      <span class="insignia impuesto"><span lang-es>EE.UU. deducible</span><span lang-en>US deductible</span></span>
     </div>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">Visa · Mastercard · Amex</span></div>
     <a class="donar" href="https://allhandsandhearts.org/our-work/programs/colombia-earthquake-relief" target="_blank" rel="noopener">
@@ -411,7 +383,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
   </div>
 
-  <h2><span lang-es>Con presencia en tu país</span><span lang-en>Present in your country</span></h2>
+  <h2><span lang-es>Organizaciones internacionales</span><span lang-en>International organizations</span></h2>
   <p class="h2sub">
     <span lang-es>Con oficina propia en decenas de países: donas en tu moneda.</span>
     <span lang-en>With their own office in dozens of countries: give in your currency.</span></p>
@@ -426,7 +398,6 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
           <span lang-en>Works with the UN, national authorities and the UNGRD. Committees in dozens of countries: give in your currency.</span>
         </div>
       </div>
-      <span class="insignia impuesto"><span lang-es>Comité nacional</span><span lang-en>National committee</span></span>
     </div>
     <div class="monedas"><span class="moneda"><span lang-es>Tu moneda local</span><span lang-en>Your local currency</span></span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="https://www.unicefusa.org/stories/magnitude-74-earthquake-strikes-colombia-children-need-help-now" target="_blank" rel="noopener">
@@ -483,10 +454,10 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <details>
     <summary><span lang-es>¿Puedo mandar ropa, comida o cosas?</span><span lang-en>Can I send clothes, food or goods?</span></summary>
-    <p><span lang-es>Por ahora no hay centros de acopio habilitados fuera de Colombia. Solo se reciben donaciones en dinero desde el exterior.</span>
-       <span lang-en>There are no collection points outside Colombia at this time. From abroad, only monetary donations are being accepted.</span></p>
-    <p><span lang-es>La Cruz Roja recomienda dinero antes que especie: se mueve más rápido, no paga flete y se compra lo que de verdad hace falta en cada zona.</span>
-       <span lang-en>The Red Cross recommends money over goods: it moves faster, avoids shipping costs, and buys what each area actually needs.</span></p>
+    <p><span lang-es><b>Este sitio no se ocupa de ese tema.</b> Aquí nos enfocamos únicamente en donaciones de dinero, porque son las fundaciones y las personas que están en el terreno quienes saben qué hace falta en cada zona y en qué momento.</span>
+       <span lang-en><b>This site does not cover that.</b> We focus only on monetary donations, because the foundations and the people on the ground are the ones who know what is needed in each area and when.</span></p>
+    <p><span lang-es>Tu aporte llega a esas organizaciones y ellas lo administran según las necesidades del día: agua, medicamentos, alojamiento, herramientas. El dinero además se mueve más rápido, no paga flete y no ocupa espacio en una cadena logística ya saturada.</span>
+       <span lang-en>Your contribution reaches those organizations and they allocate it against the day's real needs: water, medicine, shelter, tools. Money also moves faster, avoids shipping costs, and doesn't take up room in an already overloaded supply chain.</span></p>
   </details>
 
   <details>
@@ -497,32 +468,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
        <span lang-en><b>If you're outside Colombia you don't need any of this.</b> The buttons above work with your regular card.</span></p>
   </details>
 
-  <h2><span lang-es>¿Puedo deducir impuestos?</span><span lang-en>Can I claim a tax deduction?</span></h2>
-  <p class="h2sub">
-    <span lang-es>Esto solo cambia dónde puedes deducir, no si tu donación llega.</span>
-    <span lang-en>This only affects where you can deduct — not whether your donation arrives.</span></p>
-
-  <div class="selector">
-    <label for="pais"><span lang-es>Tu país de residencia fiscal</span><span lang-en>Your country of tax residence</span></label>
-    <select id="pais" onchange="verPais()">
-      <option value="">— <span lang-es>Selecciona</span> —</option>
-    </select>
-
-    <p class="explica">
-      <span lang-es><b>El dinero llega a Colombia en todos los casos.</b> Lo que cambia es si el certificado de donación te sirve para tu declaración de impuestos: solo vale si la organización está registrada en el país donde tributas.</span>
-      <span lang-en><b>The money reaches Colombia either way.</b> What changes is whether the donation receipt counts on your tax return: it only does if the organization is registered where you pay taxes.</span>
-    </p>
-
-    <div class="resultado-pais" id="res-pais"></div>
-
-    <div class="nota-fiscal">
-      <span lang-es><b>Confirma el beneficio fiscal con la organización o con tu contador.</b> Las reglas de deducción cambian por país, por tipo de contribuyente y por monto. Esta guía indica dónde existe la vía local, no cuánto puedes deducir.</span>
-      <span lang-en><b>Confirm the tax treatment with the organization or your accountant.</b> Rules vary by country, taxpayer type and amount. This guide shows where a local route exists, not how much you can deduct.</span>
-    </div>
-  </div>
-
   <a class="otra-pag" href="/fuentes.html">
-    <span class="t"><span lang-es>Fuentes verificadas</span><span lang-en>Verified sources</span></span>
+    <span class="t"><span lang-es>Mantente informado</span><span lang-en>Stay informed</span></span>
     <span class="d"><span lang-es>Información oficial, confirmada y verificada por instituciones colombianas.</span>
     <span lang-en>Official information, confirmed and verified by Colombian institutions.</span></span>
   </a>
@@ -562,138 +509,6 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 </div>
 
 <script>
-/* ============================================================
-   Sociedades nacionales de la Cruz Roja: 191 países.
-   Comités nacionales de UNICEF y oficinas de Plan: solo en algunos.
-   Donde no hay vía local, la tarjeta igual funciona: lo que falta
-   es el recibo deducible en el país del donante, no la capacidad de donar.
-   ============================================================ */
-const PAISES = {
-  // --- Unión Europea ---
-  ES:{n:'España', cr:'Cruz Roja Española', unicef:1, plan:1},
-  DE:{n:'Alemania', cr:'Deutsches Rotes Kreuz', unicef:1, plan:1},
-  FR:{n:'Francia', cr:'Croix-Rouge française', unicef:1, plan:1},
-  IT:{n:'Italia', cr:'Croce Rossa Italiana', unicef:1, plan:1},
-  NL:{n:'Países Bajos', cr:'Het Nederlandse Rode Kruis', unicef:1, plan:1},
-  BE:{n:'Bélgica', cr:'Croix-Rouge / Rode Kruis', unicef:1, plan:1},
-  PT:{n:'Portugal', cr:'Cruz Vermelha Portuguesa', unicef:1, plan:0},
-  IE:{n:'Irlanda', cr:'Irish Red Cross', unicef:1, plan:1},
-  AT:{n:'Austria', cr:'Österreichisches Rotes Kreuz', unicef:1, plan:0},
-  SE:{n:'Suecia', cr:'Svenska Röda Korset', unicef:1, plan:1},
-  DK:{n:'Dinamarca', cr:'Røde Kors', unicef:1, plan:1},
-  FI:{n:'Finlandia', cr:'Suomen Punainen Risti', unicef:1, plan:1},
-  PL:{n:'Polonia', cr:'Polski Czerwony Krzyż', unicef:1, plan:0},
-  CZ:{n:'Chequia', cr:'Český červený kříž', unicef:1, plan:0},
-  GR:{n:'Grecia', cr:'Ελληνικός Ερυθρός Σταυρός', unicef:1, plan:0},
-  LU:{n:'Luxemburgo', cr:'Croix-Rouge luxembourgeoise', unicef:1, plan:0},
-  HU:{n:'Hungría', cr:'Magyar Vöröskereszt', unicef:1, plan:0},
-  RO:{n:'Rumanía', cr:'Crucea Roșie Română', unicef:0, plan:0},
-  SK:{n:'Eslovaquia', cr:'Slovenský Červený kríž', unicef:1, plan:0},
-  HR:{n:'Croacia', cr:'Hrvatski Crveni križ', unicef:1, plan:0},
-  BG:{n:'Bulgaria', cr:'Български Червен кръст', unicef:1, plan:0},
-  EE:{n:'Estonia', cr:'Eesti Punane Rist', unicef:1, plan:0},
-  LT:{n:'Lituania', cr:'Lietuvos Raudonasis Kryžius', unicef:1, plan:0},
-  LV:{n:'Letonia', cr:'Latvijas Sarkanais Krusts', unicef:0, plan:0},
-  SI:{n:'Eslovenia', cr:'Rdeči križ Slovenije', unicef:1, plan:0},
-  // --- Resto de Europa ---
-  GB:{n:'Reino Unido', cr:'British Red Cross', unicef:1, plan:1, gg:1},
-  CH:{n:'Suiza', cr:'Schweizerisches Rotes Kreuz', unicef:1, plan:0},
-  NO:{n:'Noruega', cr:'Norges Røde Kors', unicef:1, plan:1},
-  IS:{n:'Islandia', cr:'Rauði krossinn', unicef:1, plan:0},
-  // --- América ---
-  US:{n:'Estados Unidos', cr:'American Red Cross', unicef:1, plan:1, gg:1},
-  CA:{n:'Canadá', cr:'Canadian Red Cross', unicef:1, plan:1},
-  MX:{n:'México', cr:'Cruz Roja Mexicana', unicef:0, plan:0},
-  AR:{n:'Argentina', cr:'Cruz Roja Argentina', unicef:0, plan:0},
-  CL:{n:'Chile', cr:'Cruz Roja Chilena', unicef:0, plan:0},
-  BR:{n:'Brasil', cr:'Cruz Vermelha Brasileira', unicef:0, plan:0},
-  PE:{n:'Perú', cr:'Cruz Roja Peruana', unicef:0, plan:0},
-  EC:{n:'Ecuador', cr:'Cruz Roja Ecuatoriana', unicef:0, plan:0},
-  PA:{n:'Panamá', cr:'Cruz Roja Panameña', unicef:0, plan:0},
-  CR:{n:'Costa Rica', cr:'Cruz Roja Costarricense', unicef:0, plan:0},
-  // --- Asia y Oceanía ---
-  AU:{n:'Australia', cr:'Australian Red Cross', unicef:1, plan:1},
-  NZ:{n:'Nueva Zelanda', cr:'New Zealand Red Cross', unicef:1, plan:0},
-  JP:{n:'Japón', cr:'Japanese Red Cross Society', unicef:1, plan:1},
-  KR:{n:'Corea del Sur', cr:'Korean Red Cross', unicef:1, plan:1},
-  AE:{n:'Emiratos Árabes Unidos', cr:'Emirates Red Crescent', unicef:0, plan:0},
-  IL:{n:'Israel', cr:'Magen David Adom', unicef:0, plan:0},
-  IN:{n:'India', cr:'Indian Red Cross Society', unicef:1, plan:1},
-  TR:{n:'Turquía', cr:'Türk Kızılay', unicef:1, plan:0},
-  ZA:{n:'Sudáfrica', cr:'South African Red Cross Society', unicef:0, plan:0}
-};
-
-(function llenar(){
-  const sel = document.getElementById('pais');
-  Object.keys(PAISES).sort((a,b)=>PAISES[a].n.localeCompare(PAISES[b].n,'es'))
-    .forEach(c=>{
-      const o=document.createElement('option'); o.value=c; o.textContent=PAISES[c].n; sel.appendChild(o);
-    });
-  const otro=document.createElement('option'); otro.value='OTRO'; otro.textContent='Otro país / Other country';
-  sel.appendChild(otro);
-})();
-
-function fila(nom, etq, clase, det){
-  return `<div class="ruta">
-    <div class="ruta-cab"><span class="ruta-nom">${nom}</span>
-    <span class="etiqueta ${clase}">${etq}</span></div>
-    <div class="ruta-det">${det}</div></div>`;
-}
-
-function verPais(){
-  const c = document.getElementById('pais').value;
-  const cont = document.getElementById('res-pais');
-  const en = document.body.classList.contains('en');
-  if(!c){ cont.className='resultado-pais'; cont.innerHTML=''; return; }
-
-  if(c==='OTRO'){
-    cont.className='resultado-pais visible';
-    cont.innerHTML = fila(
-      en?'Red Cross / Red Crescent':'Cruz Roja o Media Luna Roja',
-      en?'191 countries':'191 países','si',
-      en?'There is almost certainly a National Society in your country, and it can channel funds through the IFRC network. Search for it on <b>ifrc.org</b>.'
-        :'Casi con certeza existe una Sociedad Nacional en tu país y puede canalizar fondos por la red de la IFRC. Búscala en <b>ifrc.org</b>.')
-      + fila('GlobalGiving', en?'No deduction':'Sin deducción','no',
-      en?'Accepts international cards. A local tax receipt is only issued in the US and UK.'
-        :'Acepta tarjetas internacionales. El recibo fiscal local solo se emite en EE. UU. y Reino Unido.')
-      + fila(en?'Colombian organizations':'Entidades colombianas', en?'No deduction':'Sin deducción','no',
-      en?'Cruz Roja Colombiana, ABACO and Fundación PLAN issue Colombian receipts, which generally do not deduct abroad.'
-        :'Cruz Roja Colombiana, ABACO y Fundación PLAN emiten recibo colombiano, que en general no deduce fuera del país.');
-    return;
-  }
-
-  const p = PAISES[c];
-  let h = fila(p.cr, en?'Deductible for you':'Deduces impuestos','si',
-    (en?'Your country\'s National Red Cross Society. Donate in your currency, get a local receipt; funds move through the IFRC network to the Colombian Red Cross.'
-       :'La Sociedad Nacional de la Cruz Roja de tu país. Donas en tu moneda, recibes certificado local y los fondos se canalizan por la red de la IFRC hacia la Cruz Roja Colombiana.'));
-
-  h += p.unicef
-    ? fila('UNICEF '+p.n, en?'Deductible for you':'Deduces impuestos','si',
-        en?'There is a UNICEF National Committee here. Give through it for a local tax receipt.'
-          :'Existe Comité Nacional de UNICEF. Donando por él obtienes recibo fiscal local.')
-    : fila('UNICEF', en?'No office here':'No opera en tu país','no',
-        en?'No National Committee here. You can still give at unicef.org, without a local receipt.'
-          :'No hay Comité Nacional. Igual puedes donar en unicef.org, sin recibo local.');
-
-  if(p.plan) h += fila('Plan International '+p.n, en?'Deductible for you':'Deduces impuestos','si',
-    en?'Plan has a national organization here and is responding in Colombia.'
-      :'Plan tiene organización nacional en tu país y está respondiendo en Colombia.');
-
-  h += p.gg
-    ? fila('GlobalGiving', en?'Deductible for you':'Deduces impuestos','si',
-        en?'Registered in your country — the receipt is valid for your tax return.'
-          :'Está registrada en tu país; el recibo sirve para tu declaración.')
-    : fila('GlobalGiving', en?'No deduction':'Sin deducción','no',
-        en?'Accepts your card, but the receipt is US or UK only.'
-          :'Acepta tu tarjeta, pero el recibo es solo de EE. UU. o Reino Unido.');
-
-  h += fila(en?'Colombian organizations':'Entidades colombianas', en?'No deduction':'Sin deducción','no',
-    en?'Same speed, same destination — but the receipt is Colombian, so your tax authority will not accept it.'
-      :'Misma velocidad y mismo destino, pero el certificado es colombiano y tu autoridad tributaria no lo acepta.');
-
-  cont.className='resultado-pais visible';
-  cont.innerHTML = h;
-}
 
 const META = {
   es: {t:'Cómo ayudar desde el exterior — sismo Colombia',
@@ -713,7 +528,6 @@ function idioma(l, btn){
   document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
   guardarIdioma(l);
   armarEnlacesCompartir();
-  verPais();   // el panel de país se vuelve a pintar en el idioma nuevo
 }
 // Fecha de última verificación de los enlaces de pago. Un directorio de
 // donaciones sin fecha visible no es verificable por quien lo lee.
