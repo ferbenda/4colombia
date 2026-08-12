@@ -72,6 +72,15 @@ h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
 .nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
 @media (max-width:400px){.nav-int{padding:0 12px}.nav a.enl{padding:13px 6px;font-size:10px}}
 
+.cima{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  margin:0 0 14px}
+.cima .idioma{margin:0}
+.cima .actualiza{margin:0}
+@media (max-width:430px){
+  .cima{gap:8px}
+  .cima .actualiza{font-size:9.5px;padding:6px 9px}
+  .cima .idioma button{padding:7px 11px;min-height:34px}
+}
 .actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
   border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
   padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
@@ -98,12 +107,12 @@ h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
   box-shadow:0 0 0 1px rgba(212,217,224,.6)}
 
 
-.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+.wrap{max-width:620px;margin:0 auto;padding:18px 18px 60px}
 
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
-.logo-hero{display:block;width:min(300px,72%);height:auto;margin:6px 0 14px}
+.logo-hero{display:block;width:min(260px,66%);height:auto;margin:0 0 10px}
 @media (max-width:420px){.logo-hero{width:min(250px,80%)}}
-h1{font-size:clamp(38px,9vw,58px);font-weight:700;letter-spacing:-.04em;margin:12px 0 12px;
+h1{font-size:clamp(34px,8vw,50px);font-weight:700;letter-spacing:-.04em;margin:8px 0 10px;
   line-height:1.02;text-wrap:balance}
 h1 .subraya{background:linear-gradient(transparent 62%, rgba(252,209,22,.85) 62%);padding:0 3px}
 .cafe{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--amarillo);
@@ -113,7 +122,7 @@ h1 .subraya{background:linear-gradient(transparent 62%, rgba(252,209,22,.85) 62%
 .cafe b{color:var(--tinta)}
 .cafe .destaca{background:var(--amarillo-suave,#FFF6D6);border-bottom:2px solid var(--amarillo);
   padding:1px 5px;font-weight:700;color:var(--tinta)}
-.sub{color:var(--tinta-2);font-size:17px;line-height:1.45;margin-bottom:24px;max-width:34ch}
+.sub{color:var(--tinta-2);font-size:16px;line-height:1.45;margin-bottom:18px;max-width:36ch}
 
 .idioma{display:flex;gap:8px;margin:0 0 22px}
 .idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
@@ -127,8 +136,13 @@ a.bloque{display:block;background:var(--blanco);border:1px solid var(--linea);bo
 a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 .b-tit{font-weight:650;letter-spacing:-.02em;line-height:1.1}
 .b-sub{color:var(--tinta-2);font-size:14.5px;margin-top:7px;line-height:1.45;transition:color .16s ease}
-.b-ir{font-family:var(--mono);font-size:11px;letter-spacing:.08em;margin-top:11px;font-weight:600;
-  color:var(--tinta-2);transition:color .16s ease}
+.b-cta{display:inline-flex;align-items:center;gap:8px;margin-top:13px;
+  background:var(--amarillo);color:#3A2C00;border:1.5px solid #E0B800;border-radius:2px;
+  padding:11px 18px;font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:-.01em;
+  box-shadow:0 1px 0 rgba(19,26,34,.12)}
+.linea-1:hover .b-cta,.linea-1.activo .b-cta{background:#fff;border-color:#3A2C00}
+.b-ir{font-family:var(--sans);font-size:14.5px;letter-spacing:-.01em;margin-top:11px;font-weight:650;
+  color:var(--azul);transition:color .16s ease}
 
 .linea-1{border-left-color:var(--amarillo)}
 .linea-1 .b-tit{font-size:34px}
@@ -208,35 +222,39 @@ body.en [lang-en]{display:inline}
 <div class="fondo" aria-hidden="true"></div>
 <div class="wrap">
 
+  <div class="cima">
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+  <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
+    <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
+  </div>
+
   <img class="logo-hero" src="/img/logo.png" alt="4Colombia">
   <div class="eyebrow"><span lang-es>Sismo Colombia · 10 de agosto de 2026</span><span lang-en>Colombia Earthquake · August 10, 2026</span></div>
   <h1><span lang-es>Colombia necesita<br>tu ayuda <span class="subraya">hoy</span></span><span lang-en>Colombia needs<br>your help <span class="subraya">today</span></span></h1>
   <p class="sub"><span lang-es>Dona en dos minutos con tu tarjeta, desde cualquier país. O infórmate con contenido curado sobre lo que está pasando.</span><span lang-en>Give in two minutes by card, from any country. Or catch up with curated coverage of what is happening.</span></p>
+
+
+
+  <a class="bloque linea-1" href="/ayudar.html">
+    <div class="b-tit"><span lang-es>Donaciones</span><span lang-en>Donations</span></div>
+    <div class="b-sub"><span lang-es>Dónde donar de forma segura. Con tarjeta, desde cualquier país.</span><span lang-en>Where to give safely. By card, from any country.</span></div>
+    <div class="b-cta"><span lang-es>Dona aquí</span><span lang-en>Donate here</span> &#8594;</div>
+  </a>
+
+  <a class="bloque linea-2" href="/fuentes.html">
+    <div class="b-tit"><span lang-es>Mantente informado</span><span lang-en>Stay informed</span></div>
+    <div class="b-sub"><span lang-es>Contenido curado y verificado de lo que está pasando, más las instituciones responsables.</span><span lang-en>Curated, verified coverage of what is happening, plus the responsible institutions.</span></div>
+    <div class="b-ir"><span lang-es>Ver contenido</span><span lang-en>See coverage</span> &#8594;</div>
+  </a>
 
   <div class="cafe">
     <p><span lang-es><b>Cualquier aporte cuenta.</b> Lo que te cuesta un café o una dona alcanza para agua, una comida o una manta. <span class="destaca">Una sola vez</span> que cambies tu rutina puede ayudar a una comunidad afectada que lo necesita.</span><span lang-en><b>Any amount counts.</b> What a coffee or a doughnut costs buys water, a meal, a blanket. <span class="destaca">Changing your routine once</span> can help an affected community that needs it.</span></p>
     <p class="rol"><span lang-es><span class="destaca">Nunca tocamos el dinero.</span> Solo curamos información y verificamos que cada botón lleve a una fundación reconocida. Tú donas directo a ellas.</span><span lang-en><span class="destaca">We never touch the money.</span> We only curate information and check that every button leads to a recognized foundation. You give directly to them.</span></p>
     <p class="rol"><span lang-es><b>¿No puedes donar?</b> Comparte esta página con toda la gente que puedas. Difundirla también ayuda.</span><span lang-en><b>Can't donate?</b> Share this page with as many people as you can. Spreading it helps too.</span></p>
   </div>
-
-  <div class="actualiza"><span class="pulso" aria-hidden="true"></span>
-    <span lang-es>Página en actualización constante</span><span lang-en>Page updated continuously</span></div>
-  <div class="idioma">
-    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
-    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
-  </div>
-
-  <a class="bloque linea-1" href="/ayudar.html">
-    <div class="b-tit"><span lang-es>Donaciones</span><span lang-en>Donations</span></div>
-    <div class="b-sub"><span lang-es>Dónde donar de forma segura. Con tarjeta, desde cualquier país.</span><span lang-en>Where to give safely. By card, from any country.</span></div>
-    <div class="b-ir"><span lang-es>VER OPCIONES</span><span lang-en>SEE OPTIONS</span> &#8594;</div>
-  </a>
-
-  <a class="bloque linea-2" href="/fuentes.html">
-    <div class="b-tit"><span lang-es>Mantente informado</span><span lang-en>Stay informed</span></div>
-    <div class="b-sub"><span lang-es>Contenido curado y verificado de lo que está pasando, más las instituciones responsables.</span><span lang-en>Curated, verified coverage of what is happening, plus the responsible institutions.</span></div>
-    <div class="b-ir"><span lang-es>VER FUENTES</span><span lang-en>SEE SOURCES</span> &#8594;</div>
-  </a>
 
   <div class="linea-3" tabindex="0" role="note">
     <div class="b-tit"><span lang-es>Somos únicamente un directorio</span><span lang-en>We are only a directory</span></div>
