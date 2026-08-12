@@ -30,6 +30,15 @@
       "miniatura": "/img/thumbs/casa-familia.jpg"
     },
     {
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/p/Db3pIzux08h/",
+      "autor": "Instagram",
+      "titulo_es": "Un edificio se desploma tras el sismo",
+      "titulo_en": "A building comes down after the quake",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/edificio-colapsa.jpg"
+    },
+    {
       "plataforma": "facebook",
       "url": "https://www.facebook.com/reel/1401951855159766",
       "autor": "Facebook",
@@ -37,6 +46,15 @@
       "titulo_en": "Houses still collapsing in Buenaventura",
       "idioma": "sin_texto",
       "miniatura": "/img/thumbs/casa-buenaventura.jpg"
+    },
+    {
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/p/Db3kSxQAJUN/",
+      "autor": "Infinito",
+      "titulo_es": "Una iglesia afectada por el sismo",
+      "titulo_en": "A church damaged by the earthquake",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/iglesia.jpg"
     },
     {
       "plataforma": "web",
@@ -54,33 +72,6 @@
       "titulo_es": "El momento exacto del sismo, grabado por testigos",
       "titulo_en": "The moment the quake struck, filmed by witnesses",
       "idioma": "en",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "facebook",
-      "url": "https://www.facebook.com/share/r/1PUXM5WMff/",
-      "autor": "Facebook",
-      "titulo_es": "PENDIENTE — describe qué se ve",
-      "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "facebook",
-      "url": "https://www.facebook.com/share/r/19bpvFGuDB/",
-      "autor": "Facebook",
-      "titulo_es": "PENDIENTE — describe qué se ve",
-      "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "facebook",
-      "url": "https://www.facebook.com/share/r/17JdBpG6Y7/",
-      "autor": "Facebook",
-      "titulo_es": "PENDIENTE — describe qué se ve",
-      "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto",
       "miniatura": ""
     }
   ]
