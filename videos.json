@@ -3,6 +3,42 @@
   "actualizado": "2026-08-11",
   "videos": [
     {
+      "plataforma": "facebook",
+      "url": "https://www.facebook.com/reel/935524779599154",
+      "autor": "Latinus",
+      "titulo_es": "Un edificio colapsa en Pereira durante el sismo",
+      "titulo_en": "A building collapses in Pereira during the quake",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/colapso-pereira.jpg"
+    },
+    {
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/reel/Db6feJqNugM/",
+      "autor": "@orduzcolombia",
+      "titulo_es": "Sacan vivo a un hombre de los escombros",
+      "titulo_en": "A man pulled out alive from the rubble",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/rescate-hombre.jpg"
+    },
+    {
+      "plataforma": "facebook",
+      "url": "https://www.facebook.com/reel/2234480077399847",
+      "autor": "@castellanosfamili",
+      "titulo_es": "Una familia ve su casa partirse durante el sismo",
+      "titulo_en": "A family watches their house split apart",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/casa-familia.jpg"
+    },
+    {
+      "plataforma": "facebook",
+      "url": "https://www.facebook.com/reel/1401951855159766",
+      "autor": "Facebook",
+      "titulo_es": "Casas siguen cayendo en Buenaventura",
+      "titulo_en": "Houses still collapsing in Buenaventura",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/casa-buenaventura.jpg"
+    },
+    {
       "plataforma": "web",
       "url": "https://www.cnn.com/2026/08/11/world/live-news/colombia-earthquake-latest",
       "autor": "CNN",
@@ -18,33 +54,6 @@
       "titulo_es": "El momento exacto del sismo, grabado por testigos",
       "titulo_en": "The moment the quake struck, filmed by witnesses",
       "idioma": "en",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "instagram",
-      "url": "https://www.instagram.com/reel/Db6feJqNugM/",
-      "autor": "Instagram",
-      "titulo_es": "PENDIENTE — describe qué se ve",
-      "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "instagram",
-      "url": "https://www.instagram.com/reel/DaGKJKVhpug/",
-      "autor": "Instagram",
-      "titulo_es": "PENDIENTE — describe qué se ve",
-      "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto",
-      "miniatura": ""
-    },
-    {
-      "plataforma": "instagram",
-      "url": "https://www.instagram.com/reel/DaIWZk-tmYr/",
-      "autor": "Instagram",
-      "titulo_es": "PENDIENTE — describe qué se ve",
-      "titulo_en": "PENDING — describe what it shows",
-      "idioma": "sin_texto",
       "miniatura": ""
     },
     {
