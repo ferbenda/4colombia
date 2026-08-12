@@ -146,12 +146,10 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
   background:linear-gradient(to top,rgba(8,12,18,.86) 0%,rgba(8,12,18,.30) 52%,rgba(8,12,18,0) 100%)}
 .vid:hover{border-color:var(--amarillo)}
 .vid:focus-visible{outline:3px solid var(--amarillo);outline-offset:2px}
-.vid-play{position:absolute;top:11px;left:11px;width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.5);
-  display:flex;align-items:center;justify-content:center}
-.vid-play svg{width:13px;height:13px;fill:#fff;margin-left:2px}
-.vid-plat{position:absolute;top:14px;right:12px;font-family:var(--mono);font-size:9px;
-  letter-spacing:.1em;font-weight:700;color:rgba(255,255,255,.9)}
+.vid-plat{position:absolute;top:11px;left:11px;font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.1em;font-weight:700;color:#fff;background:rgba(8,12,18,.55);
+  border:1px solid rgba(255,255,255,.22);border-radius:2px;padding:3px 6px;
+  backdrop-filter:blur(3px)}
 .vid-tit{position:relative;font-size:14px;font-weight:650;line-height:1.25;letter-spacing:-.01em;
   color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .vid-meta{position:relative;font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.72);
@@ -477,7 +475,6 @@ function pintarVideos(datos){
   const en = document.body.classList.contains('en');
   const cont = document.getElementById('videos');
   if(!cont) return;
-  const play = '<span class="vid-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
   cont.innerHTML = (datos.videos||[]).map(normalizar).map(v=>{
     const t = en ? (v.titulo_en || v.titulo_es) : (v.titulo_es || v.titulo_en);
     const etq = ETQ_PLAT[v.plataforma] || 'LINK';
@@ -490,7 +487,7 @@ function pintarVideos(datos){
     const glifo = v.miniatura ? '' :
       '<span class="vid-glifo" aria-hidden="true">' + etq.slice(0,2) + '</span>';
     return '<a class="vid ' + (v.miniatura ? '' : 'sin-mini') + '" data-p="' + esc(v.plataforma) +
-      '" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + mini + glifo + play +
+      '" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + mini + glifo +
       '<span class="vid-plat">' + etq + '</span>' +
       '<span class="vid-tit">' + esc(t) + '</span>' +
       '<span class="vid-meta">' + esc(v.autor || '') + tag + '</span></a>';
