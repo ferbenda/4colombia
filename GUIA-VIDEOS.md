@@ -114,6 +114,16 @@ la transición que importa.
 
 ---
 
+## Cómo llegan los datos a la página
+
+`videos.json` es la fuente, pero la galería **no la lee por red**: el script copia
+los datos dentro de `fuentes.html`, entre los marcadores `DATOS-VIDEOS`. Por eso
+la galería funciona servida, en local y aunque falle la conexión.
+
+Si editas `videos.json` a mano, corre `python scripts/actualizar_videos.py`
+—o edita `links.txt` y deja que GitHub lo haga— para que el bloque incrustado
+quede al día. Nunca edites el bloque de `fuentes.html` directamente.
+
 ## Publicar
 
 ```bash

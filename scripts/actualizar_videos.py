@@ -176,6 +176,30 @@ def enriquecer(url: str, plat: str) -> dict:
     return datos
 
 
+def incrustar(videos):
+    """
+    Copia los datos dentro de fuentes.html, entre los marcadores.
+    Así la galería no depende de que el navegador pueda leer videos.json:
+    funciona servida, en local y aunque falle la red.
+    """
+    pagina = RAIZ / "fuentes.html"
+    if not pagina.exists():
+        return
+    s = pagina.read_text(encoding="utf-8")
+    ini, fin = "<!-- DATOS-VIDEOS-INICIO", "<!-- DATOS-VIDEOS-FIN -->"
+    if ini not in s or fin not in s:
+        print("  aviso: faltan los marcadores DATOS-VIDEOS en fuentes.html")
+        return
+    compacto = json.dumps({"videos": videos}, ensure_ascii=False, separators=(",", ":"))
+    nuevo = (ini + ' (lo regenera scripts/actualizar_videos.py) -->\n'
+             '  <script type="application/json" id="datos-videos">' + compacto +
+             '</script>\n  ' + fin)
+    a = s.index(ini)
+    b = s.index(fin) + len(fin)
+    pagina.write_text(s[:a] + nuevo + s[b:], encoding="utf-8")
+    print("  datos incrustados en fuentes.html")
+
+
 def main():
     if not LINKS.exists():
         sys.exit(f"Falta {LINKS.name}")
@@ -230,8 +254,10 @@ def main():
         "videos": videos,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+    incrustar(videos)
+
     con_mini = sum(1 for v in videos if v["miniatura"])
-    print(f"\n{len(videos)} videos · {con_mini} con miniatura -> videos.json")
+    print(f"\n{len(videos)} videos · {con_mini} con miniatura -> videos.json + fuentes.html")
 
 
 if __name__ == "__main__":
