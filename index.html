@@ -115,13 +115,6 @@ h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
 h1{font-size:clamp(34px,8vw,50px);font-weight:700;letter-spacing:-.04em;margin:8px 0 10px;
   line-height:1.02;text-wrap:balance}
 h1 .subraya{background:linear-gradient(transparent 62%, rgba(252,209,22,.85) 62%);padding:0 3px}
-.cafe{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--amarillo);
-  padding:15px 16px;margin:0 0 18px}
-.cafe p{font-size:14.5px;color:var(--tinta-2);line-height:1.55;margin:0}
-.cafe .rol{font-size:13.5px;margin-top:11px;padding-top:11px;border-top:1px solid var(--linea)}
-.cafe b{color:var(--tinta)}
-.cafe .destaca{background:var(--amarillo-suave,#FFF6D6);border-bottom:2px solid var(--amarillo);
-  padding:1px 5px;font-weight:700;color:var(--tinta)}
 .sub{color:var(--tinta-2);font-size:16px;line-height:1.45;margin-bottom:18px;max-width:36ch}
 
 .idioma{display:flex;gap:8px;margin:0 0 22px}
@@ -149,12 +142,6 @@ a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 .linea-2{border-left-color:var(--azul)}
 .linea-2 .b-tit{font-size:24px}
 
-.linea-3{display:block;background:var(--blanco);border:1px solid var(--linea);
-  border-left:6px solid var(--rojo);padding:17px 18px;
-  transition:background-color .16s ease,border-color .16s ease,color .16s ease}
-.linea-3 .b-tit{font-size:16.5px;color:var(--rojo);transition:color .16s ease}
-.linea-3 p{font-size:14px;color:var(--tinta-2);line-height:1.55;margin-top:7px;transition:color .16s ease}
-.linea-3 b{color:var(--tinta);transition:color .16s ease}
 
 /* --- bloque completo en lavado de color de bandera --- */
 .linea-1.activo{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
@@ -163,26 +150,17 @@ a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 .linea-2.activo{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
 .linea-2.activo .b-sub,.linea-2.activo .b-ir{color:#143466}
 
-.linea-3.activo{background:rgba(206,17,38,.38);border-color:var(--rojo)}
-.linea-3.activo .b-tit,.linea-3.activo b{color:#4A0810}
-.linea-3.activo p{color:#74141E}
 
 @media (hover:hover){
   .linea-1:hover{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
   .linea-1:hover .b-sub,.linea-1:hover .b-ir{color:#5C4600}
   .linea-2:hover{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
   .linea-2:hover .b-sub,.linea-2:hover .b-ir{color:#143466}
-  .linea-3:hover{background:rgba(206,17,38,.38);border-color:var(--rojo)}
-  .linea-3:hover .b-tit,.linea-3:hover b{color:#4A0810}
-  .linea-3:hover p{color:#74141E}
-}
+      }
 .linea-1:active{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
 .linea-1:active .b-sub,.linea-1:active .b-ir{color:#5C4600}
 .linea-2:active{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
 .linea-2:active .b-sub,.linea-2:active .b-ir{color:#143466}
-.linea-3:active{background:rgba(206,17,38,.38);border-color:var(--rojo)}
-.linea-3:active .b-tit,.linea-3:active b{color:#4A0810}
-.linea-3:active p{color:#74141E}
 .compartir{margin:26px 0 4px;background:var(--blanco);border:1px solid var(--linea);
   border-left:5px solid var(--azul);padding:16px 17px}
 .compartir h3{font-size:15.5px;font-weight:650;letter-spacing:-.01em;margin:0 0 3px}
@@ -198,6 +176,23 @@ a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 .cbtn.principal:hover{background:var(--azul)}
 .cbtn svg{width:16px;height:16px;flex:none;fill:currentColor}
 .cbtn.hecho{border-color:var(--azul);color:var(--azul)}
+.cierre{display:block;background:var(--blanco);border:1px solid var(--linea);
+  border-left:6px solid var(--rojo);padding:18px;margin-top:4px;
+  transition:background-color .16s ease,border-color .16s ease,color .16s ease}
+.cierre .c-tit{font-size:17px;font-weight:700;letter-spacing:-.015em;color:var(--rojo);
+  transition:color .16s ease}
+.cierre p{font-size:14px;color:var(--tinta-2);line-height:1.55;margin-top:8px;transition:color .16s ease}
+.cierre b{color:var(--tinta);transition:color .16s ease}
+.cierre .destaca{background:var(--amarillo-suave);border-bottom:2px solid var(--amarillo);
+  padding:1px 5px;font-weight:700;color:var(--tinta)}
+.cierre.activo,.cierre:active{background:rgba(206,17,38,.38);border-color:var(--rojo)}
+.cierre.activo .c-tit,.cierre.activo b,.cierre:active .c-tit,.cierre:active b{color:#4A0810}
+.cierre.activo p,.cierre:active p{color:#74141E}
+@media (hover:hover){
+  .cierre:hover{background:rgba(206,17,38,.38);border-color:var(--rojo)}
+  .cierre:hover .c-tit,.cierre:hover b{color:#4A0810}
+  .cierre:hover p{color:#74141E}
+}
 .pie{font-size:12.5px;color:var(--tinta-2);margin-top:30px;border-top:1px solid var(--linea);
 padding-top:15px;line-height:1.7}
 [lang-en]{display:none}
@@ -250,17 +245,6 @@ body.en [lang-en]{display:inline}
     <div class="b-ir"><span lang-es>Ver contenido</span><span lang-en>See coverage</span> &#8594;</div>
   </a>
 
-  <div class="cafe">
-    <p><span lang-es><b>Cualquier aporte cuenta.</b> Lo que te cuesta un café o una dona alcanza para agua, una comida o una manta. <span class="destaca">Una sola vez</span> que cambies tu rutina puede ayudar a una comunidad afectada que lo necesita.</span><span lang-en><b>Any amount counts.</b> What a coffee or a doughnut costs buys water, a meal, a blanket. <span class="destaca">Changing your routine once</span> can help an affected community that needs it.</span></p>
-    <p class="rol"><span lang-es><span class="destaca">Nunca tocamos el dinero.</span> Solo curamos información y verificamos que cada botón lleve a una fundación reconocida. Tú donas directo a ellas.</span><span lang-en><span class="destaca">We never touch the money.</span> We only curate information and check that every button leads to a recognized foundation. You give directly to them.</span></p>
-    <p class="rol"><span lang-es><b>¿No puedes donar?</b> Comparte esta página con toda la gente que puedas. Difundirla también ayuda.</span><span lang-en><b>Can't donate?</b> Share this page with as many people as you can. Spreading it helps too.</span></p>
-  </div>
-
-  <div class="linea-3" tabindex="0" role="note">
-    <div class="b-tit"><span lang-es>Somos únicamente un directorio</span><span lang-en>We are only a directory</span></div>
-    <p><span lang-es><b>No pedimos ni recibimos dinero.</b> Si alguien te contacta en nuestro nombre pidiendo una donación, no respondas: no somos nosotros. Aquí solo revisamos dónde donar de forma segura y cómo informarse de forma segura.</span><span lang-en><b>We never ask for or receive money.</b> If anyone contacts you in our name asking for a donation, do not respond — it isn't us. All we do is check where to give safely and how to stay safely informed.</span></p>
-  </div>
-
   <div class="compartir">
     <h3><span lang-es>Comparte esta página</span><span lang-en>Share this page</span></h3>
     <p><span lang-es>Alguien que puede ayudar todavía no sabe cómo.</span><span lang-en>Someone who can help doesn't know how yet.</span></p>
@@ -288,6 +272,12 @@ body.en [lang-en]{display:inline}
     </div>
   </div>
 
+  <div class="cierre" tabindex="0" role="note">
+    <div class="c-tit"><span lang-es>Cualquier aporte cuenta</span><span lang-en>Any amount counts</span></div>
+    <p><span lang-es>Lo que te cuesta un café o una dona alcanza para agua, una comida o una manta. <span class="destaca">Una sola vez</span> que cambies tu rutina puede ayudar a una comunidad afectada. Y si no puedes donar, comparte esta página con toda la gente que puedas.</span><span lang-en>What a coffee or a doughnut costs buys water, a meal, a blanket. <span class="destaca">Changing your routine once</span> can help an affected community. And if you can't give, share this page with as many people as you can.</span></p>
+    <p><b><span lang-es>Somos únicamente un directorio.</span><span lang-en>We are only a directory.</span></b> <span lang-es>Nunca tocamos el dinero: solo curamos información y verificamos que cada botón lleve a una fundación reconocida. Si alguien te contacta en nuestro nombre pidiendo una donación, no respondas: no somos nosotros.</span><span lang-en>We never touch the money: we only curate information and check that every button leads to a recognized foundation. If anyone contacts you in our name asking for a donation, don't respond — it isn't us.</span></p>
+  </div>
+
   <p class="pie">
     <span lang-es>Independiente y sin ánimo de lucro. Se añaden entidades a medida que se verifican; cada página muestra su fecha de revisión.</span>
     <span lang-en>Independent and non-profit. Organizations are added as they're verified; each page shows its review date.</span>
@@ -305,7 +295,7 @@ const META = {
 /* :active no siempre dispara en bloques no interactivos de iOS:
    se refuerza con eventos táctiles. */
 (function tacto(){
-  document.querySelectorAll('.linea-1,.linea-2,.linea-3').forEach(el=>{
+  document.querySelectorAll('.linea-1,.linea-2,.cierre').forEach(el=>{
     const on = ()=>el.classList.add('activo');
     const off = ()=>el.classList.remove('activo');
     el.addEventListener('touchstart', on, {passive:true});

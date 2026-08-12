@@ -1,12 +1,12 @@
 LOGOS DE LAS ORGANIZACIONES
 ===========================
 
-Los siete están puestos y optimizados: recortados sin márgenes,
+Los ocho están puestos y optimizados: recortados sin márgenes,
 normalizados a 184x104 px (2x del slot de 92x52) y en PNG con
 transparencia.
 
   globalgiving.png   allhands.png   cruzroja.png   abaco.png
-  plan.png           unicef.png     alto.png
+  plan.png           unicef.png     alto.png      luca.png
 
 NOTAS
 -----
