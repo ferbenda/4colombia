@@ -82,6 +82,15 @@
       "autor": "@juan_el_maximo",
       "idioma": "sin_texto",
       "miniatura": "/img/thumbs/militares.jpg"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Db5jatqx8yN/",
+      "plataforma": "instagram",
+      "titulo_es": "Los perros de búsqueda de la Cruz Roja rastrean entre los escombros",
+      "titulo_en": "Red Cross search dogs work the rubble",
+      "autor": "@petremixes",
+      "idioma": "sin_texto",
+      "miniatura": "/img/thumbs/perros-busqueda.jpg"
     }
   ]
 }
