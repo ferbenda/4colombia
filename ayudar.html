@@ -150,6 +150,10 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
 /* Logo e insignia comparten la primera fila; el texto ocupa una fila
    completa debajo. Antes los tres competían por el ancho y en móvil el
    nombre se partía palabra por palabra. */
+.org.caso{border-left:5px solid var(--verde,#0A7B34)}
+.etq-caso{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:700;padding:4px 7px;border-radius:2px;background:var(--tinta);color:#fff;
+  white-space:nowrap;margin-left:auto}
 .org-cab{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
 .marca-org{width:92px;height:52px;flex:none;border-radius:3px;border:1px solid var(--linea);
   background:var(--blanco);display:flex;align-items:center;justify-content:center;
@@ -358,6 +362,22 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">USD</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="https://www.zeffy.com/en-US/donation-form/latinos-united-for-colombia" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+  </div>
+
+  <div class="org caso">
+    <div class="org-cab">
+      <div class="marca-org" aria-hidden="true"><img src="/img/logos/madeinchoco.png" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='MC'"></div>
+      <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
+      <div class="org-txt">
+        <div class="org-nom">Made in Chocó</div>
+        <div class="org-que">
+          <span lang-es>Su casa cultural en Quibdó quedó destruida por el sismo. El Chocó es la región que menos ayuda ha recibido.</span><span lang-en>Their cultural home in Quibdó was destroyed by the earthquake. Chocó is the region that has received the least help.</span>
+        </div>
+      </div>
+    </div>
+    <div class="monedas"><span class="moneda">USD</span><span class="moneda">PayPal</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
+    <a class="donar" href="/made-in-choco.html">
+      <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
   </div>
 
   <div class="org destacada">

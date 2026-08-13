@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/img/icono.png">
+<link rel="apple-touch-icon" href="/img/icono.png">
+<meta name="theme-color" content="#003893">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Made in Chocó — 4Colombia</title>
+<meta name="description" content="The home of Casa Cultural Made in Chocó, in Quibdó, was destroyed by the earthquake. How to help.">
+<meta property="og:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:title" content="Made in Chocó — 4Colombia">
+<style>
+:root{
+--amarillo:#FCD116; --azul:#003893; --rojo:#CE1126; --amarillo-suave:#FFF6D6;
+--papel:#F4F5F7;--tinta:#101828;--tinta-2:#56606E;--linea:#D4D9E0;--blanco:#fff;
+--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
+-webkit-font-smoothing:antialiased;
+padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+
+/* --- QA móvil: sin desbordes ni textos encimados --- */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg{max-width:100%}
+h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
+.wrap{width:100%}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:31}
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.94);
+  backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--linea)}
+.nav-int{max-width:620px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:2px;min-width:0}
+.btn-share{display:inline-flex;align-items:center;gap:5px;margin-left:5px;flex:none;
+  font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:-.01em;
+  color:#3A2C00;background:var(--amarillo);border:1.5px solid #E0B800;border-radius:2px;
+  padding:8px 13px;cursor:pointer;min-height:38px;white-space:nowrap;
+  box-shadow:0 1px 0 rgba(19,26,34,.12)}
+.btn-share:hover{background:#FFD920;border-color:#C9A500}
+.btn-share:active{transform:translateY(1px)}
+.btn-share:focus-visible{outline:2px solid var(--tinta);outline-offset:2px}
+.btn-share svg{width:15px;height:15px;fill:currentColor;flex:none}
+.btn-share .pulso-share{position:absolute;inset:-4px;border:2px solid var(--amarillo);
+  border-radius:3px;opacity:0;animation:latido 3.2s ease-out infinite;pointer-events:none}
+.btn-share{position:relative}
+@keyframes latido{0%{opacity:.85;transform:scale(1)}60%{opacity:0;transform:scale(1.18)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.btn-share .pulso-share{animation:none;display:none}}
+.btn-share.hecho{background:var(--senal,#003893);border-color:var(--azul);color:#fff}
+@media (max-width:420px){
+  .btn-share{padding:8px 9px;font-size:12px;gap:4px}
+  .btn-share svg{width:13px;height:13px}
+  .nav a.enl{padding:13px 5px;font-size:9.5px;letter-spacing:.03em}
+  .marca img{height:20px}
+}
+@media (max-width:340px){
+  .nav a.enl{font-size:9px;padding:13px 4px}
+  .marca img{height:18px}
+}
+.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none;flex:0 1 auto;min-width:0}
+.marca img{height:26px;width:auto;display:block}
+@media (max-width:400px){.marca img{height:22px}}
+.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 7px;white-space:nowrap;
+  border-bottom:2px solid transparent;flex:none}
+.nav a.enl:hover{color:var(--tinta)}
+.nav a.enl[aria-current="page"]{color:var(--tinta);border-bottom-color:var(--amarillo)}
+.nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
+@media (max-width:400px){.nav-int{padding:0 12px}.nav a.enl{padding:13px 6px;font-size:10px}}
+
+.actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
+  border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
+  padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-2);text-transform:uppercase;font-weight:600}
+.pulso{width:7px;height:7px;border-radius:50%;background:var(--rojo);flex:none;
+  animation:lat 2.4s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+
+.tricolor i{display:block}
+.tricolor i:nth-child(1){background:var(--amarillo);flex:2}
+.tricolor i:nth-child(2){background:var(--azul);flex:1}
+.tricolor i:nth-child(3){background:var(--rojo);flex:1}
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("img/colombia-horizontal.webp");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  opacity:.72}
+@media (orientation:portrait){
+  .fondo{background-image:url("img/colombia-vertical.webp")}
+}
+/* La columna de contenido es papel translúcido: la ilustración se ve a través
+   y a los lados, pero el texto conserva contraste en la zona más densa. */
+.wrap{position:relative;z-index:1;background:rgba(244,245,247,.94);
+  box-shadow:0 0 0 1px rgba(212,217,224,.6)}
+
+
+.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+.sub{color:var(--tinta-2);font-size:16px;margin-bottom:26px}
+
+.idioma{display:flex;gap:8px;margin:0 0 22px}
+.idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+font-weight:600;padding:8px 13px;border:1px solid var(--linea);background:var(--blanco);
+color:var(--tinta-2);border-radius:2px;cursor:pointer;min-height:38px}
+.idioma button[aria-pressed="true"]{border-color:var(--tinta);color:var(--tinta)}
+
+.compartir{margin:26px 0 4px;background:var(--blanco);border:1px solid var(--linea);
+  border-left:5px solid var(--azul);padding:16px 17px}
+.compartir h3{font-size:15.5px;font-weight:650;letter-spacing:-.01em;margin:0 0 3px}
+.compartir p{font-size:13.5px;color:var(--tinta-2);margin:0 0 12px;line-height:1.45}
+.comp-btns{display:flex;flex-wrap:wrap;gap:8px}
+.cbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:var(--sans);font-size:14px;flex:1 1 auto;min-width:0;
+  font-weight:600;padding:11px 14px;border-radius:2px;border:1.5px solid var(--linea);
+  background:var(--blanco);color:var(--tinta);text-decoration:none;cursor:pointer;min-height:44px}
+.cbtn:hover{border-color:var(--tinta)}
+.cbtn:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.cbtn.principal{background:rgba(0,56,147,.9);border-color:var(--azul);color:#fff;flex:1 1 100%;
+  justify-content:center;font-size:15px}
+.cbtn.principal:hover{background:var(--azul)}
+.cbtn svg{width:16px;height:16px;flex:none;fill:currentColor}
+.cbtn.hecho{border-color:var(--azul);color:var(--azul)}
+.pie{font-size:12.5px;color:var(--tinta-2);margin-top:30px;border-top:1px solid var(--linea);
+padding-top:15px;line-height:1.7}
+[lang-en]{display:none}
+body.en [lang-es]{display:none}
+body.en [lang-en]{display:inline}
+
+h1{font-size:26px;font-weight:650;letter-spacing:-.025em;margin:10px 0 8px}
+
+/* ---- página de caso ---- */
+.caso-vuelta{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--tinta-2);
+  text-decoration:none;margin-bottom:14px}
+.caso-vuelta:hover{color:var(--azul)}
+.caso-logo{display:block;width:min(280px,74%);height:auto;margin:2px 0 16px}
+.caso-lugar{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-2);margin-bottom:8px}
+h1{font-size:clamp(28px,7vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:0 0 12px}
+.caso-lede{font-size:17px;color:var(--tinta-2);line-height:1.5;margin-bottom:22px;max-width:38ch}
+.caso h2{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-2);font-weight:600;border-bottom:2px solid var(--amarillo);
+  display:inline-block;padding-bottom:4px;margin:30px 0 12px}
+.caso p{font-size:15px;color:var(--tinta-2);line-height:1.6;margin-bottom:12px}
+.caso p b{color:var(--tinta)}
+.lema{background:var(--blanco);border-left:5px solid var(--azul);padding:14px 16px;margin:16px 0;
+  font-size:16px;font-weight:650;color:var(--tinta);letter-spacing:-.01em;line-height:1.4}
+.lema span{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--tinta-2);margin-top:7px}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:14px 0 4px}
+.galeria figure{margin:0;background:var(--blanco);border:1px solid var(--linea)}
+.galeria img{width:100%;height:auto;display:block}
+.galeria figcaption{font-size:11.5px;color:var(--tinta-2);padding:7px 9px;line-height:1.35}
+.galeria .ancha{grid-column:1/-1}
+.donar-caso{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:var(--blanco);border:1px solid var(--azul);border-left:6px solid var(--azul);
+  padding:17px 18px;margin:22px 0 6px;text-decoration:none;color:var(--tinta)}
+.donar-caso:hover{background:rgba(0,56,147,.06)}
+.donar-caso:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.donar-caso .t{font-size:18px;font-weight:700;letter-spacing:-.015em;display:block}
+.donar-caso .d{font-size:13.5px;color:var(--tinta-2);margin-top:3px;display:block}
+.donar-caso .f{font-size:20px;flex:none;color:var(--azul)}
+.caso-nota{font-family:var(--mono);font-size:11px;color:var(--tinta-2);line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="tricolor"><i></i><i></i><i></i></div>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-int">
+    <a class="marca" href="/index.html"><img src="/img/logo.png" alt="4Colombia"></a>
+    <a class="enl" href="/ayudar.html" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
+    <a class="enl" href="/fuentes.html"><span lang-es>Informarse</span><span lang-en>Get informed</span></a>
+    <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">
+      <span class="pulso-share" aria-hidden="true"></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+      <span class="txt"><span lang-es>Compartir</span><span lang-en>Share</span></span>
+    </button>
+  </div>
+</nav><div class="fondo" aria-hidden="true"></div>
+<div class="wrap caso">
+
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+
+  <a class="caso-vuelta" href="/ayudar.html">&#8592; <span lang-es>Volver a donaciones</span><span lang-en>Back to donations</span></a>
+
+  <img class="caso-logo" src="/img/casos/madeinchoco-logo.png" alt="Made in Chocó">
+
+  <div class="caso-lugar"><span lang-es>Quibdó · Chocó</span><span lang-en>Quibdó · Chocó</span></div>
+  <h1><span lang-es>Perdieron su casa cultural</span><span lang-en>They lost their cultural home</span></h1>
+  <p class="caso-lede"><span lang-es>El sismo destruyó la sede de la Corporación Casa Cultural Made in Chocó y las manzanas a su alrededor.</span><span lang-en>The earthquake destroyed the home of Corporación Casa Cultural Made in Chocó and the blocks around it.</span></p>
+
+  <a class="donar-caso" href="https://www.paypal.me/madeinchoco" target="_blank" rel="noopener">
+    <span><span class="t"><span lang-es>Donar por PayPal</span><span lang-en>Donate with PayPal</span></span>
+    <span class="d"><span lang-es>Va directo a Made in Chocó. Tarjeta o saldo de PayPal.</span><span lang-en>Goes straight to Made in Chocó. Card or PayPal balance.</span></span></span>
+    <span class="f" aria-hidden="true">&#8594;</span>
+  </a>
+  <p class="caso-nota"><span lang-es>4Colombia no recibe ni administra este dinero.</span><span lang-en>4Colombia neither receives nor handles this money.</span></p>
+
+  <h2><span lang-es>Lo que pasó</span><span lang-en>What happened</span></h2>
+  <p><span lang-es>Quibdó fue de los lugares más golpeados por el sismo del 10 de agosto. La sede de Made in Chocó quedó destruida, junto con buena parte de su barrio: viviendas partidas por la mitad, manzanas enteras convertidas en escombros y equipos de rescate trabajando durante días entre las ruinas.</span><span lang-en>Quibdó was among the hardest hit by the 10 August earthquake. The Made in Chocó building was destroyed, along with much of its neighbourhood: homes split in half, entire blocks turned to rubble, and rescue crews working for days among the ruins.</span></p>
+  <p><span lang-es><b>El Chocó es la región del país que menos ayuda ha recibido.</b> Es un departamento mayoritariamente afrocolombiano, históricamente al margen de la inversión estatal, y hoy también al margen de la cobertura: casi toda la atención se ha ido a las ciudades grandes.</span><span lang-en><b>Chocó is the region that has received the least help.</b> It is a majority Afro-Colombian department, historically left out of state investment, and today also left out of the coverage: almost all the attention has gone to the larger cities.</span></p>
+
+  <div class="galeria">
+      <figure class="ancha"><img src="/img/casos/mc-casa.jpg" alt="" loading="lazy"><figcaption><span lang-es>Viviendas partidas en el barrio de la sede, en Quibdó</span><span lang-en>Homes split open in the neighbourhood around their building, in Quibdó</span></figcaption></figure>
+      <figure class="ancha"><img src="/img/casos/mc-escombros.jpg" alt="" loading="lazy"><figcaption><span lang-es>Una manzana entera derrumbada en Quibdó</span><span lang-en>An entire block brought down in Quibdó</span></figcaption></figure>
+      <figure class=""><img src="/img/casos/mc-maquinaria.jpg" alt="" loading="lazy"><figcaption><span lang-es>Maquinaria removiendo los escombros</span><span lang-en>Machinery clearing the rubble</span></figcaption></figure>
+      <figure class=""><img src="/img/casos/mc-rescate.jpg" alt="" loading="lazy"><figcaption><span lang-es>Equipos de rescate trabajando en la zona</span><span lang-en>Rescue crews working in the area</span></figcaption></figure>
+  </div>
+
+  <h2><span lang-es>Quiénes son</span><span lang-en>Who they are</span></h2>
+  <p><span lang-es>Made in Chocó nació como colectivo en 2015 en Quibdó y se formalizó como corporación en 2019. Trabaja con fotografía, audiovisual, música, danza, muralismo y formación de jóvenes para que las comunidades del Chocó cuenten sus propias historias.</span><span lang-en>Made in Chocó started as a collective in 2015 in Quibdó and became a formal corporation in 2019. It works with photography, film, music, dance, muralism and youth training so that Chocó's communities can tell their own stories.</span></p>
+  <p><span lang-es>Su trabajo es mostrar un Chocó que no se reduzca a la violencia, la pobreza y el abandono. Está dirigida por Leison Hachito.</span><span lang-en>Their work is to show a Chocó that is not reduced to violence, poverty and neglect. It is led by Leison Hachito.</span></p>
+
+  <div class="lema"><span lang-es>«Comunicar para resistir, resistir para existir.»</span><span lang-en>\u201cCommunicate to resist, resist to exist.\u201d</span>
+    <span><span lang-es>Lema de Made in Chocó</span><span lang-en>Made in Chocó's motto</span></span></div>
+
+  <a class="donar-caso" href="https://www.paypal.me/madeinchoco" target="_blank" rel="noopener">
+    <span><span class="t"><span lang-es>Donar por PayPal</span><span lang-en>Donate with PayPal</span></span>
+    <span class="d"><span lang-es>Cualquier aporte cuenta.</span><span lang-en>Any amount counts.</span></span></span>
+    <span class="f" aria-hidden="true">&#8594;</span>
+  </a>
+
+  <div class="compartir">
+    <h3><span lang-es>Comparte esta página</span><span lang-en>Share this page</span></h3>
+    <p><span lang-es>Alguien que puede ayudar todavía no sabe cómo.</span><span lang-en>Someone who can help doesn't know how yet.</span></p>
+    <div class="comp-btns">
+      <button class="cbtn principal" id="btn-compartir" onclick="compartir(this)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        <span><span lang-es>Compartir</span><span lang-en>Share</span></span>
+      </button>
+      <a class="cbtn" id="cb-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 01-1.44-5.01c0-5.18 4.22-9.4 9.41-9.4 2.51 0 4.87.98 6.65 2.76a9.34 9.34 0 012.75 6.65c0 5.19-4.22 9.41-9.4 9.41zM20.52 3.48A11.78 11.78 0 0012.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.85 11.85 0 005.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.48-8.39z"/></svg>
+        WhatsApp
+      </a>
+      <a class="cbtn" id="cb-x" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.59l5.24 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z"/></svg>
+        X
+      </a>
+      <a class="cbtn" id="cb-fb" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        Facebook
+      </a>
+      <a class="cbtn" id="cb-ig" href="/img/historia-es.jpg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.36 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.73 1.47 1.39 2.13.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.8-.3 1.47-.72 2.13-1.38.66-.66 1.08-1.33 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.8-.72-1.47-1.38-2.13-.66-.66-1.33-1.08-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        <span class="txt"><span lang-es>Historia</span><span lang-en>For Stories</span></span>
+      </a>
+      <button class="cbtn" id="cb-copiar" onclick="copiarEnlace(this)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zm3 4H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>
+        <span class="txt"><span lang-es>Copiar enlace</span><span lang-en>Copy link</span></span>
+      </button>
+    </div>
+  </div>
+
+  <p class="pie">
+    <span lang-es>4Colombia es un directorio: no recibe ni administra dinero. El botón abre la página de PayPal de Made in Chocó.</span><span lang-en>4Colombia is a directory: it neither receives nor handles money. The button opens Made in Chocó's own PayPal page.</span><br>
+    <span id="verif"></span>
+  </p>
+</div>
+
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<script>
+const META = {
+  es: {t:'Made in Chocó — 4Colombia',
+       d:'La sede de Made in Chocó, en Quibdó, quedó destruida por el sismo. Cómo ayudar.'},
+  en: {t:'Made in Chocó — 4Colombia',
+       d:'The home of Made in Chocó, in Quibdó, was destroyed by the earthquake. How to help.'}
+};
+
+function idioma(l, btn){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
+  guardarIdioma(l);
+  armarEnlacesCompartir();
+  const m = META[l];
+  document.title = m.t;
+  document.querySelector('meta[name="description"]').setAttribute('content', m.d);
+  document.querySelector('meta[property="og:title"]').setAttribute('content', m.t);
+}
+
+
+/* ---------- compartir ---------- */
+function textoCompartir(){
+  const en = document.body.classList.contains('en');
+  return en
+    ? 'Colombia needs help after the 7.4 earthquake. Verified donation channels and official sources, in one place:'
+    : 'Colombia necesita ayuda tras el sismo de 7,4. Canales de donación verificados y fuentes oficiales, en un solo lugar:';
+}
+
+function armarEnlacesCompartir(){
+  const url = location.origin + location.pathname;
+  const t = textoCompartir();
+  const wa = document.getElementById('cb-wa');
+  const x  = document.getElementById('cb-x');
+  const fb = document.getElementById('cb-fb');
+  if(wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(t + ' ' + url);
+  if(x)  x.href  = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(t) + '&url=' + encodeURIComponent(url);
+  if(fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+  const ig = document.getElementById('cb-ig');
+  if(ig) ig.href = '/img/historia-' + (document.body.classList.contains('en') ? 'en' : 'es') + '.jpg';
+}
+
+async function compartir(btn){
+  const url = location.origin + location.pathname;
+  const datos = {title: document.title, text: textoCompartir(), url: url};
+  /* Web Share abre el menú nativo del sistema: WhatsApp, Mensajes, Telegram,
+     AirDrop, lo que la persona tenga. Es la ruta con menos fricción en móvil. */
+  if(navigator.share){
+    try{ await navigator.share(datos); return; }catch(e){ if(e && e.name === 'AbortError') return; }
+  }
+  /* Sin menú nativo (escritorio): se copia y se confirma en el mismo botón. */
+  copiarEnlace(btn && btn.querySelector('.txt') ? btn : document.getElementById('cb-copiar'));
+}
+
+async function copiarEnlace(btn){
+  const url = location.origin + location.pathname;
+  let ok = false;
+  try{ await navigator.clipboard.writeText(url); ok = true; }
+  catch(e){
+    const t = document.createElement('textarea');
+    t.value = url; t.setAttribute('readonly','');
+    t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select();
+    try{ ok = document.execCommand('copy'); }catch(_){}
+    document.body.removeChild(t);
+  }
+  const nav = document.getElementById('btn-share-nav');
+  if(ok && nav){ const p = nav.querySelector('.pulso-share'); if(p) p.remove(); }
+  if(btn && ok){
+    const s = btn.querySelector('.txt');
+    const original = s ? s.textContent : '';
+    if(s) s.textContent = document.body.classList.contains('en') ? 'Copied' : 'Copiado';
+    btn.classList.add('hecho');
+    setTimeout(()=>{ if(s) s.textContent = original; btn.classList.remove('hecho'); }, 1800);
+  }
+}
+
+function guardarIdioma(l){
+  try{ localStorage.setItem('idioma', l); }catch(e){}
+  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
+  document.querySelectorAll('a[href^="/"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), location.origin);
+    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+
+(function inicial(){
+  let l = new URLSearchParams(location.search).get('lang');
+  if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
+  if(l !== 'es') l = 'en';
+  const botones = document.querySelectorAll('.idioma button');
+  idioma(l, botones[l==='es' ? 1 : 0]);
+})();
+</script>
+</body>
+</html>
