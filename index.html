@@ -133,7 +133,6 @@ a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
   background:var(--amarillo);color:#3A2C00;border:1.5px solid #E0B800;border-radius:2px;
   padding:11px 18px;font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:-.01em;
   box-shadow:0 1px 0 rgba(19,26,34,.12)}
-.linea-1:hover .b-cta,.linea-1.activo .b-cta{background:#fff;border-color:#3A2C00}
 .b-ir{font-family:var(--sans);font-size:14.5px;letter-spacing:-.01em;margin-top:11px;font-weight:650;
   color:var(--azul);transition:color .16s ease}
 
@@ -144,23 +143,9 @@ a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 
 
 /* --- bloque completo en lavado de color de bandera --- */
-.linea-1.activo{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
-.linea-1.activo .b-sub,.linea-1.activo .b-ir{color:#5C4600}
-
-.linea-2.activo{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
-.linea-2.activo .b-sub,.linea-2.activo .b-ir{color:#143466}
 
 
-@media (hover:hover){
-  .linea-1:hover{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
-  .linea-1:hover .b-sub,.linea-1:hover .b-ir{color:#5C4600}
-  .linea-2:hover{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
-  .linea-2:hover .b-sub,.linea-2:hover .b-ir{color:#143466}
-      }
-.linea-1:active{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
-.linea-1:active .b-sub,.linea-1:active .b-ir{color:#5C4600}
-.linea-2:active{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
-.linea-2:active .b-sub,.linea-2:active .b-ir{color:#143466}
+
 .compartir{margin:26px 0 4px;background:var(--blanco);border:1px solid var(--linea);
   border-left:5px solid var(--azul);padding:16px 17px}
 .compartir h3{font-size:15.5px;font-weight:650;letter-spacing:-.01em;margin:0 0 3px}
@@ -185,14 +170,6 @@ a.bloque:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
 .cierre b{color:var(--tinta);transition:color .16s ease}
 .cierre .destaca{background:var(--amarillo-suave);border-bottom:2px solid var(--amarillo);
   padding:1px 5px;font-weight:700;color:var(--tinta)}
-.cierre.activo,.cierre:active{background:rgba(206,17,38,.38);border-color:var(--rojo)}
-.cierre.activo .c-tit,.cierre.activo b,.cierre:active .c-tit,.cierre:active b{color:#4A0810}
-.cierre.activo p,.cierre:active p{color:#74141E}
-@media (hover:hover){
-  .cierre:hover{background:rgba(206,17,38,.38);border-color:var(--rojo)}
-  .cierre:hover .c-tit,.cierre:hover b{color:#4A0810}
-  .cierre:hover p{color:#74141E}
-}
 /* Los tres bloques forman una bandera: amarillo, azul y rojo pegados,
    para que se lean como una sola pieza. */
 .bandera{margin:0 0 4px}
@@ -219,6 +196,40 @@ padding-top:15px;line-height:1.7}
 [lang-en]{display:none}
 body.en [lang-es]{display:none}
 body.en [lang-en]{display:inline}
+
+/* ---- los tres bloques: color de base, pleno al tocarlos ----
+   Antes nacían blancos y solo se pintaban al pasar el cursor, que en móvil
+   no ocurre nunca. Ahora la bandera se ve desde el primer momento. */
+.bandera{margin:0 0 22px}
+.bandera .bloque,.bandera .cierre{margin:0 0 10px}
+.bandera .bloque{border-bottom:1px solid var(--linea)}
+.bandera > :last-child{margin-bottom:0}
+
+/* amarillo */
+.linea-1{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
+.linea-1 .b-sub,.linea-1 .b-ir{color:#5C4600}
+.linea-1:active,.linea-1.activo{background:var(--amarillo);color:#2B2000}
+.linea-1:active .b-sub,.linea-1.activo .b-sub,
+.linea-1:active .b-ir,.linea-1.activo .b-ir{color:#4A3800}
+.linea-1:active .b-cta,.linea-1.activo .b-cta{background:#fff;border-color:#2B2000;color:#2B2000}
+
+/* azul */
+.linea-2{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
+.linea-2 .b-sub,.linea-2 .b-ir{color:#143466}
+.linea-2:active,.linea-2.activo{background:var(--azul);color:#fff}
+.linea-2:active .b-sub,.linea-2.activo .b-sub{color:rgba(255,255,255,.88)}
+.linea-2:active .b-ir,.linea-2.activo .b-ir{color:#FCD116}
+
+/* rojo */
+.cierre{background:rgba(206,17,38,.38);border-color:var(--rojo)}
+.cierre .c-tit{color:#5E0C13}
+.cierre p{color:#74141E}
+.cierre b{color:#4A0810}
+.cierre:active,.cierre.activo{background:var(--rojo)}
+.cierre:active .c-tit,.cierre.activo .c-tit,
+.cierre:active b,.cierre.activo b{color:#fff}
+.cierre:active p,.cierre.activo p{color:rgba(255,255,255,.92)}
+.cierre:active .destaca,.cierre.activo .destaca{background:var(--amarillo);border-bottom-color:#fff;color:#2B2000}
 </style>
 </head>
 <body>
