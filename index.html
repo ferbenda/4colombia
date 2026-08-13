@@ -206,17 +206,17 @@ body.en [lang-en]{display:inline}
 .bandera > :last-child{margin-bottom:0}
 
 /* amarillo */
-.linea-1{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
+a.linea-1{background:rgba(252,209,22,.38);border-color:var(--amarillo);color:#3A2C00}
 .linea-1 .b-sub,.linea-1 .b-ir{color:#5C4600}
-.linea-1:active,.linea-1.activo{background:var(--amarillo);color:#2B2000}
+a.linea-1:active,a.linea-1.activo{background:var(--amarillo);color:#2B2000}
 .linea-1:active .b-sub,.linea-1.activo .b-sub,
 .linea-1:active .b-ir,.linea-1.activo .b-ir{color:#4A3800}
 .linea-1:active .b-cta,.linea-1.activo .b-cta{background:#fff;border-color:#2B2000;color:#2B2000}
 
 /* azul */
-.linea-2{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
+a.linea-2{background:rgba(0,56,147,.38);border-color:var(--azul);color:#041A40}
 .linea-2 .b-sub,.linea-2 .b-ir{color:#143466}
-.linea-2:active,.linea-2.activo{background:var(--azul);color:#fff}
+a.linea-2:active,a.linea-2.activo{background:var(--azul);color:#fff}
 .linea-2:active .b-sub,.linea-2.activo .b-sub{color:rgba(255,255,255,.88)}
 .linea-2:active .b-ir,.linea-2.activo .b-ir{color:#FCD116}
 
@@ -334,13 +334,13 @@ const META = {
 /* :active no siempre dispara en bloques no interactivos de iOS:
    se refuerza con eventos táctiles. */
 (function tacto(){
+  /* Los bloques nacen con el color al 38%. Al tocarlos o hacerles clic pasan
+     a color sólido y se quedan así: el estado no se revierte solo. */
   document.querySelectorAll('.linea-1,.linea-2,.cierre').forEach(el=>{
-    const on = ()=>el.classList.add('activo');
-    const off = ()=>el.classList.remove('activo');
-    el.addEventListener('touchstart', on, {passive:true});
-    ['touchend','touchcancel'].forEach(ev=>el.addEventListener(ev, ()=>setTimeout(off,180), {passive:true}));
-    el.addEventListener('focus', on);
-    el.addEventListener('blur', off);
+    const solido = ()=>el.classList.add('activo');
+    el.addEventListener('touchstart', solido, {passive:true});
+    el.addEventListener('click', solido);
+    el.addEventListener('focus', solido);
   });
 })();
 
