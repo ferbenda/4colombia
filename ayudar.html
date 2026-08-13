@@ -299,8 +299,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="pregunta"><span lang-es>¿Dónde estás?</span><span lang-en>Where are you?</span></div>
   <div class="origen" role="tablist">
-    <button role="tab" aria-selected="false" onclick="verOrigen('co',this)"><span lang-es>En Colombia</span><span lang-en>In Colombia</span><span class="sub"><span lang-es>Llave Bre-B · Nequi</span><span lang-en>Bre-B key · Nequi</span></span></button>
     <button role="tab" aria-selected="true" onclick="verOrigen('fuera',this)"><span lang-es>Fuera de Colombia</span><span lang-en>Outside Colombia</span><span class="sub"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></button>
+    <button role="tab" aria-selected="false" onclick="verOrigen('co',this)"><span lang-es>En Colombia</span><span lang-en>In Colombia</span><span class="sub"><span lang-es>Llave Bre-B · Nequi</span><span lang-en>Bre-B key · Nequi</span></span></button>
   </div>
 
   <div id="v-fuera">
@@ -812,7 +812,7 @@ function verOrigen(cual, btn){
   try{ o = localStorage.getItem('origen'); }catch(e){}
   if(o !== 'co') o = 'fuera';
   const botones = document.querySelectorAll('.origen button');
-  if(botones.length) verOrigen(o, botones[o === 'co' ? 0 : 1]);
+  if(botones.length) verOrigen(o, botones[o === 'co' ? 1 : 0]);
 })();
 
 function guardarIdioma(l){
