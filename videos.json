@@ -39,6 +39,15 @@
       "miniatura": "/img/thumbs/caldas-manizales.jpg"
     },
     {
+      "url": "https://www.instagram.com/reel/Db9NaTnRexz/",
+      "plataforma": "instagram",
+      "titulo_es": "Una sobreviviente cuenta cómo tumbó la puerta para salir",
+      "titulo_en": "A survivor describes kicking down the door to escape",
+      "autor": "CBS News",
+      "idioma": "en",
+      "miniatura": "/img/thumbs/sobreviviente-cbs.jpg"
+    },
+    {
       "url": "https://www.tiktok.com/@enfermera_saturada/video/7672450470652284182",
       "plataforma": "tiktok",
       "titulo_es": "El Hospital Universitario del Valle colapsa parcialmente",
@@ -127,6 +136,15 @@
       "autor": "@aldenorlima",
       "idioma": "es",
       "miniatura": "/img/thumbs/perro-reunion.jpg"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Db-4MhMOaQP/",
+      "plataforma": "instagram",
+      "titulo_es": "Brigadas removiendo escombros de noche, con linternas",
+      "titulo_en": "Crews clearing rubble at night, by torchlight",
+      "autor": "@padrewilmar",
+      "idioma": "es",
+      "miniatura": "/img/thumbs/brigada-noche.jpg"
     }
   ]
 }
