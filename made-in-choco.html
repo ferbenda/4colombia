@@ -240,7 +240,7 @@ h1{font-size:clamp(24px,5.6vw,31px);font-weight:700;letter-spacing:-.025em;line-
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"/></svg>
         <span class="txt">LinkedIn</span>
       </a>
-      <a class="cbtn" id="cb-ig" href="/img/casos/historia-mc-es.jpg" target="_blank" rel="noopener">
+      <a class="cbtn" id="cb-ig" href="/img/casos/historia-mc-es.jpg" target="_blank" rel="noopener" onclick="return compartirHistoria(event,this)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.36 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.73 1.47 1.39 2.13.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.8-.3 1.47-.72 2.13-1.38.66-.66 1.08-1.33 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.8-.72-1.47-1.38-2.13-.66-.66-1.33-1.08-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
         <span class="txt"><span lang-es>Historia</span><span lang-en>Story</span></span>
       </a>
@@ -335,6 +335,48 @@ async function copiarEnlace(btn){
     btn.classList.add('hecho');
     setTimeout(()=>{ if(s) s.textContent = original; btn.classList.remove('hecho'); }, 1800);
   }
+}
+
+/* ---------- compartir la imagen de historia ----------
+   Si el navegador permite compartir archivos (iOS 15+, Android reciente),
+   se manda la imagen al menú del sistema: la persona elige Instagram y la
+   historia se abre con la foto ya puesta. Si no, se abre la imagen para
+   guardarla a mano. De paso se copia el enlace, que es lo que hay que
+   pegar en el sticker. */
+async function compartirHistoria(ev, btn){
+  const ruta = btn.getAttribute('href');
+  const url = location.origin + location.pathname;
+  const en = document.body.classList.contains('en');
+
+  try{ await navigator.clipboard.writeText(url); }catch(e){}
+
+  if(navigator.canShare && navigator.share){
+    try{
+      const r = await fetch(ruta);
+      if(r.ok){
+        const blob = await r.blob();
+        const archivo = new File([blob], '4colombia.jpg', {type: blob.type || 'image/jpeg'});
+        if(navigator.canShare({files: [archivo]})){
+          if(ev && ev.preventDefault) ev.preventDefault();
+          await navigator.share({files: [archivo], text: url});
+          avisoHistoria(btn, en ? 'Link copied' : 'Enlace copiado');
+          return false;
+        }
+      }
+    }catch(e){ if(e && e.name === 'AbortError') { if(ev&&ev.preventDefault) ev.preventDefault(); return false; } }
+  }
+  /* sin compartir de archivos: la imagen se abre y se guarda manteniendo pulsado */
+  avisoHistoria(btn, en ? 'Link copied' : 'Enlace copiado');
+  return true;
+}
+
+function avisoHistoria(btn, texto){
+  const s = btn.querySelector('.txt');
+  if(!s) return;
+  const antes = s.textContent;
+  s.textContent = texto;
+  btn.classList.add('hecho');
+  setTimeout(()=>{ s.textContent = antes; btn.classList.remove('hecho'); }, 1900);
 }
 
 function guardarIdioma(l){

@@ -18,6 +18,10 @@ img/           fondos ilustrados, logo y favicon
                  El botón abre la imagen en una pestaña; desde ahí se
                  mantiene pulsada para guardarla en el carrete, se sube
                  a la historia y se le pega el sticker de enlace.
+                 En móviles compatibles el botón comparte la imagen como
+                 archivo por el menú del sistema: se elige Instagram y la
+                 historia se abre con la foto ya puesta. El enlace queda
+                 copiado en el portapapeles para pegarlo en el sticker.
 robots.txt     indexación
 sitemap.xml    mapa del sitio
 vercel.json    cabeceras de seguridad y caché
