@@ -88,7 +88,12 @@ En `ayudar.html`, entre los marcadores `DATOS-COLOMBIA`, reemplaza
   persona. Se saca de un fotograma: recorta cuadrado, exporta a 160x160.
 - `tipo`: `"persona"` marca la tarjeta como individuo (borde amarillo y etiqueta
   "Persona, no fundación"). Se omite para fundaciones.
-- `video` y `perfil`: enlaces que se muestran bajo la descripción.
+- `expira`: fecha en formato `2026-08-27`. La tarjeta se deja de mostrar ese
+  día, sola, sin que nadie toque el sitio. Úsalo siempre en casos de personas:
+  una necesidad puntual no debería seguir pidiendo dinero seis meses después.
+  Mientras está publicada, la tarjeta muestra "Publicado hasta el 27 de agosto".
+- `video`, `perfil` y `whatsapp`: enlaces bajo la descripción. En `whatsapp`
+  va el número con indicativo (`+573145322215`); el enlace se arma solo.
 
 **Campos de cada medio:**
 
