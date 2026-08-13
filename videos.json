@@ -1,6 +1,6 @@
 {
   "_leeme": "GENERADO por scripts/actualizar_videos.py — edita links.txt, no este archivo.",
-  "actualizado": "2026-08-12",
+  "actualizado": "2026-08-13",
   "videos": [
     {
       "url": "https://www.tiktok.com/@albo_style_o11ce/video/7672859019752606997",
@@ -64,6 +64,15 @@
       "autor": "@juanfoodtime",
       "idioma": "sin_texto",
       "miniatura": "/img/thumbs/edificio-vanesa.jpg"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Db9DAv1pFHd/",
+      "plataforma": "instagram",
+      "titulo_es": "Cuadrillas trabajando en altura tras el sismo",
+      "titulo_en": "Crews working at height after the quake",
+      "autor": "@tororisaralda",
+      "idioma": "es",
+      "miniatura": "/img/thumbs/energia-risaralda.jpg"
     },
     {
       "url": "https://www.tiktok.com/@jimincolombia__/video/7672811376003271958",
