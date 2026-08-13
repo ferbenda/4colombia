@@ -14,9 +14,10 @@ img/           fondos ilustrados, logo y favicon
   og.jpg         imagen que aparece al compartir el enlace
   historia-es.jpg / historia-en.jpg
                  1080x1920 para publicar en historias de Instagram.
-                 Instagram no permite compartir enlaces desde la web:
-                 el usuario descarga la imagen, la sube a su historia
-                 y le pega el sticker de enlace.
+                 Instagram no permite compartir enlaces desde la web.
+                 El botón abre la imagen en una pestaña; desde ahí se
+                 mantiene pulsada para guardarla en el carrete, se sube
+                 a la historia y se le pega el sticker de enlace.
 robots.txt     indexación
 sitemap.xml    mapa del sitio
 vercel.json    cabeceras de seguridad y caché
@@ -27,6 +28,13 @@ vercel.json    cabeceras de seguridad y caché
 `fuentes.html` lee la sección de video de `videos.json`. Para actualizarla no se
 toca el HTML: se edita ese archivo y se hace push. Instrucciones completas en
 `GUIA-VIDEOS.md`.
+
+## Donaciones desde Colombia
+
+`ayudar.html` tiene una sección "Desde Colombia" para llaves Bre-B, Nequi y
+Daviplata. Está oculta mientras el bloque `datos-colombia` esté vacío y aparece
+sola al agregar una cuenta. Instrucciones y explicación del sistema en
+`GUIA-COLOMBIA.md`.
 
 ## Seguridad
 

@@ -186,20 +186,61 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .paso-txt{font-size:14.5px;flex:1;min-width:0;line-height:1.45}
 
 /* seguridad */
-.seguridad{background:var(--blanco);border-left:3px solid var(--alto);padding:15px 16px;margin:26px 0}
-.seguridad h3{font-size:15.5px;font-weight:650;margin-bottom:9px}
-.seguridad li{font-size:14px;color:var(--tinta-2);margin-left:17px;margin-bottom:7px;line-height:1.5}
-.seguridad b{color:var(--tinta)}
 
+.pregunta{font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:-.015em;
+  color:var(--tinta);margin:0 0 10px}
+/* ---- selector: exterior / Colombia ---- */
+.origen{display:flex;gap:0;margin:0 0 22px;border:1.5px solid var(--azul);border-radius:2px;
+  overflow:hidden;background:var(--blanco)}
+.origen button{flex:1;font-family:var(--sans);font-size:15px;font-weight:650;letter-spacing:-.01em;
+  color:var(--tinta-2);background:var(--blanco);border:0;padding:13px 10px;cursor:pointer;
+  min-height:48px;border-right:1px solid var(--linea)}
+.origen button:last-child{border-right:0}
+.origen button[aria-selected="true"]{background:var(--azul);color:#fff}
+.origen button:focus-visible{outline:2px solid var(--tinta);outline-offset:-3px}
+.origen .sub{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;
+  text-transform:uppercase;font-weight:600;opacity:.75;margin-top:3px}
+@media (max-width:380px){.origen button{font-size:13px;padding:11px 6px}}
+.co.persona{border-left-color:var(--amarillo)}
+.co.persona .solo-co{background:var(--amarillo);color:#3A2C00}
+.tipo-persona{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:700;padding:4px 7px;border-radius:2px;background:var(--papel);color:var(--tinta-2);
+  border:1px solid var(--linea);white-space:nowrap}
+.co-enlaces{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:4px}
+.co-perfil{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;
+  color:var(--azul);text-decoration:none;margin-top:2px}
+.co-perfil:hover{text-decoration:underline}
+.co-cuidado{background:var(--papel);border-left:3px solid var(--amarillo);padding:10px 12px;
+  font-size:12.5px;color:var(--tinta-2);line-height:1.45;margin-top:12px}
+.co-cuidado b{color:var(--tinta)}
+/* ---- donaciones desde Colombia ---- */
+.co-aviso{background:var(--blanco);border-left:3px solid var(--azul);padding:12px 14px;
+  font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:14px}
+.co-aviso b{color:var(--tinta)}
+.co{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--azul);
+  padding:16px 17px;margin-bottom:12px}
+.co-cab{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.co-nom{font-size:17px;font-weight:650;letter-spacing:-.01em;flex:1 1 100%;min-width:0}
+.solo-co{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:700;padding:4px 7px;border-radius:2px;background:var(--azul);color:#fff;white-space:nowrap}
+.co-nit{font-family:var(--mono);font-size:11px;color:var(--tinta-2)}
+.co-que{font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin:8px 0 10px}
+.medio{display:flex;align-items:center;gap:10px;border-top:1px solid var(--linea);padding:10px 0}
+.medio-txt{flex:1;min-width:0}
+.medio-etq{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--tinta-2)}
+.medio-val{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--tinta);margin-top:3px;overflow-wrap:anywhere;line-height:1.3}
+.medio-nota{font-size:11.5px;color:var(--tinta-2);margin-top:3px;line-height:1.4}
+.copiar{flex:none;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--tinta);
+  background:var(--papel);border:1px solid var(--linea);border-radius:2px;padding:9px 12px;
+  cursor:pointer;min-height:40px;white-space:nowrap}
+.copiar:hover{border-color:var(--tinta)}
+.copiar:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.copiar.hecho{border-color:var(--azul);color:var(--azul)}
 .antes{background:var(--amarillo-suave);border-left:3px solid var(--amarillo);padding:12px 14px;
   font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:14px}
 .antes b{color:var(--tinta)}
 
 
-details{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:15px 16px;margin-bottom:12px}
-summary{font-size:15.5px;font-weight:650;cursor:pointer}
-details p,details li{font-size:14px;color:var(--tinta-2);margin-top:9px;line-height:1.55}
-details li{margin-left:17px}
 
 .compartir{margin:26px 0 4px;background:var(--blanco);border:1px solid var(--linea);
   border-left:5px solid var(--azul);padding:16px 17px}
@@ -278,6 +319,12 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
   </div>
 
+  <div class="pregunta"><span lang-es>¿Dónde estás?</span><span lang-en>Where are you?</span></div>
+  <div class="origen" role="tablist">
+    <button role="tab" aria-selected="false" onclick="verOrigen('co',this)"><span lang-es>En Colombia</span><span lang-en>In Colombia</span><span class="sub"><span lang-es>Llave Bre-B · Nequi</span><span lang-en>Bre-B key · Nequi</span></span></button>
+    <button role="tab" aria-selected="true" onclick="verOrigen('fuera',this)"><span lang-es>Fuera de Colombia</span><span lang-en>Outside Colombia</span><span class="sub"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></button>
+  </div>
+
   <div class="pasos">
     <div class="paso"><span class="num">1</span><span class="paso-txt">
       <span lang-es>Elige una organización de abajo.</span><span lang-en>Pick an organization below.</span></span></div>
@@ -289,6 +336,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       <span lang-en>Pay by card, like any online purchase.</span></span></div>
   </div>
 
+  <div id="v-fuera">
   <h2><span lang-es>Dónde donar</span><span lang-en>Where to give</span></h2>
   <p class="h2sub">
     <span lang-es>Todas aceptan tarjeta y el dinero llega a equipos que ya están en terreno.</span>
@@ -434,58 +482,20 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
   </div>
 
-  <h2><span lang-es>Animales afectados</span><span lang-en>Animals affected</span></h2>
-  <p class="h2sub">
-    <span lang-es>Varios refugios del Eje Cafetero colapsaron. Cientos de animales rescatados quedaron sin techo, perdidos o heridos.</span><span lang-en>Several shelters in the coffee region collapsed. Hundreds of rescued animals are homeless, lost or injured.</span></p>
-
-  <div class="org destacada">
-    <div class="org-cab">
-      <div class="marca-org" aria-hidden="true"><img src="/img/logos/alto.png" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='ALTO'"></div>
-      <div class="org-txt">
-        <div class="org-nom">Plataforma ALTO</div>
-        <div class="org-que">
-          <span lang-es><b>No existe una entidad central que reciba donaciones para animales en esta emergencia.</b> ALTO documenta refugio por refugio y publica cómo ayudar a cada uno: es la vía más confiable para saber qué se necesita hoy y a qué canal enviarlo.</span><span lang-en><b>There is no central body collecting animal donations for this emergency.</b> ALTO documents each shelter and publishes how to help: the most reliable way to know what is needed today and where to send it.</span>
-        </div>
-      </div>
-      <span class="insignia"><span lang-es>Verifica refugios</span><span lang-en>Verifies shelters</span></span>
-    </div>
-    <a class="donar" href="https://x.com/PlataformaALTO" target="_blank" rel="noopener">
-      <span lang-es>Ver cómo ayudar a cada refugio</span><span lang-en>See how to help each shelter</span></a>
   </div>
 
-  <div class="antes">
-    <span lang-es><b>Los refugios afectados reciben por canales personales</b> —WhatsApp, Nequi, mensaje directo—, y es justo donde más cuentas falsas aparecen. Por eso aquí no publicamos esos canales: entra por Plataforma ALTO, que está verificando refugio por refugio, y confirma siempre que la solicitud venga de la fundación.</span><span lang-en><b>Affected shelters receive through personal channels</b> — WhatsApp, Nequi, direct message — which is exactly where fake accounts appear. So we don't publish those channels here: go through Plataforma ALTO, which is verifying shelter by shelter, and always confirm the request comes from the foundation itself.</span>
+  <div id="v-co" hidden>
+  <h2 id="desde-colombia"><span lang-es>Desde Colombia</span><span lang-en>From inside Colombia</span></h2>
+  <p class="h2sub"><span lang-es>Transferencia inmediata con Bre-B, Nequi o Daviplata. No aplica desde el exterior.</span><span lang-en>Instant transfer with Bre-B, Nequi or Daviplata. Not available from abroad.</span></p>
+
+  <div class="co-aviso"><span lang-es><b>El dinero llega solo, sin enlaces.</b> Copia la llave o el número, pégalo en tu app y transfiere. Si alguien te manda un enlace para «aceptar» o «reclamar» la transferencia, es una estafa.</span><span lang-en><b>The money arrives on its own, with no links.</b> Copy the key or number, paste it into your app and transfer. If anyone sends you a link to accept or claim a transfer, it is a scam.</span></div>
+
+  <div id="cuentas-co"></div>
+  <!-- DATOS-COLOMBIA-INICIO -->
+  <script type="application/json" id="datos-colombia">{"cuentas":[{"nombre":"@djprilla","tipo":"persona","perfil":"https://www.instagram.com/djprilla/","descripcion_es":"Influencer que está trabajando en el terreno y documenta en video a dónde va lo que recibe.","descripcion_en":"Influencer working on the ground who documents on video where the money goes.","medios":[{"tipo":"llave","valor":"@Prilla","nota_es":"Llave alfanumérica Bre-B, publicada por él en su propio video","nota_en":"Bre-B alphanumeric key, published by him in his own video"}],"video":"https://www.instagram.com/reel/Db9l4n3Os3O/"}]}</script>
+  <!-- DATOS-COLOMBIA-FIN -->
+
   </div>
-
-
-  <div class="seguridad">
-    <h3><span lang-es>Tres reglas para no caer en estafas</span><span lang-en>Three rules to avoid scams</span></h3>
-    <ul>
-      <li><span lang-es><b>Nunca pagues por un enlace que te llegó por WhatsApp o redes.</b> Entra tú mismo al sitio de la organización.</span>
-          <span lang-en><b>Never pay through a link sent by WhatsApp or social media.</b> Go to the organization's own site yourself.</span></li>
-      <li><span lang-es><b>Un número de cuenta o una llave suelta no prueban nada.</b> Cualquiera puede publicar una. Una página de pago en el dominio oficial sí.</span>
-          <span lang-en><b>A bare account number proves nothing.</b> Anyone can post one. A checkout page on the official domain does.</span></li>
-      <li><span lang-es><b>Revisa que la dirección empiece por</b> <code>https://</code> <b>y que el dominio sea el de la organización</b>, no uno parecido.</span>
-          <span lang-en><b>Check the address starts with</b> <code>https://</code> <b>and the domain belongs to the organization</b>, not a lookalike.</span></li>
-    </ul>
-  </div>
-
-  <details>
-    <summary><span lang-es>¿Puedo mandar ropa, comida o cosas?</span><span lang-en>Can I send clothes, food or goods?</span></summary>
-    <p><span lang-es><b>Este sitio no se ocupa de ese tema.</b> Aquí nos enfocamos únicamente en donaciones de dinero, porque son las fundaciones y las personas que están en el terreno quienes saben qué hace falta en cada zona y en qué momento.</span>
-       <span lang-en><b>This site does not cover that.</b> We focus only on monetary donations, because the foundations and the people on the ground are the ones who know what is needed in each area and when.</span></p>
-    <p><span lang-es>Tu aporte llega a esas organizaciones y ellas lo administran según las necesidades del día: agua, medicamentos, alojamiento, herramientas. El dinero además se mueve más rápido, no paga flete y no ocupa espacio en una cadena logística ya saturada.</span>
-       <span lang-en>Your contribution reaches those organizations and they allocate it against the day's real needs: water, medicine, shelter, tools. Money also moves faster, avoids shipping costs, and doesn't take up room in an already overloaded supply chain.</span></p>
-  </details>
-
-  <details>
-    <summary><span lang-es>Estoy en Colombia — ¿qué es Bre-B, Nequi, Daviplata?</span><span lang-en>I'm in Colombia — what are Bre-B, Nequi, Daviplata?</span></summary>
-    <p><span lang-es>Son formas de pago locales. Bre-B es el sistema de pagos inmediatos: en vez del número de cuenta usas una "llave" (un correo o un número). Nequi y Daviplata son billeteras digitales de Bancolombia y Davivienda.</span>
-       <span lang-en>These are local payment methods. Bre-B is Colombia's instant payments system, where a "key" (an email or phone number) replaces the account number. Nequi and Daviplata are digital wallets run by Bancolombia and Davivienda.</span></p>
-    <p><span lang-es><b>Si estás fuera de Colombia no necesitas nada de esto.</b> Los botones de arriba funcionan con tu tarjeta normal.</span>
-       <span lang-en><b>If you're outside Colombia you don't need any of this.</b> The buttons above work with your regular card.</span></p>
-    <p><span lang-es>Y si alguien te comparte una llave de Bre-B o un número de Nequi pidiendo una donación, <b>no vas a poder usarla desde el exterior</b> — y no tienes forma de verificar quién está al otro lado.</span><span lang-en>And if someone shares a Bre-B key or a Nequi number asking for a donation, <b>you won't be able to use it from abroad</b> — and you have no way to verify who is on the other end.</span></p>
-  </details>
 
   <a class="otra-pag" href="/fuentes.html">
     <span class="t"><span lang-es>Mantente informado</span><span lang-en>Stay informed</span></span>
@@ -513,9 +523,9 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
         Facebook
       </a>
-      <a class="cbtn" id="cb-ig" href="/img/historia-es.jpg" download>
+      <a class="cbtn" id="cb-ig" href="/img/historia-es.jpg" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.36 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.73 1.47 1.39 2.13.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.8-.3 1.47-.72 2.13-1.38.66-.66 1.08-1.33 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.8-.72-1.47-1.38-2.13-.66-.66-1.33-1.08-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
-        <span class="txt"><span lang-es>Imagen para historias</span><span lang-en>Story image</span></span>
+        <span class="txt"><span lang-es>Historia</span><span lang-en>For Stories</span></span>
       </a>
       <button class="cbtn" id="cb-copiar" onclick="copiarEnlace(this)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zm3 4H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>
@@ -551,6 +561,7 @@ function idioma(l, btn){
   document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
   guardarIdioma(l);
   armarEnlacesCompartir();
+  pintarCuentasCO();
 }
 // Fecha de última verificación de los enlaces de pago. Un directorio de
 // donaciones sin fecha visible no es verificable por quien lo lee.
@@ -615,6 +626,176 @@ async function copiarEnlace(btn){
     setTimeout(()=>{ if(s) s.textContent = original; btn.classList.remove('hecho'); }, 1800);
   }
 }
+
+/* ---------- cuentas para donar desde Colombia ----------
+   Se dibujan solo si hay datos: mientras el bloque esté vacío, la sección
+   entera no aparece. Se construye sin innerHTML, como el resto del sitio. */
+const ETQ_MEDIO = {
+  llave:      ['Llave Bre-B',        'Bre-B key'],
+  nequi:      ['Nequi',              'Nequi'],
+  daviplata:  ['Daviplata',          'Daviplata'],
+  cuenta:     ['Cuenta bancaria',    'Bank account'],
+  qr:         ['Código QR',          'QR code']
+};
+
+function pintarCuentasCO(){
+  const bloque = document.getElementById('datos-colombia');
+  const cont = document.getElementById('cuentas-co');
+  if(!bloque || !cont) return;
+  let datos;
+  try{ datos = JSON.parse(bloque.textContent); }catch(e){ return; }
+  const lista = (datos && datos.cuentas) || [];
+  const en = document.body.classList.contains('en');
+
+  const seccion = document.getElementById('desde-colombia');
+  const sub = seccion && seccion.nextElementSibling;
+  const aviso = sub && sub.nextElementSibling;
+  const visible = lista.length > 0;
+  [seccion, sub, aviso].forEach(el => { if(el) el.hidden = !visible; });
+  while(cont.firstChild) cont.removeChild(cont.firstChild);
+  if(!visible) return;
+
+  lista.forEach(c => {
+    const caja = document.createElement('div');
+    caja.className = 'co' + (c.tipo === 'persona' ? ' persona' : '');
+
+    const cab = document.createElement('div');
+    cab.className = 'co-cab';
+    const nom = document.createElement('div');
+    nom.className = 'co-nom';
+    nom.textContent = c.nombre || '';
+    cab.appendChild(nom);
+    const tag = document.createElement('span');
+    tag.className = 'solo-co';
+    tag.textContent = en ? 'Colombia only' : 'Solo desde Colombia';
+    cab.appendChild(tag);
+    if(c.tipo === 'persona'){
+      const tp = document.createElement('span');
+      tp.className = 'tipo-persona';
+      tp.textContent = en ? 'Individual, not a foundation' : 'Persona, no fundación';
+      cab.appendChild(tp);
+    }
+    if(c.nit){
+      const nit = document.createElement('span');
+      nit.className = 'co-nit';
+      nit.textContent = 'NIT ' + c.nit;
+      cab.appendChild(nit);
+    }
+    caja.appendChild(cab);
+
+    if(c.descripcion_es || c.descripcion_en){
+      const q = document.createElement('div');
+      q.className = 'co-que';
+      q.textContent = en ? (c.descripcion_en || c.descripcion_es) : (c.descripcion_es || c.descripcion_en);
+      caja.appendChild(q);
+    }
+
+    const enlaces = document.createElement('div');
+    enlaces.className = 'co-enlaces';
+    if(c.video){
+      const v = document.createElement('a');
+      v.className = 'co-perfil';
+      v.href = c.video; v.target = '_blank'; v.rel = 'noopener';
+      v.textContent = (en ? 'Watch the video where he shares it ' : 'Ver el video donde la publica ') + '\u2197';
+      enlaces.appendChild(v);
+    }
+    if(c.perfil){
+      const a = document.createElement('a');
+      a.className = 'co-perfil';
+      a.href = c.perfil; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = (en ? 'See their profile ' : 'Ver su perfil ') + '\u2197';
+      enlaces.appendChild(a);
+    }
+    if(enlaces.childNodes.length) caja.appendChild(enlaces);
+
+    (c.medios || []).forEach(m => {
+      const fila = document.createElement('div');
+      fila.className = 'medio';
+      const txt = document.createElement('div');
+      txt.className = 'medio-txt';
+
+      const etq = document.createElement('div');
+      etq.className = 'medio-etq';
+      const par = ETQ_MEDIO[m.tipo] || ['', ''];
+      etq.textContent = m.etiqueta || (en ? par[1] : par[0]);
+      txt.appendChild(etq);
+
+      const val = document.createElement('div');
+      val.className = 'medio-val';
+      val.textContent = m.valor || '';
+      txt.appendChild(val);
+
+      const nota = en ? (m.nota_en || m.nota_es) : (m.nota_es || m.nota_en);
+      if(nota){
+        const n = document.createElement('div');
+        n.className = 'medio-nota';
+        n.textContent = nota;
+        txt.appendChild(n);
+      }
+      fila.appendChild(txt);
+
+      const btn = document.createElement('button');
+      btn.className = 'copiar';
+      btn.type = 'button';
+      btn.textContent = en ? 'Copy' : 'Copiar';
+      btn.addEventListener('click', async () => {
+        let ok = false;
+        try{ await navigator.clipboard.writeText(m.valor); ok = true; }
+        catch(e){
+          const t = document.createElement('textarea');
+          t.value = m.valor; t.setAttribute('readonly','');
+          t.style.position = 'fixed'; t.style.opacity = '0';
+          document.body.appendChild(t); t.select();
+          try{ ok = document.execCommand('copy'); }catch(_){}
+          document.body.removeChild(t);
+        }
+        if(ok){
+          const antes = btn.textContent;
+          btn.textContent = en ? 'Copied' : 'Copiado';
+          btn.classList.add('hecho');
+          setTimeout(() => { btn.textContent = antes; btn.classList.remove('hecho'); }, 1600);
+        }
+      });
+      fila.appendChild(btn);
+      caja.appendChild(fila);
+    });
+
+    if(c.tipo === 'persona'){
+      const cu = document.createElement('div');
+      cu.className = 'co-cuidado';
+      const b = document.createElement('b');
+      b.textContent = en ? 'This is a person, not a verified organization. ' : 'Es una persona, no una organización verificada. ';
+      cu.appendChild(b);
+      cu.appendChild(document.createTextNode(en
+        ? 'We publish it because they document their work publicly, but no institution audits it. Look at their profile and decide for yourself.'
+        : 'La publicamos porque documenta públicamente lo que hace, pero ninguna institución lo audita. Mira su perfil y decide por tu cuenta.'));
+      caja.appendChild(cu);
+    }
+
+    cont.appendChild(caja);
+  });
+}
+
+/* ---------- selector de origen ----------
+   Una sola lista visible: el que dona desde fuera no ve llaves que no puede
+   usar, y el que dona desde Colombia no tiene que buscar entre nueve tarjetas. */
+function verOrigen(cual, btn){
+  const fuera = document.getElementById('v-fuera');
+  const co = document.getElementById('v-co');
+  if(fuera) fuera.hidden = (cual !== 'fuera');
+  if(co) co.hidden = (cual !== 'co');
+  document.querySelectorAll('.origen button').forEach(b =>
+    b.setAttribute('aria-selected', String(b === btn)));
+  try{ localStorage.setItem('origen', cual); }catch(e){}
+}
+
+(function origenInicial(){
+  let o = null;
+  try{ o = localStorage.getItem('origen'); }catch(e){}
+  if(o !== 'co') o = 'fuera';
+  const botones = document.querySelectorAll('.origen button');
+  if(botones.length) verOrigen(o, botones[o === 'co' ? 0 : 1]);
+})();
 
 function guardarIdioma(l){
   try{ localStorage.setItem('idioma', l); }catch(e){}
