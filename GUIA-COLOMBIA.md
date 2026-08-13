@@ -91,7 +91,7 @@ En `ayudar.html`, entre los marcadores `DATOS-COLOMBIA`, reemplaza
 - `expira`: fecha en formato `2026-08-27`. La tarjeta se deja de mostrar ese
   día, sola, sin que nadie toque el sitio. Úsalo siempre en casos de personas:
   una necesidad puntual no debería seguir pidiendo dinero seis meses después.
-  Mientras está publicada, la tarjeta muestra "Publicado hasta el 27 de agosto".
+  La fecha no se muestra en la página: es un control interno tuyo.
 - `video`, `perfil` y `whatsapp`: enlaces bajo la descripción. En `whatsapp`
   va el número con indicativo (`+573145322215`); el enlace se arma solo.
 
