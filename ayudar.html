@@ -205,6 +205,10 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .tipo-persona{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
   font-weight:700;padding:4px 7px;border-radius:2px;background:var(--papel);color:var(--tinta-2);
   border:1px solid var(--linea);white-space:nowrap}
+.verif{font-family:var(--mono);font-size:10.5px;line-height:1.5;color:var(--tinta-2);
+  margin-top:11px;padding-top:9px;border-top:1px solid var(--linea);display:flex;gap:7px;align-items:flex-start}
+.verif b{color:var(--tinta);font-weight:700}
+.verif .tic{color:var(--azul);flex:none;font-size:11px;line-height:1.35}
 .co-expira{font-family:var(--mono);font-size:10.5px;color:var(--tinta-2);margin-top:8px}
 .co-enlaces{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:4px}
 .co-perfil{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;
@@ -297,8 +301,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       <span lang-en>Your donation <b>passes through no intermediary</b>. It goes <span class="marca-cero">100% directly</span> to official institutions and recognized humanitarian organizations.</span>
     </p>
     <p>
-      <span lang-es>Cada botón abre la página de pago de la organización. Aquí no se cobra nada ni se guardan datos de tarjeta.</span>
-      <span lang-en>Every button opens the organization's own checkout. Nothing is charged here and no card data is stored.</span>
+      <span lang-es>Cada botón abre el canal de pago de quien recibe. Aquí no se cobra nada ni se guardan datos de tarjeta.</span>
+      <span lang-en>Every button opens the recipient's own payment channel. Nothing is charged here and no card data is stored.</span>
     </p>
     <p>
       <span lang-es>Existe <b>solo para informar</b> cuál es la mejor forma de ayudar a Colombia.</span>
@@ -347,6 +351,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">PayPal</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="/made-in-choco.html">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>enlace y fotos entregados por la organización, 13 ago 2026</span><span lang-en>link and photos provided by the organization, 13 Aug 2026</span></span></div>
   </div>
 
   <div class="org">
@@ -362,6 +367,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">USD</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="https://www.zeffy.com/en-US/donation-form/latinos-united-for-colombia" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>campaña abierta por la fundación en Zeffy, 12 ago 2026</span><span lang-en>campaign opened by the foundation on Zeffy, 12 Aug 2026</span></span></div>
   </div>
 
   <div class="org">
@@ -379,6 +385,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="https://ayuda.cruzrojacolombiana.org/emergencia-colombia-terremoto" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>página de la emergencia en su dominio oficial, 11 ago 2026</span><span lang-en>emergency page on their official domain, 11 Aug 2026</span></span></div>
   </div>
 
   <div class="org destacada">
@@ -395,6 +402,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">EUR</span><span class="moneda">GBP</span><span class="moneda">Visa · Mastercard · Amex</span><span class="moneda">PayPal</span></div>
     <a class="donar" href="https://www.globalgiving.org/projects/colombia-earthquake-relief-fund/" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>fondo específico del sismo en su dominio oficial, 11 ago 2026</span><span lang-en>quake-specific fund on their official domain, 11 Aug 2026</span></span></div>
   </div>
 
   <div class="org">
@@ -411,6 +419,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">Visa · Mastercard · Amex</span></div>
     <a class="donar" href="https://allhandsandhearts.org/our-work/programs/colombia-earthquake-relief" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>programa para Colombia en su dominio oficial, 11 ago 2026</span><span lang-en>Colombia programme on their official domain, 11 Aug 2026</span></span></div>
   </div>
 
   <div class="org">
@@ -426,6 +435,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">USD</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span><span class="moneda">PayPal</span></div>
     <a class="donar" href="https://donate.wck.org/campaign/831452/donate" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>campaña del sismo en su dominio de donaciones, 12 ago 2026</span><span lang-en>quake campaign on their donation domain, 12 Aug 2026</span></span></div>
   </div>
 
   <h2><span lang-es>Entidades colombianas</span><span lang-en>Colombian organizations</span></h2>
@@ -448,6 +458,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="https://donahoy.abaco.org.co/colombia2026" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>campaña del sismo en su dominio oficial, 11 ago 2026</span><span lang-en>quake campaign on their official domain, 11 Aug 2026</span></span></div>
   </div>
 
   <div class="org">
@@ -466,6 +477,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="aviso-ruta"><span lang-es>Busca la campaña «Terremoto en Colombia» en su página de inicio.</span><span lang-en>Look for the "Terremoto en Colombia" campaign on their homepage.</span></div>
     <a class="donar" href="https://plan.org.co/" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>sitio oficial; la campaña se busca desde su portada, 11 ago 2026</span><span lang-en>official site; the campaign is found from their homepage, 11 Aug 2026</span></span></div>
   </div>
 
   <h2><span lang-es>Organizaciones internacionales</span><span lang-en>International organizations</span></h2>
@@ -487,6 +499,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <div class="monedas"><span class="moneda"><span lang-es>Tu moneda local</span><span lang-en>Your local currency</span></span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
     <a class="donar" href="https://www.unicefusa.org/stories/magnitude-74-earthquake-strikes-colombia-children-need-help-now" target="_blank" rel="noopener">
       <span lang-es>Donar con tarjeta</span><span lang-en>Donate by card</span></a>
+    <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>página del sismo en el dominio de UNICEF USA, 11 ago 2026</span><span lang-en>quake page on the UNICEF USA domain, 11 Aug 2026</span></span></div>
   </div>
 
   </div>
@@ -499,7 +512,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div id="cuentas-co"></div>
   <!-- DATOS-COLOMBIA-INICIO -->
-  <script type="application/json" id="datos-colombia">{"cuentas":[{"nombre":"@djprilla","tipo":"persona","perfil":"https://www.instagram.com/djprilla/","descripcion_es":"Está trabajando en el terreno en Cali y publica en video en qué se gasta lo que recibe: herramientas, materiales, lo que haga falta.","descripcion_en":"Working on the ground in Cali, he posts videos showing what he spends the money on: tools, materials, whatever is needed.","medios":[{"tipo":"llave","valor":"@Prilla","nota_es":"Llave alfanumérica Bre-B, publicada por él en su propio video","nota_en":"Bre-B alphanumeric key, published by him in his own video"}],"video":"https://www.instagram.com/reel/Db9l4n3Os3O/","foto":"/img/personas/djprilla.jpg"},{"nombre":"@santymon","tipo":"persona","video":"https://www.instagram.com/reel/Db5xmB5Owtr/","whatsapp":"+573145322215","descripcion_es":"Santiago Montoya y su familia. Su madre y su hermano quedaron atrapados bajo los escombros y sobrevivieron con heridas. Perdieron la casa y todo lo que tenía adentro.","descripcion_en":"Santiago Montoya and his family. His mother and brother were trapped under the rubble and survived with injuries. They lost their home and everything in it.","medios":[{"tipo":"nequi","valor":"311 363 8522","nota_es":"A nombre de Santiago Montoya","nota_en":"In Santiago Montoya's name"}],"foto":"/img/personas/montoya.jpg","expira":"2026-08-27","perfil":"https://www.instagram.com/santymon/"}]}</script>
+  <script type="application/json" id="datos-colombia">{"cuentas":[{"nombre":"@djprilla","tipo":"persona","perfil":"https://www.instagram.com/djprilla/","descripcion_es":"Está trabajando en el terreno en Cali y publica en video en qué se gasta lo que recibe: herramientas, materiales, lo que haga falta.","descripcion_en":"Working on the ground in Cali, he posts videos showing what he spends the money on: tools, materials, whatever is needed.","medios":[{"tipo":"llave","valor":"@Prilla","nota_es":"Llave alfanumérica Bre-B, publicada por él en su propio video","nota_en":"Bre-B alphanumeric key, published by him in his own video"}],"video":"https://www.instagram.com/reel/Db9l4n3Os3O/","foto":"/img/personas/djprilla.jpg","verificado_es":"él publica la llave en su propio video, 12 ago 2026","verificado_en":"he publishes the key in his own video, 12 Aug 2026"},{"nombre":"@santymon","tipo":"persona","video":"https://www.instagram.com/reel/Db5xmB5Owtr/","whatsapp":"+573145322215","descripcion_es":"Santiago Montoya y su familia. Su madre y su hermano quedaron atrapados bajo los escombros y sobrevivieron con heridas. Perdieron la casa y todo lo que tenía adentro.","descripcion_en":"Santiago Montoya and his family. His mother and brother were trapped under the rubble and survived with injuries. They lost their home and everything in it.","medios":[{"tipo":"nequi","valor":"311 363 8522","nota_es":"A nombre de Santiago Montoya","nota_en":"In Santiago Montoya's name"}],"foto":"/img/personas/montoya.jpg","expira":"2026-08-27","perfil":"https://www.instagram.com/santymon/","verificado_es":"el número aparece en su reel y en su perfil, 13 ago 2026","verificado_en":"the number appears in his reel and profile, 13 Aug 2026"}]}</script>
   <!-- DATOS-COLOMBIA-FIN -->
 
   </div>
@@ -542,8 +555,8 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
   </div>
 
   <p class="pie">
-    <span lang-es>Cada botón lleva a la página oficial de la organización. Este sitio no recibe dinero ni procesa pagos en ningún momento.</span>
-    <span lang-en>Every button opens the organization's own official page. This site never receives money or processes payments.</span>
+    <span lang-es>Cada botón lleva al canal propio de quien recibe: una organización, una fundación o una persona en el terreno. Este sitio no recibe dinero ni procesa pagos en ningún momento.</span>
+    <span lang-en>Every button leads to the recipient's own channel: an organization, a foundation or a person on the ground. This site never receives money or processes payments.</span>
     <br><span id="verif"></span>
   <br><a href="/legal.html" style="color:var(--azul)"><span lang-es>Privacidad y términos</span><span lang-en>Privacy and terms</span></a></p>
 </div>
@@ -736,6 +749,22 @@ function pintarCuentasCO(){
       enlaces.appendChild(wa);
     }
     if(enlaces.childNodes.length) caja.appendChild(enlaces);
+
+    if(c.verificado_es || c.verificado_en){
+      const v = document.createElement('div');
+      v.className = 'verif';
+      const tic = document.createElement('span');
+      tic.className = 'tic'; tic.setAttribute('aria-hidden','true'); tic.textContent = '\u2713';
+      v.appendChild(tic);
+      const txt = document.createElement('span');
+      const et = document.createElement('b');
+      et.textContent = (en ? 'Verified: ' : 'Verificado: ');
+      txt.appendChild(et);
+      txt.appendChild(document.createTextNode(en ? (c.verificado_en || c.verificado_es)
+                                                 : (c.verificado_es || c.verificado_en)));
+      v.appendChild(txt);
+      caja.appendChild(v);
+    }
 
     if(c.expira){
       const cad = document.createElement('div');
