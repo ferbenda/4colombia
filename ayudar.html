@@ -179,11 +179,6 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .donar.secundaria{background:var(--blanco);color:var(--tinta);border-color:var(--tinta)}
 
 /* pasos */
-.pasos{background:var(--blanco);border:1px solid var(--linea);border-radius:3px;padding:17px;margin-bottom:26px}
-.paso{display:flex;gap:11px;padding:9px 0;align-items:baseline;min-width:0}
-.paso+.paso{border-top:1px solid var(--linea)}
-.num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--senal);flex:none;width:18px}
-.paso-txt{font-size:14.5px;flex:1;min-width:0;line-height:1.45}
 
 /* seguridad */
 
@@ -325,17 +320,6 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
   <div class="origen" role="tablist">
     <button role="tab" aria-selected="false" onclick="verOrigen('co',this)"><span lang-es>En Colombia</span><span lang-en>In Colombia</span><span class="sub"><span lang-es>Llave Bre-B · Nequi</span><span lang-en>Bre-B key · Nequi</span></span></button>
     <button role="tab" aria-selected="true" onclick="verOrigen('fuera',this)"><span lang-es>Fuera de Colombia</span><span lang-en>Outside Colombia</span><span class="sub"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></button>
-  </div>
-
-  <div class="pasos">
-    <div class="paso"><span class="num">1</span><span class="paso-txt">
-      <span lang-es>Elige una organización de abajo.</span><span lang-en>Pick an organization below.</span></span></div>
-    <div class="paso"><span class="num">2</span><span class="paso-txt">
-      <span lang-es>Toca el botón. Abre su página oficial.</span>
-      <span lang-en>Tap the button. It opens their official page.</span></span></div>
-    <div class="paso"><span class="num">3</span><span class="paso-txt">
-      <span lang-es>Pagas con tarjeta, como cualquier compra en línea.</span>
-      <span lang-en>Pay by card, like any online purchase.</span></span></div>
   </div>
 
   <div id="v-fuera">
