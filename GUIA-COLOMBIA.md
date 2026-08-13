@@ -81,7 +81,16 @@ En `ayudar.html`, entre los marcadores `DATOS-COLOMBIA`, reemplaza
 ]}
 ```
 
-**Campos:**
+**Campos opcionales de la tarjeta:**
+
+- `foto`: ruta a un avatar en `/img/personas/` — cuadrado, 160x160 px, JPG.
+  Se muestra redondo a 56 px. Sirve para que quien vio el video reconozca a la
+  persona. Se saca de un fotograma: recorta cuadrado, exporta a 160x160.
+- `tipo`: `"persona"` marca la tarjeta como individuo (borde amarillo y etiqueta
+  "Persona, no fundación"). Se omite para fundaciones.
+- `video` y `perfil`: enlaces que se muestran bajo la descripción.
+
+**Campos de cada medio:**
 
 - `tipo`: `llave` · `nequi` · `daviplata` · `cuenta` · `qr`
 - `valor`: lo que la persona va a copiar. Escríbelo tal como se debe pegar.

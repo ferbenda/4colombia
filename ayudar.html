@@ -210,9 +210,6 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .co-perfil{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;
   color:var(--azul);text-decoration:none;margin-top:2px}
 .co-perfil:hover{text-decoration:underline}
-.co-cuidado{background:var(--papel);border-left:3px solid var(--amarillo);padding:10px 12px;
-  font-size:12.5px;color:var(--tinta-2);line-height:1.45;margin-top:12px}
-.co-cuidado b{color:var(--tinta)}
 /* ---- donaciones desde Colombia ---- */
 .co-aviso{background:var(--blanco);border-left:3px solid var(--azul);padding:12px 14px;
   font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:14px}
@@ -220,7 +217,12 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .co{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--azul);
   padding:16px 17px;margin-bottom:12px}
 .co-cab{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
-.co-nom{font-size:17px;font-weight:650;letter-spacing:-.01em;flex:1 1 100%;min-width:0}
+.co-foto{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;
+  border:2px solid var(--linea);background:var(--papel);display:block}
+.co-cab{align-items:center}
+.co-id{display:flex;align-items:center;gap:12px;flex:1 1 100%;min-width:0}
+
+.co-nom{font-size:17px;font-weight:650;letter-spacing:-.01em;flex:1;min-width:0}
 .solo-co{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
   font-weight:700;padding:4px 7px;border-radius:2px;background:var(--azul);color:#fff;white-space:nowrap}
 .co-nit{font-family:var(--mono);font-size:11px;color:var(--tinta-2)}
@@ -492,7 +494,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div id="cuentas-co"></div>
   <!-- DATOS-COLOMBIA-INICIO -->
-  <script type="application/json" id="datos-colombia">{"cuentas":[{"nombre":"@djprilla","tipo":"persona","perfil":"https://www.instagram.com/djprilla/","descripcion_es":"Influencer que está trabajando en el terreno y documenta en video a dónde va lo que recibe.","descripcion_en":"Influencer working on the ground who documents on video where the money goes.","medios":[{"tipo":"llave","valor":"@Prilla","nota_es":"Llave alfanumérica Bre-B, publicada por él en su propio video","nota_en":"Bre-B alphanumeric key, published by him in his own video"}],"video":"https://www.instagram.com/reel/Db9l4n3Os3O/"}]}</script>
+  <script type="application/json" id="datos-colombia">{"cuentas":[{"nombre":"@djprilla","tipo":"persona","perfil":"https://www.instagram.com/djprilla/","descripcion_es":"Está trabajando en el terreno en Cali y publica en video en qué se gasta lo que recibe: herramientas, materiales, lo que haga falta.","descripcion_en":"Working on the ground in Cali, he posts videos showing what he spends the money on: tools, materials, whatever is needed.","medios":[{"tipo":"llave","valor":"@Prilla","nota_es":"Llave alfanumérica Bre-B, publicada por él en su propio video","nota_en":"Bre-B alphanumeric key, published by him in his own video"}],"video":"https://www.instagram.com/reel/Db9l4n3Os3O/","foto":"/img/personas/djprilla.jpg"}]}</script>
   <!-- DATOS-COLOMBIA-FIN -->
 
   </div>
@@ -661,10 +663,20 @@ function pintarCuentasCO(){
 
     const cab = document.createElement('div');
     cab.className = 'co-cab';
+    const ident = document.createElement('div');
+    ident.className = 'co-id';
+    if(c.foto){
+      const f = document.createElement('img');
+      f.className = 'co-foto';
+      f.src = c.foto; f.alt = ''; f.loading = 'lazy';
+      f.addEventListener('error', () => f.remove());
+      ident.appendChild(f);
+    }
     const nom = document.createElement('div');
     nom.className = 'co-nom';
     nom.textContent = c.nombre || '';
-    cab.appendChild(nom);
+    ident.appendChild(nom);
+    cab.appendChild(ident);
     const tag = document.createElement('span');
     tag.className = 'solo-co';
     tag.textContent = en ? 'Colombia only' : 'Solo desde Colombia';
@@ -759,18 +771,6 @@ function pintarCuentasCO(){
       fila.appendChild(btn);
       caja.appendChild(fila);
     });
-
-    if(c.tipo === 'persona'){
-      const cu = document.createElement('div');
-      cu.className = 'co-cuidado';
-      const b = document.createElement('b');
-      b.textContent = en ? 'This is a person, not a verified organization. ' : 'Es una persona, no una organización verificada. ';
-      cu.appendChild(b);
-      cu.appendChild(document.createTextNode(en
-        ? 'We publish it because they document their work publicly, but no institution audits it. Look at their profile and decide for yourself.'
-        : 'La publicamos porque documenta públicamente lo que hace, pero ninguna institución lo audita. Mira su perfil y decide por tu cuenta.'));
-      caja.appendChild(cu);
-    }
 
     cont.appendChild(caja);
   });
