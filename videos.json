@@ -1,6 +1,6 @@
 {
   "_leeme": "GENERADO por scripts/actualizar_videos.py — edita links.txt, no este archivo.",
-  "actualizado": "2026-08-13",
+  "actualizado": "2026-08-14",
   "videos": [
     {
       "url": "https://www.tiktok.com/@albo_style_o11ce/video/7672859019752606997",
@@ -84,6 +84,15 @@
       "miniatura": "/img/thumbs/energia-risaralda.jpg"
     },
     {
+      "url": "https://www.instagram.com/reel/Db8ZpRqKYT6/",
+      "plataforma": "instagram",
+      "titulo_es": "Rescatistas venezolanos llegaron a Cali a ayudar en las labores",
+      "titulo_en": "Venezuelan rescuers travelled to Cali to help",
+      "autor": "@alcaldiadecali",
+      "idioma": "es",
+      "miniatura": "/img/thumbs/rescatista-venezolano.jpg"
+    },
+    {
       "url": "https://www.tiktok.com/@jimincolombia__/video/7672811376003271958",
       "plataforma": "tiktok",
       "titulo_es": "El Chocó, la zona más golpeada y la menos contada",
@@ -91,6 +100,15 @@
       "autor": "@jimincolombia__",
       "idioma": "en",
       "miniatura": "/img/thumbs/choco-calle.jpg"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Db9xzU_NrkA/",
+      "plataforma": "instagram",
+      "titulo_es": "Llega a Pereira la ayuda humanitaria enviada por México",
+      "titulo_en": "Mexican humanitarian aid arrives in Pereira",
+      "autor": "@ruta135noticias",
+      "idioma": "es",
+      "miniatura": "/img/thumbs/ayuda-mexico.jpg"
     },
     {
       "url": "https://www.tiktok.com/@milenitacorrrea253/video/7672472872346078484",
