@@ -6,7 +6,8 @@ normalizados a 184x104 px (2x del slot de 92x52) y en PNG con
 transparencia.
 
   globalgiving.png   allhands.png   cruzroja.png   abaco.png
-  plan.png           unicef.png     alto.png      luca.png
+  plan.png           luca.png       madeinchoco.png
+  catalinamunoz.png  namigni.png    sanjose.png      luca.png
 
 NOTAS
 -----
