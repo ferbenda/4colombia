@@ -290,9 +290,9 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 <div class="tricolor"><i></i><i></i><i></i></div>
 <nav class="nav" aria-label="Principal">
   <div class="nav-int">
-    <a class="marca" href="/index.html"><img src="/img/logo.png" alt="4Colombia"></a>
-    <a class="enl" href="/ayudar.html" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
-    <a class="enl" href="/fuentes.html"><span lang-es>Informarse</span><span lang-en>Get informed</span></a>
+    <a class="marca" href="/"><img src="/img/logo.png" alt="4Colombia"></a>
+    <a class="enl" href="/ayudar" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
+    <a class="enl" href="/fuentes"><span lang-es>Informarse</span><span lang-en>Get informed</span></a>
     <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">
       <span class="pulso-share" aria-hidden="true"></span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
@@ -340,7 +340,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       </div>
     </div>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">PayPal</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
-    <a class="donar" href="/made-in-choco.html">
+    <a class="donar" href="/made-in-choco">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
     <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>enlace y fotos entregados por la organización, 13 ago 2026</span><span lang-en>link and photos provided by the organization, 13 Aug 2026</span></span></div>
   <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
@@ -373,7 +373,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       </div>
     </div>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">PayPal</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
-    <a class="donar" href="/san-jose.html">
+    <a class="donar" href="/san-jose">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
     <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>su directora publica el PayPal en el video del hogar, 14 ago 2026</span><span lang-en>the director shares the PayPal link in the home's own video, 14 Aug 2026</span></span></div>
   <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
@@ -608,7 +608,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   </div>
 
-  <a class="otra-pag" href="/fuentes.html">
+  <a class="otra-pag" href="/fuentes">
     <span class="t"><span lang-es>Mantente informado</span><span lang-en>Stay informed</span></span>
     <span class="d"><span lang-es>Contenido curado y verificado de lo que está pasando en Colombia.</span>
     <span lang-en>Curated, verified coverage of what is happening in Colombia.</span></span>
@@ -649,7 +649,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     <span lang-es>Cada botón lleva al canal propio de quien recibe: una organización, una fundación o una persona en el terreno. Este sitio no recibe dinero ni procesa pagos en ningún momento.</span>
     <span lang-en>Every button leads to the recipient's own channel: an organization, a foundation or a person on the ground. This site never receives money or processes payments.</span>
     <br><span id="verif"></span>
-  <br><a href="/legal.html" style="color:var(--azul)"><span lang-es>Privacidad y términos</span><span lang-en>Privacy and terms</span></a></p>
+  <br><a href="/legal" style="color:var(--azul)"><span lang-es>Privacidad y términos</span><span lang-en>Privacy and terms</span></a></p>
 </div>
 
 <script>
@@ -987,14 +987,14 @@ function datosTarjeta(caja){
   const img = caja.querySelector('.marca-org img');
   const ini = caja.querySelector('.marca-org');
   const enlace = caja.querySelector('a.donar');
-  const href = enlace ? enlace.getAttribute('href') : '/ayudar.html';
+  const href = enlace ? enlace.getAttribute('href') : '/ayudar';
   const propio = href.charAt(0) === '/';
   return {
     nombre: (nom ? nom.textContent : '').trim(),
     texto: (que ? que.textContent : '').trim(),
     logo: img ? img.getAttribute('src') : null,
     iniciales: img ? '' : (ini ? ini.textContent.trim() : ''),
-    url: location.origin + (propio ? href : '/ayudar.html')
+    url: location.origin + (propio ? href : '/ayudar')
   };
 }
 
