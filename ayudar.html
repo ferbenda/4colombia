@@ -768,8 +768,7 @@ async function compartirHistoriaCO(c, id, en, btn){
     nombre: c.nombre || '',
     texto: en ? (c.descripcion_en || c.descripcion_es || '') : (c.descripcion_es || c.descripcion_en || ''),
     logo: c.foto || null,
-    iniciales: '',
-    url: CANONICAL + '/ayudar' /* dominio limpio para el gráfico; el link con ancla va en el texto */
+    iniciales: ''
   };
 
   try{ await navigator.clipboard.writeText(urlCompleta); }catch(e){}
@@ -1201,7 +1200,7 @@ async function dibujarHistoria(d, en){
   x.fillText(en ? 'See the details and donate' : 'Conoce el caso y dona', W/2, y);
 
   y += 122;
-  const dom = d.url.replace(/^https?:\/\//,'');
+  const dom = '4colombia.com'; /* en el gráfico solo mostramos el dominio, nunca la ruta completa */
   x.font = '700 46px system-ui, -apple-system, sans-serif';
   const anchoDom = x.measureText(dom).width;
   x.fillStyle = '#003893';
@@ -1282,12 +1281,6 @@ function avisoTarjeta(btn, texto){
 
 function guardarIdioma(l){
   try{ localStorage.setItem('idioma', l); }catch(e){}
-  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
-  document.querySelectorAll('a[href^="/"]').forEach(a=>{
-    const u = new URL(a.getAttribute('href'), location.origin);
-    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
-    a.setAttribute('href', u.pathname + u.search);
-  });
 }
 
 (function inicial(){

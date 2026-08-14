@@ -381,12 +381,6 @@ function avisoHistoria(btn, texto){
 
 function guardarIdioma(l){
   try{ localStorage.setItem('idioma', l); }catch(e){}
-  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
-  document.querySelectorAll('a[href^="/"]').forEach(a=>{
-    const u = new URL(a.getAttribute('href'), location.origin);
-    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
-    a.setAttribute('href', u.pathname + u.search);
-  });
 }
 
 (function inicial(){
