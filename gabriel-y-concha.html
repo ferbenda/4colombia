@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="/img/icono.png">
+<link rel="apple-touch-icon" href="/img/icono.png">
+<meta name="theme-color" content="#003893">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gabriel y Concha — 4Colombia</title>
+<meta name="description" content="Gabriel and Concha lost their home in Marsella, Risaralda. How to help them rebuild.">
+<meta property="og:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://4colombia.com/img/og.jpg">
+<meta property="og:title" content="Gabriel y Concha — 4Colombia">
+<style>
+:root{
+--amarillo:#FCD116; --azul:#003893; --rojo:#CE1126; --amarillo-suave:#FFF6D6;
+--papel:#F4F5F7;--tinta:#101828;--tinta-2:#56606E;--linea:#D4D9E0;--blanco:#fff;
+--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);line-height:1.45;
+-webkit-font-smoothing:antialiased;
+padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+
+/* --- QA móvil: sin desbordes ni textos encimados --- */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg{max-width:100%}
+h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
+.wrap{width:100%}
+.tricolor{display:flex;height:6px;width:100%;position:relative;z-index:31}
+.nav{position:sticky;top:0;z-index:30;background:rgba(244,245,247,.94);
+  backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--linea)}
+.nav-int{max-width:620px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:2px;min-width:0}
+.btn-share{display:inline-flex;align-items:center;gap:5px;margin-left:5px;flex:none;
+  font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:-.01em;
+  color:#3A2C00;background:var(--amarillo);border:1.5px solid #E0B800;border-radius:2px;
+  padding:8px 13px;cursor:pointer;min-height:38px;white-space:nowrap;
+  box-shadow:0 1px 0 rgba(19,26,34,.12)}
+.btn-share:hover{background:#FFD920;border-color:#C9A500}
+.btn-share:active{transform:translateY(1px)}
+.btn-share:focus-visible{outline:2px solid var(--tinta);outline-offset:2px}
+.btn-share svg{width:15px;height:15px;fill:currentColor;flex:none}
+.btn-share .pulso-share{position:absolute;inset:-4px;border:2px solid var(--amarillo);
+  border-radius:3px;opacity:0;animation:latido 3.2s ease-out infinite;pointer-events:none}
+.btn-share{position:relative}
+@keyframes latido{0%{opacity:.85;transform:scale(1)}60%{opacity:0;transform:scale(1.18)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.btn-share .pulso-share{animation:none;display:none}}
+.btn-share.hecho{background:var(--senal,#003893);border-color:var(--azul);color:#fff}
+@media (max-width:420px){
+  .btn-share{padding:8px 9px;font-size:12px;gap:4px}
+  .btn-share svg{width:13px;height:13px}
+  .nav a.enl{padding:13px 5px;font-size:9.5px;letter-spacing:.03em}
+  .marca img{height:20px}
+}
+@media (max-width:340px){
+  .nav a.enl{font-size:9px;padding:13px 4px}
+  .marca img{height:18px}
+}
+.marca{display:flex;align-items:center;padding:10px 0;margin-right:auto;text-decoration:none;flex:0 1 auto;min-width:0}
+.marca img{height:26px;width:auto;display:block}
+@media (max-width:400px){.marca img{height:22px}}
+.nav a.enl{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:600;color:var(--tinta-2);text-decoration:none;padding:13px 7px;white-space:nowrap;
+  border-bottom:2px solid transparent;flex:none}
+.nav a.enl:hover{color:var(--tinta)}
+.nav a.enl[aria-current="page"]{color:var(--tinta);border-bottom-color:var(--amarillo)}
+.nav a.enl:focus-visible{outline:2px solid var(--azul);outline-offset:-2px}
+@media (max-width:400px){.nav-int{padding:0 12px}.nav a.enl{padding:13px 6px;font-size:10px}}
+
+.actualiza{display:inline-flex;align-items:center;gap:7px;background:var(--blanco);
+  border:1px solid var(--linea);border-left:3px solid var(--amarillo);border-radius:0;
+  padding:7px 11px;margin-bottom:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.06em;color:var(--tinta-2);text-transform:uppercase;font-weight:600}
+.pulso{width:7px;height:7px;border-radius:50%;background:var(--rojo);flex:none;
+  animation:lat 2.4s ease-in-out infinite}
+@keyframes lat{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+
+.tricolor i{display:block}
+.tricolor i:nth-child(1){background:var(--amarillo);flex:2}
+.tricolor i:nth-child(2){background:var(--azul);flex:1}
+.tricolor i:nth-child(3){background:var(--rojo);flex:1}
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("img/colombia-horizontal.webp");
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  opacity:.72}
+@media (orientation:portrait){
+  .fondo{background-image:url("img/colombia-vertical.webp")}
+}
+/* La columna de contenido es papel translúcido: la ilustración se ve a través
+   y a los lados, pero el texto conserva contraste en la zona más densa. */
+.wrap{position:relative;z-index:1;background:rgba(244,245,247,.94);
+  box-shadow:0 0 0 1px rgba(212,217,224,.6)}
+
+
+.wrap{max-width:620px;margin:0 auto;padding:26px 18px 60px}
+
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+.sub{color:var(--tinta-2);font-size:16px;margin-bottom:26px}
+
+.idioma{display:flex;gap:8px;margin:0 0 22px}
+.idioma button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+font-weight:600;padding:8px 13px;border:1px solid var(--linea);background:var(--blanco);
+color:var(--tinta-2);border-radius:2px;cursor:pointer;min-height:38px}
+.idioma button[aria-pressed="true"]{border-color:var(--tinta);color:var(--tinta)}
+
+.compartir{margin:26px 0 4px;background:var(--blanco);border:1px solid var(--linea);
+  border-left:5px solid var(--azul);padding:16px 17px}
+.compartir h3{font-size:15.5px;font-weight:650;letter-spacing:-.01em;margin:0 0 3px}
+.compartir p{font-size:13.5px;color:var(--tinta-2);margin:0 0 12px;line-height:1.45}
+.comp-btns{display:flex;flex-wrap:wrap;gap:8px}
+.cbtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:var(--sans);font-size:14px;flex:1 1 auto;min-width:0;
+  font-weight:600;padding:11px 14px;border-radius:2px;border:1.5px solid var(--linea);
+  background:var(--blanco);color:var(--tinta);text-decoration:none;cursor:pointer;min-height:44px}
+.cbtn:hover{border-color:var(--tinta)}
+.cbtn:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.cbtn.principal{background:rgba(0,56,147,.9);border-color:var(--azul);color:#fff;flex:1 1 100%;
+  justify-content:center;font-size:15px}
+.cbtn.principal:hover{background:var(--azul)}
+.cbtn svg{width:16px;height:16px;flex:none;fill:currentColor}
+.cbtn.hecho{border-color:var(--azul);color:var(--azul)}
+.pie{font-size:12.5px;color:var(--tinta-2);margin-top:30px;border-top:1px solid var(--linea);
+padding-top:15px;line-height:1.7}
+[lang-en]{display:none}
+body.en [lang-es]{display:none}
+body.en [lang-en]{display:inline}
+
+h1{font-size:26px;font-weight:650;letter-spacing:-.025em;margin:10px 0 8px}
+
+/* ---- página de caso ---- */
+.caso-vuelta{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--tinta-2);
+  text-decoration:none;margin-bottom:14px}
+.caso-vuelta:hover{color:var(--azul)}
+.caso-logo{display:block;width:min(190px,52%);height:auto;margin:2px 0 12px}
+.caso-lugar{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-2);margin-bottom:8px}
+h1{font-size:clamp(24px,5.6vw,31px);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin:0 0 9px}
+.caso-lede{font-size:15px;color:var(--tinta-2);line-height:1.5;margin-bottom:18px;max-width:42ch}
+.caso h2{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-2);font-weight:600;border-bottom:2px solid var(--amarillo);
+  display:inline-block;padding-bottom:4px;margin:26px 0 10px}
+.caso p{font-size:14.5px;color:var(--tinta-2);line-height:1.6;margin-bottom:11px}
+.caso p b{color:var(--tinta)}
+.co-perfil{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);color:var(--azul);text-decoration:none}
+.co-perfil:hover{text-decoration:underline}
+.lema{background:var(--blanco);border-left:5px solid var(--azul);padding:12px 14px;margin:14px 0;
+  font-size:15px;font-weight:650;color:var(--tinta);letter-spacing:-.01em;line-height:1.4}
+.lema .lema-fuente{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--tinta-2);margin-top:7px}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:14px 0 4px}
+.galeria figure{margin:0;background:var(--blanco);border:1px solid var(--linea)}
+.galeria img{width:100%;height:auto;display:block}
+.galeria figcaption{font-size:11.5px;color:var(--tinta-2);padding:7px 9px;line-height:1.35}
+.galeria .ancha{grid-column:1/-1}
+
+.pagos{background:var(--blanco);border:1px solid var(--linea);border-left:6px solid var(--azul);
+  padding:4px 16px 8px;margin:18px 0 6px}
+.pago{display:flex;align-items:center;gap:10px;border-top:1px solid var(--linea);padding:11px 0}
+.pago:first-child{border-top:0}
+.pago-txt{flex:1;min-width:0}
+.pago-etq{font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--tinta-2)}
+.pago-val{font-family:var(--mono);font-size:15.5px;font-weight:700;color:var(--tinta);margin-top:3px;overflow-wrap:anywhere;line-height:1.3}
+.pago-nota{font-size:11.5px;color:var(--tinta-2);margin-top:3px;line-height:1.4}
+.pago-copiar{flex:none;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--tinta);
+  background:var(--papel);border:1px solid var(--linea);border-radius:2px;padding:9px 12px;cursor:pointer;
+  min-height:40px;white-space:nowrap}
+.pago-copiar:hover{border-color:var(--tinta)}
+.pago-copiar:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.pago-copiar.hecho{border-color:var(--azul);color:var(--azul)}
+.pagos-tit{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--tinta-2);font-weight:700;padding:12px 0 2px}
+.donar-caso{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  background:var(--blanco);border:1px solid var(--azul);border-left:6px solid var(--azul);
+  padding:14px 16px;margin:18px 0 6px;text-decoration:none;color:var(--tinta)}
+.donar-caso:hover{background:rgba(0,56,147,.06)}
+.donar-caso:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.donar-caso .t{font-size:16.5px;font-weight:700;letter-spacing:-.015em;display:block}
+.donar-caso .d{font-size:13.5px;color:var(--tinta-2);margin-top:3px;display:block}
+.donar-caso .f{font-size:20px;flex:none;color:var(--azul)}
+.caso-nota{font-family:var(--mono);font-size:11px;color:var(--tinta-2);line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="tricolor"><i></i><i></i><i></i></div>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-int">
+    <a class="marca" href="/"><img src="/img/logo.png" alt="4Colombia"></a>
+    <a class="enl" href="/ayudar" aria-current="page"><span lang-es>Donar</span><span lang-en>Give</span></a>
+    <a class="enl" href="/fuentes"><span lang-es>Informarse</span><span lang-en>Get informed</span></a>
+    <button class="btn-share" id="btn-share-nav" onclick="compartir(this)">
+      <span class="pulso-share" aria-hidden="true"></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+      <span class="txt"><span lang-es>Compartir</span><span lang-en>Share</span></span>
+    </button>
+  </div>
+</nav><div class="fondo" aria-hidden="true"></div>
+<div class="wrap caso">
+
+  <div class="idioma">
+    <button aria-pressed="true" onclick="idioma('en',this)">English</button>
+    <button aria-pressed="false" onclick="idioma('es',this)">Español</button>
+  </div>
+
+  <a class="caso-vuelta" href="/ayudar">&#8592; <span lang-es>Volver a donaciones</span><span lang-en>Back to donations</span></a>
+
+
+  <div class="caso-lugar"><span lang-es>Vereda El Kiosko · Marsella, Risaralda</span><span lang-en>El Kiosko · Marsella, Risaralda</span></div>
+  <h1><span lang-es>En segundos perdieron su casa</span><span lang-en>In seconds they lost their home</span></h1>
+  <p class="caso-lede"><span lang-es>Gabriel y Concha son adultos mayores. La casa que construyeron y donde vivían quedó destruida por el sismo.</span><span lang-en>Gabriel and Concha are an elderly couple. The house they built and lived in was destroyed by the earthquake.</span></p>
+
+  <div class="pagos">
+    <div class="pagos-tit"><span lang-es>Desde Colombia</span><span lang-en>From Colombia</span></div>
+    <div class="pago"><span class="pago-txt"><span class="pago-etq"><span lang-es>Llave Bre-B</span><span lang-en>Bre-B key</span></span><span class="pago-val">@gabriel30802</span></span><button class="pago-copiar" type="button" onclick="copiarPago(this,'@gabriel30802')"><span lang-es>Copiar</span><span lang-en>Copy</span></button></div>
+    <div class="pago"><span class="pago-txt"><span class="pago-etq"><span lang-es>Bancolombia · ahorros</span><span lang-en>Bancolombia · savings</span></span><span class="pago-val">05970949331</span><span class="pago-nota"><span lang-es>A nombre de Gabriel Anzola</span><span lang-en>In Gabriel Anzola's name</span></span></span><button class="pago-copiar" type="button" onclick="copiarPago(this,'05970949331')"><span lang-es>Copiar</span><span lang-en>Copy</span></button></div>
+    <div class="pagos-tit"><span lang-es>Desde Estados Unidos</span><span lang-en>From the United States</span></div>
+    <div class="pago"><span class="pago-txt"><span class="pago-etq">Zelle</span><span class="pago-val">203-904-7963</span><span class="pago-nota"><span lang-es>Los fondos van a reconstruir la casa</span><span lang-en>Funds go towards rebuilding the house</span></span></span><button class="pago-copiar" type="button" onclick="copiarPago(this,'203-904-7963')"><span lang-es>Copiar</span><span lang-en>Copy</span></button></div>
+  </div>
+  <p class="caso-nota"><span lang-es>4Colombia no recibe ni administra este dinero.</span><span lang-en>4Colombia neither receives nor handles this money.</span></p>
+
+  <h2><span lang-es>Lo que pasó</span><span lang-en>What happened</span></h2>
+  <p><span lang-es>La casa de la vereda El Kiosko se vino abajo con el sismo del 10 de agosto: las paredes reventadas, el techo sostenido por guaduas, los muebles y las ventanas en el patio. Gabriel y Concha llevaban toda una vida ahí. A su edad, volver a levantarla no es algo que puedan hacer solos.</span><span lang-en>Their house in the El Kiosko hamlet came down in the 10 August earthquake: walls burst open, the roof propped up with bamboo poles, furniture and windows out on the grass. Gabriel and Concha had spent their whole life there. At their age, rebuilding is not something they can do alone.</span></p>
+  <p><span lang-es><b>La familia está recogiendo el dinero para reconstruirla.</b> Lo que llegue va directo a levantar la casa de sus papás.</span><span lang-en><b>Their family is raising the money to rebuild it.</b> What comes in goes straight into rebuilding their parents' house.</span></p>
+
+  <div class="galeria">
+      <figure><img src="/img/casos/gc-antes.jpg" alt="" loading="lazy"><figcaption><span lang-es>La casa antes del sismo</span><span lang-en>The house before the earthquake</span></figcaption></figure>
+      <figure><img src="/img/casos/gc-despues.jpg" alt="" loading="lazy"><figcaption><span lang-es>La misma casa después</span><span lang-en>The same house afterwards</span></figcaption></figure>
+      <figure><img src="/img/casos/gc-gabriel.jpg" alt="" loading="lazy"><figcaption><span lang-es>Gabriel, frente a lo que quedó</span><span lang-en>Gabriel, in front of what is left</span></figcaption></figure>
+      <figure><img src="/img/casos/gc-pareja.jpg" alt="" loading="lazy"><figcaption><span lang-es>Concha, el día después</span><span lang-en>Concha, the day after</span></figcaption></figure>
+  </div>
+
+  <h2><span lang-es>A dónde va el dinero</span><span lang-en>Where the money goes</span></h2>
+  <p><span lang-es>La cuenta está a nombre de Gabriel Anzola. Desde Estados Unidos, la familia habilitó Zelle para quienes quieran aportar desde allá.</span><span lang-en>The account is in Gabriel Anzola's name. From the United States, the family set up Zelle for anyone who wants to help from there.</span></p>
+  <p><span lang-es>En el video se ve cómo quedó la casa y ellos contando lo que pasó.</span><span lang-en>The video shows the state of the house and them telling what happened.</span></p>
+
+  <a class="co-perfil" href="https://www.instagram.com/reel/Db9oyCTM3Q_/" target="_blank" rel="noopener" style="font-size:13px;margin:4px 0 14px"><span lang-es>Ver el video </span><span lang-en>Watch the video </span>&#8599;</a>
+
+  <div class="pagos">
+    <div class="pagos-tit"><span lang-es>Desde Colombia</span><span lang-en>From Colombia</span></div>
+    <div class="pago"><span class="pago-txt"><span class="pago-etq"><span lang-es>Llave Bre-B</span><span lang-en>Bre-B key</span></span><span class="pago-val">@gabriel30802</span></span><button class="pago-copiar" type="button" onclick="copiarPago(this,'@gabriel30802')"><span lang-es>Copiar</span><span lang-en>Copy</span></button></div>
+    <div class="pago"><span class="pago-txt"><span class="pago-etq"><span lang-es>Bancolombia · ahorros</span><span lang-en>Bancolombia · savings</span></span><span class="pago-val">05970949331</span><span class="pago-nota"><span lang-es>A nombre de Gabriel Anzola</span><span lang-en>In Gabriel Anzola's name</span></span></span><button class="pago-copiar" type="button" onclick="copiarPago(this,'05970949331')"><span lang-es>Copiar</span><span lang-en>Copy</span></button></div>
+    <div class="pagos-tit"><span lang-es>Desde Estados Unidos</span><span lang-en>From the United States</span></div>
+    <div class="pago"><span class="pago-txt"><span class="pago-etq">Zelle</span><span class="pago-val">203-904-7963</span><span class="pago-nota"><span lang-es>Los fondos van a reconstruir la casa</span><span lang-en>Funds go towards rebuilding the house</span></span></span><button class="pago-copiar" type="button" onclick="copiarPago(this,'203-904-7963')"><span lang-es>Copiar</span><span lang-en>Copy</span></button></div>
+  </div>
+
+  <div class="compartir">
+    <h3><span lang-es>Comparte este caso</span><span lang-en>Share this case</span></h3>
+    <p><span lang-es>Cuanta más gente lo vea, más ayuda les llega.</span><span lang-en>The more people see it, the more help reaches them.</span></p>
+    <div class="comp-btns">
+      <button class="cbtn principal" onclick="compartir(this)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        <span class="txt"><span lang-es>Compartir</span><span lang-en>Share</span></span>
+      </button>
+      <a class="cbtn" id="cb-wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5 0-.1-.2-.2-.5-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+        <span class="txt">WhatsApp</span>
+      </a>
+      <a class="cbtn" id="cb-li" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21h-4z"/></svg>
+        <span class="txt">LinkedIn</span>
+      </a>
+      <a class="cbtn" id="cb-ig" href="/img/casos/historia-gc-es.jpg" target="_blank" rel="noopener" onclick="return compartirHistoria(event,this)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.36 2.67.94 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.73 1.47 1.39 2.13.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.8-.3 1.47-.72 2.13-1.38.66-.66 1.08-1.33 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.8-.72-1.47-1.38-2.13-.66-.66-1.33-1.08-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zm0 10.16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+        <span class="txt"><span lang-es>Historia</span><span lang-en>Story</span></span>
+      </a>
+      <button class="cbtn" id="cb-copiar" onclick="copiarEnlace(this)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 00-2 2v14h2V3h12V1zm3 4H8a2 2 0 00-2 2v14a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2zm0 16H8V7h11v14z"/></svg>
+        <span class="txt"><span lang-es>Copiar enlace</span><span lang-en>Copy link</span></span>
+      </button>
+    </div>
+  </div>
+
+  <p class="pie">
+    <span lang-es>4Colombia es un directorio: no recibe ni administra dinero. Estos datos los publicó la familia en su propio video.</span><span lang-en>4Colombia is a directory: it neither receives nor handles money. These details were published by the family in their own video.</span><br>
+    <span id="verif"></span>
+  </p>
+</div>
+
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<script>
+const META = {
+  es: {t:'Gabriel y Concha — 4Colombia',
+       d:'Gabriel y Concha perdieron su casa en la vereda El Kiosko, en Marsella, Risaralda.'},
+  en: {t:'Gabriel y Concha — 4Colombia',
+       d:'Gabriel and Concha lost their home in Marsella, Risaralda.'}
+};
+
+function idioma(l, btn){
+  document.body.classList.toggle('en', l==='en');
+  document.documentElement.lang = l;
+  document.querySelectorAll('.idioma button').forEach(b=>b.setAttribute('aria-pressed', String(b===btn)));
+  guardarIdioma(l);
+  armarEnlacesCompartir();
+  const m = META[l];
+  document.title = m.t;
+  document.querySelector('meta[name="description"]').setAttribute('content', m.d);
+  document.querySelector('meta[property="og:title"]').setAttribute('content', m.t);
+}
+
+
+/* ---------- compartir ---------- */
+function textoCompartir(){
+  const en = document.body.classList.contains('en');
+  return en
+    ? 'Gabriel and Concha, an elderly couple in Marsella, Risaralda, lost the house they had lived in all their lives. Their family is raising money to rebuild it:'
+    : 'Gabriel y Concha, adultos mayores de Marsella, Risaralda, perdieron la casa donde vivieron toda la vida. Su familia está recogiendo para reconstruirla:';
+}
+
+function armarEnlacesCompartir(){
+  const url = location.origin + location.pathname;
+  const t = textoCompartir();
+  const wa = document.getElementById('cb-wa');
+  if(wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(t + ' ' + url);
+
+  const li = document.getElementById('cb-li');
+  if(li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+  const ig = document.getElementById('cb-ig');
+  if(ig) ig.href = '/img/casos/historia-gc-' + (document.body.classList.contains('en') ? 'en' : 'es') + '.jpg';
+}
+
+async function compartir(btn){
+  const url = location.origin + location.pathname;
+  const datos = {title: document.title, text: textoCompartir(), url: url};
+  /* Web Share abre el menú nativo del sistema: WhatsApp, Mensajes, Telegram,
+     AirDrop, lo que la persona tenga. Es la ruta con menos fricción en móvil. */
+  if(navigator.share){
+    try{ await navigator.share(datos); return; }catch(e){ if(e && e.name === 'AbortError') return; }
+  }
+  /* Sin menú nativo (escritorio): se copia y se confirma en el mismo botón. */
+  copiarEnlace(btn && btn.querySelector('.txt') ? btn : document.getElementById('cb-copiar'));
+}
+
+async function copiarEnlace(btn){
+  const url = location.origin + location.pathname;
+  let ok = false;
+  try{ await navigator.clipboard.writeText(url); ok = true; }
+  catch(e){
+    const t = document.createElement('textarea');
+    t.value = url; t.setAttribute('readonly','');
+    t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select();
+    try{ ok = document.execCommand('copy'); }catch(_){}
+    document.body.removeChild(t);
+  }
+  const nav = document.getElementById('btn-share-nav');
+  if(ok && nav){ const p = nav.querySelector('.pulso-share'); if(p) p.remove(); }
+  if(btn && ok){
+    const s = btn.querySelector('.txt');
+    const original = s ? s.textContent : '';
+    if(s) s.textContent = document.body.classList.contains('en') ? 'Copied' : 'Copiado';
+    btn.classList.add('hecho');
+    setTimeout(()=>{ if(s) s.textContent = original; btn.classList.remove('hecho'); }, 1800);
+  }
+}
+
+/* ---------- compartir la imagen de historia ----------
+   Si el navegador permite compartir archivos (iOS 15+, Android reciente),
+   se manda la imagen al menú del sistema: la persona elige Instagram y la
+   historia se abre con la foto ya puesta. Si no, se abre la imagen para
+   guardarla a mano. De paso se copia el enlace, que es lo que hay que
+   pegar en el sticker. */
+async function compartirHistoria(ev, btn){
+  const ruta = btn.getAttribute('href');
+  const url = location.origin + location.pathname;
+  const en = document.body.classList.contains('en');
+
+  try{ await navigator.clipboard.writeText(url); }catch(e){}
+
+  if(navigator.canShare && navigator.share){
+    try{
+      const r = await fetch(ruta);
+      if(r.ok){
+        const blob = await r.blob();
+        const archivo = new File([blob], '4colombia.jpg', {type: blob.type || 'image/jpeg'});
+        if(navigator.canShare({files: [archivo]})){
+          if(ev && ev.preventDefault) ev.preventDefault();
+          await navigator.share({files: [archivo], text: url});
+          avisoHistoria(btn, en ? 'Link copied' : 'Enlace copiado');
+          return false;
+        }
+      }
+    }catch(e){ if(e && e.name === 'AbortError') { if(ev&&ev.preventDefault) ev.preventDefault(); return false; } }
+  }
+  /* sin compartir de archivos: la imagen se abre y se guarda manteniendo pulsado */
+  avisoHistoria(btn, en ? 'Link copied' : 'Enlace copiado');
+  return true;
+}
+
+function avisoHistoria(btn, texto){
+  const s = btn.querySelector('.txt');
+  if(!s) return;
+  const antes = s.textContent;
+  s.textContent = texto;
+  btn.classList.add('hecho');
+  setTimeout(()=>{ s.textContent = antes; btn.classList.remove('hecho'); }, 1900);
+}
+
+async function copiarPago(btn, valor){
+  let ok = false;
+  try{ await navigator.clipboard.writeText(valor); ok = true; }
+  catch(e){
+    const t = document.createElement('textarea');
+    t.value = valor; t.setAttribute('readonly','');
+    t.style.position='fixed'; t.style.opacity='0';
+    document.body.appendChild(t); t.select();
+    try{ ok = document.execCommand('copy'); }catch(_){}
+    document.body.removeChild(t);
+  }
+  if(ok){
+    const en = document.body.classList.contains('en');
+    const antes = btn.textContent;
+    btn.textContent = en ? 'Copied' : 'Copiado';
+    btn.classList.add('hecho');
+    setTimeout(()=>{ btn.textContent = antes; btn.classList.remove('hecho'); }, 1600);
+  }
+}
+
+function guardarIdioma(l){
+  try{ localStorage.setItem('idioma', l); }catch(e){}
+  // Respaldo si el navegador bloquea el almacenamiento: el idioma viaja en la URL.
+  document.querySelectorAll('a[href^="/"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), location.origin);
+    if(l==='es') u.searchParams.set('lang','es'); else u.searchParams.delete('lang');
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+
+(function inicial(){
+  let l = new URLSearchParams(location.search).get('lang');
+  if(!l){ try{ l = localStorage.getItem('idioma'); }catch(e){} }
+  if(l !== 'es') l = 'en';
+  const botones = document.querySelectorAll('.idioma button');
+  idioma(l, botones[l==='es' ? 1 : 0]);
+})();
+</script>
+</body>
+</html>
