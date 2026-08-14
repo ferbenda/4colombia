@@ -360,7 +360,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
       </div>
     </div>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">PayPal</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
-    <a class="donar" href="/made-in-choco">
+    <a class="donar" href="/made-in-choco" target="_blank" rel="noopener">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
     <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>enlace y fotos entregados por la organización, 13 ago 2026</span><span lang-en>link and photos provided by the organization, 13 Aug 2026</span></span></div>
   <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
@@ -378,7 +378,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     </div>
     <a class="org-video" href="https://www.instagram.com/reel/DcAeGDRuBuw/" target="_blank" rel="noopener"><span lang-es>Ver el video de la entrega </span><span lang-en>Watch the delivery video </span>&#8599;</a>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">COP</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
-    <a class="donar" href="/catalina-munoz">
+    <a class="donar" href="/catalina-munoz" target="_blank" rel="noopener">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
     <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>página oficial de donación en su dominio, 14 ago 2026</span><span lang-en>official donation page on their own domain, 14 Aug 2026</span></span></div>
   <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
@@ -396,7 +396,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     </div>
     <a class="org-video" href="https://www.instagram.com/reel/Db_MtcrRbTr/" target="_blank" rel="noopener"><span lang-es>Ver el video que publicaron </span><span lang-en>Watch the video they posted </span>&#8599;</a>
     <div class="monedas"><span class="moneda">USD</span><span class="moneda">PayPal</span><span class="moneda"><span lang-es>Tarjeta</span><span lang-en>Card</span></span></div>
-    <a class="donar" href="/san-jose">
+    <a class="donar" href="/san-jose" target="_blank" rel="noopener">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
     <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>su directora publica el PayPal en el video del hogar, 14 ago 2026</span><span lang-en>the director shares the PayPal link in the home's own video, 14 Aug 2026</span></span></div>
   <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
@@ -414,7 +414,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
     </div>
     <a class="org-video" href="https://www.instagram.com/reel/Db9oyCTM3Q_/" target="_blank" rel="noopener"><span lang-es>Ver el video que publicaron </span><span lang-en>Watch the video they posted </span>&#8599;</a>
     <div class="monedas"><span class="moneda">Zelle</span><span class="moneda"><span lang-es>Llave Bre-B</span><span lang-en>Bre-B key</span></span></div>
-    <a class="donar" href="/gabriel-y-concha">
+    <a class="donar" href="/gabriel-y-concha" target="_blank" rel="noopener">
       <span lang-es>Ver el caso y donar</span><span lang-en>See the case and donate</span></a>
     <div class="verif"><span class="tic" aria-hidden="true">&#10003;</span><span><b><span lang-es>Verificado: </span><span lang-en>Verified: </span></b><span lang-es>la familia publica los datos en su propio video, 14 ago 2026</span><span lang-en>the family publishes the details in their own video, 14 Aug 2026</span></span></div>
     <span class="etq-caso"><span lang-es>Caso</span><span lang-en>Case</span></span>
@@ -698,7 +698,7 @@ function textoCompartir(){
 }
 
 function armarEnlacesCompartir(){
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   const t = textoCompartir();
   const wa = document.getElementById('cb-wa');
   const x  = document.getElementById('cb-x');
@@ -711,7 +711,7 @@ function armarEnlacesCompartir(){
 }
 
 async function compartir(btn){
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   const datos = {title: document.title, text: textoCompartir(), url: url};
   /* Web Share abre el menú nativo del sistema: WhatsApp, Mensajes, Telegram,
      AirDrop, lo que la persona tenga. Es la ruta con menos fricción en móvil. */
@@ -723,7 +723,7 @@ async function compartir(btn){
 }
 
 async function copiarEnlace(btn){
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   let ok = false;
   try{ await navigator.clipboard.writeText(url); ok = true; }
   catch(e){
@@ -1064,7 +1064,7 @@ function verOrigen(cual, btn){
    pegar en el sticker. */
 async function compartirHistoria(ev, btn){
   const ruta = btn.getAttribute('href');
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   const en = document.body.classList.contains('en');
 
   try{ await navigator.clipboard.writeText(url); }catch(e){}
@@ -1116,7 +1116,7 @@ function datosTarjeta(caja){
     texto: (que ? que.textContent : '').trim(),
     logo: img ? img.getAttribute('src') : null,
     iniciales: img ? '' : (ini ? ini.textContent.trim() : ''),
-    url: location.origin + (propio ? href : '/ayudar')
+    url: 'https://4colombia.com' + (propio ? href : '/ayudar')
   };
 }
 

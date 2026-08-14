@@ -268,7 +268,7 @@ function textoCompartir(){
 }
 
 function armarEnlacesCompartir(){
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   const t = textoCompartir();
   const wa = document.getElementById('cb-wa');
   const x  = document.getElementById('cb-x');
@@ -281,7 +281,7 @@ function armarEnlacesCompartir(){
 }
 
 async function compartir(btn){
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   const datos = {title: document.title, text: textoCompartir(), url: url};
   /* Web Share abre el menú nativo del sistema: WhatsApp, Mensajes, Telegram,
      AirDrop, lo que la persona tenga. Es la ruta con menos fricción en móvil. */
@@ -293,7 +293,7 @@ async function compartir(btn){
 }
 
 async function copiarEnlace(btn){
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   let ok = false;
   try{ await navigator.clipboard.writeText(url); ok = true; }
   catch(e){
@@ -323,7 +323,7 @@ async function copiarEnlace(btn){
    pegar en el sticker. */
 async function compartirHistoria(ev, btn){
   const ruta = btn.getAttribute('href');
-  const url = location.origin + location.pathname;
+  const url = 'https://4colombia.com' + location.pathname;
   const en = document.body.classList.contains('en');
 
   try{ await navigator.clipboard.writeText(url); }catch(e){}
