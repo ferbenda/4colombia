@@ -98,12 +98,24 @@ h1,h2,h3,p,li,a,span,div{overflow-wrap:break-word}
   background-image:url("img/colombia-horizontal.webp");
   background-size:cover;background-position:center;background-repeat:no-repeat;
   opacity:.72;
-  filter:grayscale(100%);
-  animation:colorizar 3.5s ease-out .4s forwards}
-@keyframes colorizar{to{filter:grayscale(0%)}}
-@media (prefers-reduced-motion:reduce){.fondo{animation:none;filter:none}}
+  filter:grayscale(100%)}
+/* ::before = capa a color que se desvanece, revelando el fondo gris de .fondo.
+   ::after  = capa a color recortada solo a la bandera, siempre visible: es lo
+   único que queda en color al terminar la transición. */
+.fondo::before,.fondo::after{content:"";position:absolute;inset:0;
+  background-image:inherit;background-size:cover;background-position:center;
+  background-repeat:no-repeat}
+.fondo::before{animation:desaturar 4.5s ease-in .3s forwards}
+.fondo::after{
+  -webkit-mask-image:radial-gradient(ellipse 6% 9% at 89% 33%,#000 55%,transparent 100%);
+  mask-image:radial-gradient(ellipse 6% 9% at 89% 33%,#000 55%,transparent 100%)}
+@keyframes desaturar{to{opacity:0}}
+@media (prefers-reduced-motion:reduce){.fondo::before{animation:none;opacity:0}}
 @media (orientation:portrait){
   .fondo{background-image:url("img/colombia-vertical.webp")}
+  .fondo::after{
+    -webkit-mask-image:radial-gradient(ellipse 6% 5% at 77% 30%,#000 55%,transparent 100%);
+    mask-image:radial-gradient(ellipse 6% 5% at 77% 30%,#000 55%,transparent 100%)}
 }
 /* La columna de contenido es papel translúcido: la ilustración se ve a través
    y a los lados, pero el texto conserva contraste en la zona más densa. */
