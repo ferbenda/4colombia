@@ -176,6 +176,11 @@ border-bottom:2px solid var(--amarillo);display:inline-block;padding-bottom:4px}
   font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.03em;color:var(--tinta-2);
   overflow:hidden}
 .marca-org img{width:100%;height:100%;object-fit:contain;display:block}
+/* La forma la decide el contenido: círculo para una foto, rectángulo para
+   un logo. Un wordmark dentro de un círculo pierde legibilidad. */
+.marca-org.redonda{width:56px;height:56px;border-radius:50%;overflow:hidden;border:1px solid var(--linea)}
+.marca-org.redonda img{object-fit:cover}
+
 .org-txt{flex:1 1 100%;min-width:0}
 
 .org-nom{font-size:17.5px;font-weight:650;letter-spacing:-.015em;line-height:1.25;
@@ -242,6 +247,7 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .co-cab{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .co-foto{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;
   border:2px solid var(--linea);background:var(--papel);display:block}
+.co-foto.logo{width:78px;height:48px;border-radius:3px;object-fit:contain;background:var(--blanco);border-width:1px}
 .co-cab{align-items:center}
 .co-id{display:flex;align-items:center;gap:12px;flex:1 1 100%;min-width:0}
 
@@ -386,7 +392,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org caso">
     <div class="org-cab">
-      <div class="marca-org" aria-hidden="true"><img src="/img/personas/gabriel-concha.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='G&amp;C'"></div>
+      <div class="marca-org redonda" aria-hidden="true"><img src="/img/personas/gabriel-concha.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='G&amp;C'"></div>
       <div class="org-txt">
         <div class="org-nom"><span lang-es>Gabriel y Concha — Marsella</span><span lang-en>Gabriel and Concha — Marsella</span></div>
         <div class="org-que">
@@ -404,7 +410,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div class="marca-org" aria-hidden="true"><img src="/img/personas/rita.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='RITA'"></div>
+      <div class="marca-org redonda" aria-hidden="true"><img src="/img/personas/rita.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='RITA'"></div>
       <div class="org-txt">
         <div class="org-nom"><span lang-es>Refugio de doña Rita — Buenaventura</span><span lang-en>Doña Rita's shelter — Buenaventura</span></div>
         <div class="org-que">
@@ -439,7 +445,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org">
     <div class="org-cab">
-      <div class="marca-org" aria-hidden="true"><img src="/img/personas/covida.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='COVIDA'"></div>
+      <div class="marca-org redonda" aria-hidden="true"><img src="/img/personas/covida.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='COVIDA'"></div>
       <div class="org-txt">
         <div class="org-nom"><span lang-es>Fundación Covida — Armenia, Quindío</span><span lang-en>Fundación Covida — Armenia, Quindío</span></div>
         <div class="org-que">
@@ -456,7 +462,7 @@ body.en div[lang-en],body.en p[lang-en],body.en li[lang-en]{display:block}
 
   <div class="org caso">
     <div class="org-cab">
-      <div class="marca-org" aria-hidden="true"><img src="/img/personas/oskar-carolina.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='O&amp;C'"></div>
+      <div class="marca-org redonda" aria-hidden="true"><img src="/img/personas/oskar-carolina.jpg" alt="" loading="lazy" onerror="this.remove();this.parentNode.textContent='O&amp;C'"></div>
       <div class="org-txt">
         <div class="org-nom"><span lang-es>Óskar y Carolina — Dosquebradas</span><span lang-en>Óskar and Carolina — Dosquebradas</span></div>
         <div class="org-que">
@@ -766,7 +772,9 @@ function pintarCuentasCO(){
     ident.className = 'co-id';
     if(c.foto){
       const f = document.createElement('img');
-      f.className = 'co-foto';
+      /* un logo se muestra entero; una foto se recorta al círculo */
+      const esLogo = c.foto.indexOf('/logos/') !== -1;
+      f.className = 'co-foto' + (esLogo ? ' logo' : '');
       f.src = c.foto; f.alt = ''; f.loading = 'lazy';
       f.addEventListener('error', () => f.remove());
       ident.appendChild(f);
