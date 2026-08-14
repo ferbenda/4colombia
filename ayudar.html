@@ -760,34 +760,39 @@ function slugify(s){
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-async function compartirTarjeta(c, id, en){
-  const url = location.origin + location.pathname + '#' + id;
-  const lineas = (c.medios || []).map(m => {
-    const par = ETQ_MEDIO[m.tipo] || ['', ''];
-    const etq = m.etiqueta || (en ? par[1] : par[0]);
-    return etq + ': ' + m.valor;
-  });
-  const desc = en ? (c.descripcion_en || c.descripcion_es) : (c.descripcion_es || c.descripcion_en);
-  const texto = [c.nombre, desc, ...lineas].filter(Boolean).join('\n');
+async function compartirHistoriaCO(c, id, en, btn){
+  const urlCompleta = location.origin + location.pathname + '#' + id;
+  const d = {
+    nombre: c.nombre || '',
+    texto: en ? (c.descripcion_en || c.descripcion_es || '') : (c.descripcion_es || c.descripcion_en || ''),
+    logo: c.foto || null,
+    iniciales: '',
+    url: location.origin + '/ayudar' /* dominio limpio para el gráfico; el link con ancla va en el texto */
+  };
 
-  if(navigator.share){
-    try{ await navigator.share({ title: c.nombre, text: texto, url }); return; }
-    catch(e){ if(e && e.name === 'AbortError') return; }
-  }
-  const completo = texto + '\n' + url;
-  let ok = false;
-  try{ await navigator.clipboard.writeText(completo); ok = true; }
-  catch(e){
-    const t = document.createElement('textarea');
-    t.value = completo; t.setAttribute('readonly','');
-    t.style.position = 'fixed'; t.style.opacity = '0';
-    document.body.appendChild(t); t.select();
-    try{ ok = document.execCommand('copy'); }catch(_){}
-    document.body.removeChild(t);
-  }
-  if(ok){
-    avisoFlotante(en ? 'Copied — paste it wherever you want to share it' : 'Copiado — pégalo donde quieras compartirlo');
-  }
+  try{ await navigator.clipboard.writeText(urlCompleta); }catch(e){}
+
+  try{
+    const blob = await dibujarHistoria(d, en);
+    if(blob && navigator.canShare && navigator.share){
+      const archivo = new File([blob], '4colombia.jpg', {type:'image/jpeg'});
+      if(navigator.canShare({files:[archivo]})){
+        await navigator.share({files:[archivo], text: urlCompleta});
+        avisoFlotante(en ? 'Shared' : 'Compartido');
+        return;
+      }
+    }
+    if(blob){
+      /* Sin menú del sistema, la imagen se abre en una pestaña: manteniéndola
+         pulsada se guarda en Fotos, igual que en las tarjetas internacionales. */
+      const u = URL.createObjectURL(blob);
+      window.open(u, '_blank');
+      setTimeout(()=>URL.revokeObjectURL(u), 120000);
+      avisoFlotante(en ? 'Hold to save' : 'Mantén pulsado');
+      return;
+    }
+  }catch(e){ if(e && e.name === 'AbortError') return; }
+  avisoFlotante(en ? 'Link copied' : 'Enlace copiado');
 }
 
 function avisoFlotante(msg){
@@ -896,7 +901,7 @@ function pintarCuentasCO(){
       sh.type = 'button';
       sh.className = 'co-perfil co-compartir';
       sh.textContent = (en ? 'Share ' : 'Compartir ') + '\u21D1';
-      sh.addEventListener('click', () => compartirTarjeta(c, caja.id, en));
+      sh.addEventListener('click', () => compartirHistoriaCO(c, caja.id, en, sh));
       enlaces.appendChild(sh);
     }
     if(c.whatsapp){
