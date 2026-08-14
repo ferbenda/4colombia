@@ -238,12 +238,21 @@ border-radius:2px;font-size:16px;font-weight:650;text-decoration:none;min-height
 .co-perfil{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11.5px;
   color:var(--azul);text-decoration:none;margin-top:2px}
 .co-perfil:hover{text-decoration:underline}
+.co-compartir{background:none;border:none;padding:0;cursor:pointer;font-weight:650}
+.toast-compartir{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(8px);
+  background:var(--tinta);color:#fff;font-family:var(--sans);font-size:13px;font-weight:600;
+  padding:10px 16px;border-radius:3px;box-shadow:0 4px 16px rgba(0,0,0,.2);
+  opacity:0;transition:opacity .25s ease,transform .25s ease;z-index:20;pointer-events:none;
+  max-width:88vw;text-align:center}
+.toast-compartir.mostrar{opacity:1;transform:translateX(-50%) translateY(0)}
 /* ---- donaciones desde Colombia ---- */
 .co-aviso{background:var(--blanco);border-left:3px solid var(--azul);padding:12px 14px;
   font-size:13.5px;color:var(--tinta-2);line-height:1.5;margin-bottom:14px}
 .co-aviso b{color:var(--tinta)}
 .co{background:var(--blanco);border:1px solid var(--linea);border-left:5px solid var(--azul);
   padding:16px 17px;margin-bottom:12px}
+.co.destacar{animation:destacar-tarjeta 2.2s ease}
+@keyframes destacar-tarjeta{0%{box-shadow:0 0 0 3px var(--amarillo)}100%{box-shadow:0 0 0 0 transparent}}
 .co-cab{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
 .co-foto{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;
   border:2px solid var(--linea);background:var(--papel);display:block}
@@ -746,6 +755,50 @@ const ETQ_MEDIO = {
   qr:         ['Código QR',          'QR code']
 };
 
+function slugify(s){
+  return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+async function compartirTarjeta(c, id, en){
+  const url = location.origin + location.pathname + '#' + id;
+  const lineas = (c.medios || []).map(m => {
+    const par = ETQ_MEDIO[m.tipo] || ['', ''];
+    const etq = m.etiqueta || (en ? par[1] : par[0]);
+    return etq + ': ' + m.valor;
+  });
+  const desc = en ? (c.descripcion_en || c.descripcion_es) : (c.descripcion_es || c.descripcion_en);
+  const texto = [c.nombre, desc, ...lineas].filter(Boolean).join('\n');
+
+  if(navigator.share){
+    try{ await navigator.share({ title: c.nombre, text: texto, url }); return; }
+    catch(e){ if(e && e.name === 'AbortError') return; }
+  }
+  const completo = texto + '\n' + url;
+  let ok = false;
+  try{ await navigator.clipboard.writeText(completo); ok = true; }
+  catch(e){
+    const t = document.createElement('textarea');
+    t.value = completo; t.setAttribute('readonly','');
+    t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select();
+    try{ ok = document.execCommand('copy'); }catch(_){}
+    document.body.removeChild(t);
+  }
+  if(ok){
+    avisoFlotante(en ? 'Copied — paste it wherever you want to share it' : 'Copiado — pégalo donde quieras compartirlo');
+  }
+}
+
+function avisoFlotante(msg){
+  const d = document.createElement('div');
+  d.className = 'toast-compartir';
+  d.textContent = msg;
+  document.body.appendChild(d);
+  requestAnimationFrame(() => d.classList.add('mostrar'));
+  setTimeout(() => { d.classList.remove('mostrar'); setTimeout(() => d.remove(), 300); }, 2200);
+}
+
 function pintarCuentasCO(){
   const bloque = document.getElementById('datos-colombia');
   const cont = document.getElementById('cuentas-co');
@@ -770,6 +823,7 @@ function pintarCuentasCO(){
   lista.forEach(c => {
     const caja = document.createElement('div');
     caja.className = 'co' + (c.tipo === 'persona' ? ' persona' : '');
+    caja.id = 'c-' + slugify(c.nombre || '');
 
     const cab = document.createElement('div');
     cab.className = 'co-cab';
@@ -836,6 +890,14 @@ function pintarCuentasCO(){
       s.href = c.fuente; s.target = '_blank'; s.rel = 'noopener';
       s.textContent = (en ? 'See the source ' : 'Ver la fuente ') + '\u2197';
       enlaces.appendChild(s);
+    }
+    {
+      const sh = document.createElement('button');
+      sh.type = 'button';
+      sh.className = 'co-perfil co-compartir';
+      sh.textContent = (en ? 'Share ' : 'Compartir ') + '\u21D1';
+      sh.addEventListener('click', () => compartirTarjeta(c, caja.id, en));
+      enlaces.appendChild(sh);
     }
     if(c.whatsapp){
       const wa = document.createElement('a');
@@ -935,9 +997,21 @@ function verOrigen(cual, btn){
 (function origenInicial(){
   let o = null;
   try{ o = localStorage.getItem('origen'); }catch(e){}
+  const hash = location.hash.replace('#','');
+  if(hash.indexOf('c-') === 0) o = 'co';
   if(o !== 'co') o = 'fuera';
   const botones = document.querySelectorAll('.origen button');
   if(botones.length) verOrigen(o, botones[o === 'co' ? 1 : 0]);
+  if(hash.indexOf('c-') === 0){
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if(el){
+        el.scrollIntoView({behavior:'smooth', block:'center'});
+        el.classList.add('destacar');
+        setTimeout(() => el.classList.remove('destacar'), 2200);
+      }
+    }, 60);
+  }
 })();
 
 /* ---------- compartir la imagen de historia ----------
