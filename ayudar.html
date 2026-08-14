@@ -772,13 +772,14 @@ function slugify(s){
 }
 
 async function compartirHistoriaCO(c, id, en, btn){
-  const urlCompleta = location.origin + location.pathname + '#' + id;
+  const CANONICAL = 'https://4colombia.com';
+  const urlCompleta = CANONICAL + '/ayudar#' + id;
   const d = {
     nombre: c.nombre || '',
     texto: en ? (c.descripcion_en || c.descripcion_es || '') : (c.descripcion_es || c.descripcion_en || ''),
     logo: c.foto || null,
     iniciales: '',
-    url: location.origin + '/ayudar' /* dominio limpio para el gráfico; el link con ancla va en el texto */
+    url: CANONICAL + '/ayudar' /* dominio limpio para el gráfico; el link con ancla va en el texto */
   };
 
   try{ await navigator.clipboard.writeText(urlCompleta); }catch(e){}
