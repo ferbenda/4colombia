@@ -199,6 +199,14 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1564918698746756&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script>
+document.addEventListener('click', function(e){
+  var t = e.target.closest('.donar, .donar-caso');
+  if(t && window.fbq){
+    fbq('trackCustom', 'ClickDonar', { metodo: 'tarjeta', destino: t.getAttribute('href') || '' });
+  }
+});
+</script>
 </head>
 <body>
 <div class="tricolor"><i></i><i></i><i></i></div>
